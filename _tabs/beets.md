@@ -1,7 +1,7 @@
 ---
 # the default layout is 'page'
 icon: fas fa-user-circle
-order: 5
+order: 6
 ---
 
 # Beets media library management
@@ -25,7 +25,7 @@ order: 5
     1. [Beets import followup steps](#beets-import-followup-steps)
         1. [Performing an interactive Beets import](#performing-an-interactive-beets-import)
         1. [Performing a Beets import with a MusicBrainz ID](#performing-a-beets-import-with-a-musicbrainz-id)
-    1. [Downloading album cover art with the mpplus command](#downloading-album-cover-art-with-the-mpplus-command)
+    1. [Download album cover art with the mpplus command](#download-album-cover-art-with-the-mpplus-command)
     1. [Downloading album cover art with the fetchart Beets plugin](#downloading-album-cover-art-with-the-fetchart-beets-plugin)
 1. [Playlist creation](#playlist-creation)
 1. [Fetching lyrics](#fetching-lyrics)
@@ -332,7 +332,7 @@ run the command `mpplus -D`.
 
 For details on album cover art download, manual art download, and
 converting WAV format media files to MP3 format see the
-[MusicPlayerPlus Beets README](beets/README.md).
+[MusicPlayerPlus Beets section](https://musicplayerplus.dev/beets).
 
 #### Analyze and extract additional metadata with Essentia
 
