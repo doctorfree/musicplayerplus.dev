@@ -821,7 +821,7 @@ beet list -f '$artist: $album - $title' lyrics::^$
 ```
 
 To fetch lyrics for all songs in the music library that do not already have
-lyrics. after the Beets import process completes issue the command:
+lyrics, after the Beets import process completes issue the command:
 
 ```
 mpplus -L
