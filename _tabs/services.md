@@ -65,10 +65,12 @@ music library while MPD or Mopidy is serving up the same library locally.
 Navidrome can optionally scrobble to Last.FM so if that option is enabled
 then deactivate the YAMS service.
 
-**[Summary]** MusicPlayerPlus provides several different selections of
-services appropriate for a variety of use cases. All service configurations
-require a prior MusicPlayerPlus initialization with `mppinit`. Some common
-MusicPlayerPlus service configurations include:
+#### Common Service Configurations
+
+MusicPlayerPlus provides several different selections of services appropriate
+for a variety of use cases. All service configurations require a prior
+MusicPlayerPlus initialization with `mppinit`. Some common MusicPlayerPlus
+service configurations include:
 
 - **Basic Music Player Daemon**
   - Configured automatically with `mppinit`
