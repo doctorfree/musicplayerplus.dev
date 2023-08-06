@@ -4,32 +4,56 @@ layout: page
 
 <div data-align="center">
   <p>
-    <img
-      src="https://raw.githubusercontent.com/wiki/doctorfree/MusicPlayerPlus/img/musicplayerplus.png"
-      style="width: 800px; height: 140px"
-      alt="MusicPlayerPlus"
-    />
+    <img src="https://raw.githubusercontent.com/wiki/doctorfree/MusicPlayerPlus/img/musicplayerplus.png"
+      style="width: 800px; height: 140px" alt="MusicPlayerPlus" />
   </p>
 </div>
 <p>
   MusicPlayerPlus is a character-based console and terminal window music player
-  - <strong><em>plus</em></strong> Beets media library management with
-  preconfigured plugins - <strong><em>plus</em></strong> Character-based
-  spectrum visualizer <code>mppcava</code> -
-  <strong><em>plus</em></strong> Music Player Daemon and ALSA configuration
-  management - <strong><em>plus</em></strong> Mopidy Music Server with
-  preconfigured extensions - <strong><em>plus</em></strong>
-  Navidrome Music Server/Streamer automated install/config/service -
-  <strong><em>plus</em></strong> Bliss acoustic analysis and song similarity
-  database - <strong><em>plus</em></strong> Essentia acoustic analysis and
-  metadata extraction - <strong><em>plus</em></strong> YAMS MPD Last.fm
-  scrobbler running as a service - <strong><em>plus</em></strong> Media fuzzy
-  finder using <code>fzf</code> - <strong><em>plus</em></strong> Album cover art
-  download - <strong><em>plus</em></strong> Bandcamp collections download -
-  <strong><em>plus</em></strong> Soundcloud favorites download -
-  <strong><em>plus</em></strong> Discogs user collection to markdown generator -
-  <strong><em>plus</em></strong> Automated setup, import and organization,
-  metadata, playlists, …
+<ul>
+  <li>
+    <strong><em>plus</em></strong> Beets media library management with preconfigured plugins
+  </li>
+  <li>
+    <strong><em>plus</em></strong> Character-based spectrum visualizer <code>mppcava</code>
+  </li>
+  <li>
+    <strong><em>plus</em></strong> Music Player Daemon and ALSA configuration management
+  </li>
+  <li>
+    <strong><em>plus</em></strong> Mopidy Music Server with preconfigured extensions
+  </li>
+  <li>
+    <strong><em>plus</em></strong> Navidrome Music Server/Streamer automated install/config/service
+  </li>
+  <li>
+    <strong><em>plus</em></strong> Bliss acoustic analysis and song similarity database
+  </li>
+  <li>
+    <strong><em>plus</em></strong> Essentia acoustic analysis and metadata extraction
+  </li>
+  <li>
+    <strong><em>plus</em></strong> YAMS MPD Last.fm scrobbler running as a service
+  </li>
+  <li>
+    <strong><em>plus</em></strong> Media fuzzy finder using <code>fzf</code>
+  </li>
+  <li>
+    <strong><em>plus</em></strong> Album cover art download
+  </li>
+  <li>
+    <strong><em>plus</em></strong> Bandcamp collections download
+  </li>
+  <li>
+    <strong><em>plus</em></strong> Soundcloud favorites download
+  </li>
+  <li>
+    <strong><em>plus</em></strong> Discogs user collection to markdown generator
+  </li>
+  <li>
+    <strong><em>plus</em></strong> Automated setup, import and organization, metadata, playlists, …
+  </li>
+</ul>
 </p>
 <p>
   MusicPlayerPlus is one of the <a href="https://neoman.dev">Neoman</a> managed
@@ -62,282 +86,201 @@ layout: page
   </tbody>
 </table>
 <h2 id="table-of-contents">Table of contents</h2>
-<ol type="1">
-  <li>
-    <a href="#overview">Overview</a>
-    <ol type="1">
-      <li><a href="#requirements">Requirements</a></li>
-      <li><a href="#musicplayerplus-commands">MusicPlayerPlus Commands</a></li>
-    </ol>
-  </li>
-  <li>
-    <a href="#quickstart">Quickstart</a>
-    <ol type="1">
-      <li>
-        <a href="https://musicplayerplus.dev/quickstart#quickstart-summary"
-          >Quickstart summary</a
-        >
-      </li>
-      <li>
-        <a href="https://musicplayerplus.dev/quickstart#full-tilt-boogie"
-          >Full Tilt Boogie</a
-        >
-      </li>
-    </ol>
-  </li>
-  <li>
-    <a href="#installation">Installation</a>
-    <ol type="1">
-      <li>
-        <a href="https://musicplayerplus.dev/install#supported-platforms"
-          >Supported platforms</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://musicplayerplus.dev/install#debian-package-installation"
-          >Debian package installation</a
-        >
-      </li>
-      <li>
-        <a href="https://musicplayerplus.dev/install#rpm-package-installation"
-          >RPM Package installation</a
-        >
-      </li>
-      <li>
-        <a href="https://musicplayerplus.dev/install#arch-package-installation"
-          >Arch Package installation</a
-        >
-      </li>
-    </ol>
-  </li>
-  <li>
-    <a href="#post-installation-configuration"
-      >Post Installation Configuration</a
-    >
-    <ol type="1">
-      <li>
-        <a
-          href="https://musicplayerplus.dev/configuration#client-configuration-required"
-          >Client Configuration (required)</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://musicplayerplus.dev/configuration#musicplayerplus-configuration-file"
-          >MusicPlayerPlus Configuration File</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://musicplayerplus.dev/configuration#mpd-music-directory-configuration"
-          >MPD Music Directory Configuration</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://musicplayerplus.dev/configuration#initializing-the-beets-media-library-management-system"
-          >Initializing the Beets media library management system</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://musicplayerplus.dev/configuration#additional-metadata-analysis-and-retrieval"
-          >Additional metadata analysis and retrieval</a
-        >
-        <ol type="1">
-          <li>
-            <a
-              href="https://musicplayerplus.dev/configuration#acoustic-analysis-with-blissify"
-              >Acoustic analysis with Blissify</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://musicplayerplus.dev/configuration#acoustic-analysis-with-essentia"
-              >Acoustic analysis with Essentia</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://musicplayerplus.dev/configuration#acoustic-retrieval-with-acousticbrainz"
-              >Acoustic retrieval with AcousticBrainz</a
-            >
-          </li>
-        </ol>
-      </li>
-      <li>
-        <a
-          href="https://musicplayerplus.dev/configuration#activating-the-yams-scrobbler-for-lastfm"
-          >Activating the YAMS scrobbler for Last.fm</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://musicplayerplus.dev/configuration#mpd-audio-output-configuration"
-          >MPD Audio Output Configuration</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://musicplayerplus.dev/configuration#fuzzy-finder-configuration"
-          >Fuzzy Finder Configuration</a
-        >
-      </li>
-      <li>
-        <a href="https://musicplayerplus.dev/configuration#start-mpd"
-          >Start MPD</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://musicplayerplus.dev/configuration#system-verification-checks"
-          >System verification checks</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://musicplayerplus.dev/configuration#initialize-music-database"
-          >Initialize Music Database</a
-        >
-      </li>
-      <li>
-        <a href="https://musicplayerplus.dev/configuration#installing-mopidy"
-          >Installing Mopidy</a
-        >
-      </li>
-      <li>
-        <a href="https://musicplayerplus.dev/configuration#installing-navidrome"
-          >Installing Navidrome</a
-        >
-        <ol type="1">
-          <li>
-            <a
-              href="https://musicplayerplus.dev/configuration#navidrome-clients"
-              >Navidrome clients</a
-            >
-          </li>
-        </ol>
-      </li>
-      <li>
-        <a
-          href="https://musicplayerplus.dev/configuration#terminal-emulator-support"
-          >Terminal Emulator Support</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://musicplayerplus.dev/configuration#discogs-user-collection"
-          >Discogs User Collection</a
-        >
-      </li>
-    </ol>
-  </li>
-  <li>
-    <a href="#musicplayerplus-services-and-clients"
-      >MusicPlayerPlus Services and Clients</a
-    >
-    <ol type="1">
-      <li><a href="#services">Services</a></li>
-      <li>
-        <a href="#which-services-should-be-installed-and-activated"
-          >Which services should be installed and activated</a
-        >
-      </li>
-      <li><a href="#clients">Clients</a></li>
-    </ol>
-  </li>
-  <li>
-    <a href="#documentation">Documentation</a>
-    <ol type="1">
-      <li>
-        <a
-          href="https://musicplayerplus.dev/documentation#readme-for-musicplayerplus-configuration"
-          >README for MusicPlayerPlus configuration</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://musicplayerplus.dev/documentation#readme-for-mpcplus-mpd-client"
-          >README for mpcplus MPD client</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://musicplayerplus.dev/documentation#readme-for-tmuxp-configs"
-          >README for tmuxp configs</a
-        >
-      </li>
-      <li>
-        <a href="https://musicplayerplus.dev/documentation#man-pages"
-          >Man Pages</a
-        >
-      </li>
-      <li>
-        <a href="https://musicplayerplus.dev/documentation#usage">Usage</a>
-      </li>
-      <li>
-        <a
-          href="https://musicplayerplus.dev/documentation#example-client-invocations"
-          >Example client invocations</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://musicplayerplus.dev/documentation#adding-album-cover-art"
-          >Adding Album Cover Art</a
-        >
-      </li>
-      <li>
-        <a href="https://musicplayerplus.dev/documentation#custom-key-bindings"
-          >Custom key bindings</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://musicplayerplus.dev/documentation#tmux-session-exit-issues"
-          >Tmux session exit issues</a
-        >
-      </li>
-    </ol>
-  </li>
-  <li><a href="#removal">Removal</a></li>
-  <li>
-    <a href="#troubleshooting">Troubleshooting</a>
-    <ol type="1">
-      <li><a href="#known-issues">Known issues</a></li>
-    </ol>
-  </li>
-  <li>
-    <a href="#infrared-remote-control-of-mpd">Infrared remote control of MPD</a>
-  </li>
-  <li><a href="#screenshots">Screenshots</a></li>
-  <li><a href="#videos">Videos</a></li>
-  <li>
-    <a href="#building-musicplayerplus-from-source"
-      >Building MusicPlayerPlus from source</a
-    >
-  </li>
-  <li>
-    <a href="#contributing">Contributing</a>
-    <ol type="1">
-      <li>
-        <a href="#testing-and-issue-reporting">Testing and Issue Reporting</a>
-      </li>
-      <li><a href="#sponsor-musicplayerplus">Sponsor MusicPlayerPlus</a></li>
-      <li>
-        <a href="#contribute-to-development">Contribute to Development</a>
-      </li>
-    </ol>
-  </li>
-</ol>
+<details>
+  <summary>
+    <strong>Click here to expand/collapse</strong>
+  </summary>
+  <ol type="1">
+    <li>
+      <a href="#overview">Overview</a>
+      <ol type="1">
+        <li><a href="#requirements">Requirements</a></li>
+        <li><a href="#musicplayerplus-commands">MusicPlayerPlus Commands</a></li>
+      </ol>
+    </li>
+    <li>
+      <a href="#quickstart">Quickstart</a>
+      <ol type="1">
+        <li>
+          <a href="https://musicplayerplus.dev/quickstart#quickstart-summary">Quickstart summary</a>
+        </li>
+        <li>
+          <a href="https://musicplayerplus.dev/quickstart#full-tilt-boogie">Full Tilt Boogie</a>
+        </li>
+      </ol>
+    </li>
+    <li>
+      <a href="#installation">Installation</a>
+      <ol type="1">
+        <li>
+          <a href="https://musicplayerplus.dev/install#supported-platforms">Supported platforms</a>
+        </li>
+        <li>
+          <a href="https://musicplayerplus.dev/install#debian-package-installation">Debian package installation</a>
+        </li>
+        <li>
+          <a href="https://musicplayerplus.dev/install#rpm-package-installation">RPM Package installation</a>
+        </li>
+        <li>
+          <a href="https://musicplayerplus.dev/install#arch-package-installation">Arch Package installation</a>
+        </li>
+      </ol>
+    </li>
+    <li>
+      <a href="#post-installation-configuration">Post Installation Configuration</a>
+      <ol type="1">
+        <li>
+          <a href="https://musicplayerplus.dev/configuration#client-configuration-required">Client Configuration
+            (required)</a>
+        </li>
+        <li>
+          <a href="https://musicplayerplus.dev/configuration#musicplayerplus-configuration-file">MusicPlayerPlus
+            Configuration File</a>
+        </li>
+        <li>
+          <a href="https://musicplayerplus.dev/configuration#mpd-music-directory-configuration">MPD Music Directory
+            Configuration</a>
+        </li>
+        <li>
+          <a href="https://musicplayerplus.dev/configuration#initializing-the-beets-media-library-management-system">Initializing
+            the Beets media library management system</a>
+        </li>
+        <li>
+          <a href="https://musicplayerplus.dev/configuration#additional-metadata-analysis-and-retrieval">Additional
+            metadata analysis and retrieval</a>
+          <ol type="1">
+            <li>
+              <a href="https://musicplayerplus.dev/configuration#acoustic-analysis-with-blissify">Acoustic analysis with
+                Blissify</a>
+            </li>
+            <li>
+              <a href="https://musicplayerplus.dev/configuration#acoustic-analysis-with-essentia">Acoustic analysis with
+                Essentia</a>
+            </li>
+            <li>
+              <a href="https://musicplayerplus.dev/configuration#acoustic-retrieval-with-acousticbrainz">Acoustic
+                retrieval with AcousticBrainz</a>
+            </li>
+          </ol>
+        </li>
+        <li>
+          <a href="https://musicplayerplus.dev/configuration#activating-the-yams-scrobbler-for-lastfm">Activating the
+            YAMS scrobbler for Last.fm</a>
+        </li>
+        <li>
+          <a href="https://musicplayerplus.dev/configuration#mpd-audio-output-configuration">MPD Audio Output
+            Configuration</a>
+        </li>
+        <li>
+          <a href="https://musicplayerplus.dev/configuration#fuzzy-finder-configuration">Fuzzy Finder Configuration</a>
+        </li>
+        <li>
+          <a href="https://musicplayerplus.dev/configuration#start-mpd">Start MPD</a>
+        </li>
+        <li>
+          <a href="https://musicplayerplus.dev/configuration#system-verification-checks">System verification checks</a>
+        </li>
+        <li>
+          <a href="https://musicplayerplus.dev/configuration#initialize-music-database">Initialize Music Database</a>
+        </li>
+        <li>
+          <a href="https://musicplayerplus.dev/configuration#installing-mopidy">Installing Mopidy</a>
+        </li>
+        <li>
+          <a href="https://musicplayerplus.dev/configuration#installing-navidrome">Installing Navidrome</a>
+          <ol type="1">
+            <li>
+              <a href="https://musicplayerplus.dev/configuration#navidrome-clients">Navidrome clients</a>
+            </li>
+          </ol>
+        </li>
+        <li>
+          <a href="https://musicplayerplus.dev/configuration#terminal-emulator-support">Terminal Emulator Support</a>
+        </li>
+        <li>
+          <a href="https://musicplayerplus.dev/configuration#discogs-user-collection">Discogs User Collection</a>
+        </li>
+      </ol>
+    </li>
+    <li>
+      <a href="#musicplayerplus-services-and-clients">MusicPlayerPlus Services and Clients</a>
+      <ol type="1">
+        <li><a href="https://musicplayerplus.dev/services#services">Services</a></li>
+        <li>
+          <a href="https://musicplayerplus.dev/services#which-services-should-be-installed-and-activated">Which services
+            should be installed and
+            activated</a>
+        </li>
+        <li><a href="https://musicplayerplus.dev/services#clients">Clients</a></li>
+      </ol>
+    </li>
+    <li>
+      <a href="#documentation">Documentation</a>
+      <ol type="1">
+        <li>
+          <a href="https://musicplayerplus.dev/documentation#readme-for-musicplayerplus-configuration">README for
+            MusicPlayerPlus configuration</a>
+        </li>
+        <li>
+          <a href="https://musicplayerplus.dev/documentation#readme-for-mpcplus-mpd-client">README for mpcplus MPD
+            client</a>
+        </li>
+        <li>
+          <a href="https://musicplayerplus.dev/documentation#readme-for-tmuxp-configs">README for tmuxp configs</a>
+        </li>
+        <li>
+          <a href="https://musicplayerplus.dev/documentation#man-pages">Man Pages</a>
+        </li>
+        <li>
+          <a href="https://musicplayerplus.dev/documentation#usage">Usage</a>
+        </li>
+        <li>
+          <a href="https://musicplayerplus.dev/documentation#example-client-invocations">Example client invocations</a>
+        </li>
+        <li>
+          <a href="https://musicplayerplus.dev/documentation#adding-album-cover-art">Adding Album Cover Art</a>
+        </li>
+        <li>
+          <a href="https://musicplayerplus.dev/documentation#custom-key-bindings">Custom key bindings</a>
+        </li>
+        <li>
+          <a href="https://musicplayerplus.dev/documentation#tmux-session-exit-issues">Tmux session exit issues</a>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#removal">Removal</a></li>
+    <li>
+      <a href="#troubleshooting">Troubleshooting</a>
+      <ol type="1">
+        <li><a href="#known-issues">Known issues</a></li>
+      </ol>
+    </li>
+    <li>
+      <a href="#infrared-remote-control-of-mpd">Infrared remote control of MPD</a>
+    </li>
+    <li><a href="#screenshots">Screenshots</a></li>
+    <li><a href="#videos">Videos</a></li>
+    <li>
+      <a href="#building-musicplayerplus-from-source">Building MusicPlayerPlus from source</a>
+    </li>
+    <li>
+      <a href="#contributing">Contributing</a>
+      <ol type="1">
+        <li>
+          <a href="#testing-and-issue-reporting">Testing and Issue Reporting</a>
+        </li>
+        <li><a href="#sponsor-musicplayerplus">Sponsor MusicPlayerPlus</a></li>
+        <li>
+          <a href="#contribute-to-development">Contribute to Development</a>
+        </li>
+      </ol>
+    </li>
+  </ol>
+</details>
 <h2 id="overview">Overview</h2>
 <p>
-  <a href="https://opensource.org/licenses/MIT"
-    ><img
-      src="https://img.shields.io/badge/License-MIT-yellow.svg"
-      alt="License: MIT"
-  /></a>
+  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg"
+      alt="License: MIT" /></a>
 </p>
 <p>
   The MusicPlayerPlus project provides integration and extension of several
@@ -410,9 +353,8 @@ layout: page
     <a href="https://beets.io/">beets</a>, media library management system
   </li>
   <li>
-    <a href="https://github.com/doctorfree/mpplus-essentia/README.md"
-      >essentia</a
-    >, acoustic metadata analysis and extraction
+    <a href="https://github.com/doctorfree/mpplus-essentia/README.md">essentia</a>, acoustic metadata analysis and
+    extraction
   </li>
   <li>
     <a href="https://mopidy.com/">mopidy</a>, music server with cool extensions
@@ -616,345 +558,27 @@ layout: page
 </p>
 <p>
   Additional detail and info can be found in the
-  <a href="https://github.com/doctorfree/MusicPlayerPlus/wiki"
-    >MusicPlayerPlus Wiki</a
-  >.
+  <a href="https://github.com/doctorfree/MusicPlayerPlus/wiki">MusicPlayerPlus Wiki</a>.
 </p>
 <h2 id="quickstart">Quickstart</h2>
 See the
-<a href="https://musicplayerplus.dev/quickstart"
-  >MusicPlayerPlus Quickstart section</a
->
+<a href="https://musicplayerplus.dev/quickstart">MusicPlayerPlus Quickstart section</a>
 for details on getting started quickly.
 <h2 id="installation">Installation</h2>
 See the
-<a href="https://musicplayerplus.dev/install"
-  >MusicPlayerPlus Install section</a
->
+<a href="https://musicplayerplus.dev/install">MusicPlayerPlus Install section</a>
 for details on MusicPlayerPlus installation.
 <h2 id="post-installation-configuration">Post Installation Configuration</h2>
 See the
-<a href="https://musicplayerplus.dev/configuration"
-  >MusicPlayerPlus Configuration section</a
->
+<a href="https://musicplayerplus.dev/configuration">MusicPlayerPlus Configuration section</a>
 for details on MusicPlayerPlus post-installation configuration.
-<h2 id="musicplayerplus-services-and-clients">
-  MusicPlayerPlus Services and Clients
-</h2>
-<p>
-  MusicPlayerPlus includes several services, some installed by default and
-  others optionally installed with the <code>mppinit</code> command
-  post-installation. Clients that can be used to access these services are also
-  provided.
-</p>
-<h3 id="services">Services</h3>
-<p>The following services are included with MusicPlayerPlus:</p>
-<ul>
-  <li>
-    <strong>Music Player Daemon (MPD)</strong>
-    <ul>
-      <li>Installed, configured, and activated by default</li>
-    </ul>
-  </li>
-  <li>
-    <strong>MPD Stats Service</strong>
-    <ul>
-      <li>Installed, configured, and activated by default</li>
-    </ul>
-  </li>
-  <li>
-    <strong>Beets Web Plugin Service</strong>
-    <ul>
-      <li>Installed, configured, and activated by default</li>
-    </ul>
-  </li>
-  <li>
-    <strong>Mopidy Music Server</strong>
-    <ul>
-      <li>
-        Installed, configured, and activated with
-        <code>mppinit mopidy</code>
-      </li>
-      <li>When activated, deactivates MPD, MPD Stats, and YAMS services</li>
-    </ul>
-  </li>
-  <li>
-    <strong>Navidrome Music Streaming Server</strong>
-    <ul>
-      <li>
-        Installed, configured, and activated with
-        <code>mppinit navidrome</code>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <strong>YAMS Last.FM Scrobbler</strong>
-    <ul>
-      <li>
-        Installed, configured, and activated with
-        <code>mppinit yams</code>
-      </li>
-    </ul>
-  </li>
-</ul>
-<p>
-  All of the MusicPlayerPlus services are user-level systemd services and can be
-  controlled by the MusicPlayerPlus user without the need for
-  <code>root</code> privilege. The <code>mpplus -i</code> interactive menu
-  system includes menu entries for controlling each of these services as well as
-  a status report on them by selecting the “Manage Music Services” from the Main
-  Menu. Alternately, each service can be controlled from the command line using
-  <code>systemctl --user ...</code>. For example, to stop the MPD Stats Service,
-  run the command <code>systemctl --user stop mpdstats</code>.
-</p>
-<h3 id="which-services-should-be-installed-and-activated">
-  Which services should be installed and activated
-</h3>
-<p>
-  Depending upon the use case and personal preference, a variety of combinations
-  of MusicPlayerPlus services can be activated. Mopidy with the Mopidy-MPD
-  extension conflicts with the MPD service. YAMS and MPD Stats only work with
-  MPD. Therefore, if Mopidy is activated the MPD, YAMS, and MPD Stats services
-  are automatically deactivated. Similarly, if the MPD service is reactivated,
-  the YAMS and MPD Stats services are reactivated and Mopidy deactivated.
-</p>
-<p>
-  Choose which service you prefer, MPD or Mopidy, and activate it with either
-  <code>mppinit mopidy</code> or <code>mppinit mpd</code> (after activating
-  Mopidy then deciding to reactivate MPD). Using these two commands,
-  <code>mppinit mopidy</code> and <code>mppinit mpd</code>, it is easy to switch
-  between the two conflicting services.
-</p>
-<p>
-  The advantage of MPD is its stability, maturity, flexibility, power, and
-  extensive configuration options. However, it is difficult to enable streaming
-  with MPD. The advantage of Mopidy is its streaming capability and the variety
-  of useful extensions, many of which are installed by default with
-  <code>mppinit mopidy</code>.
-</p>
-<p>
-  An even better streaming solution is provided by Navidrome. Activating
-  Navidrome enables access to the music library from any desktop, phone, tablet,
-  or remote device with a browser. There are numerous Navidrome clients
-  available for all devices and platforms. Activating Navidrome does not
-  conflict with any of the other MusicPlayerPlus services so it can be streaming
-  the music library while MPD or Mopidy is serving up the same library locally.
-  Navidrome can optionally scrobble to Last.FM so if that option is enabled then
-  deactivate the YAMS service.
-</p>
-<p>
-  <strong>[Summary]</strong> MusicPlayerPlus provides several different
-  selections of services appropriate for a variety of use cases. All service
-  configurations require a prior MusicPlayerPlus initialization with
-  <code>mppinit</code>. Some common MusicPlayerPlus service configurations
-  include:
-</p>
-<ul>
-  <li>
-    <strong>Basic Music Player Daemon</strong>
-    <ul>
-      <li>Configured automatically with <code>mppinit</code></li>
-      <li>MPD enabled and active, all other services disabled</li>
-      <li>
-        Use <code>mpplus</code>, <code>mpcplus</code>, <code>mpc</code>, etc to
-        play music on local system
-      </li>
-    </ul>
-  </li>
-  <li>
-    <strong>Music Player Daemon plus Beets</strong>
-    <ul>
-      <li>Configured with <code>mppinit import</code></li>
-      <li>MPD and Beets enabled and active, all other services disabled</li>
-      <li>
-        Use <code>beet ...</code>, <code>mpplus</code>, <code>mpcplus</code>,
-        <code>mpc</code>, to search, filter, play, …
-      </li>
-      <li>
-        Enables the Beets web plugin at
-        <code>http://&lt;ip address&gt;:8337</code>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <strong>Mopidy Music Server plus Beets</strong>
-    <ul>
-      <li>
-        Configured with <code>mppinit import</code>, and
-        <code>mppinit mopidy</code>
-      </li>
-      <li>Mopidy and Beets enabled and active, other services disabled</li>
-      <li>
-        Use <code>beet ...</code>, <code>mpplus</code>, <code>mpcplus</code>,
-        <code>mpc</code>, to search, filter, play, …
-      </li>
-      <li>
-        Enables the Beets web plugin at
-        <code>http://&lt;ip address&gt;:8337</code>
-      </li>
-      <li>
-        Enables the Mopidy web client at
-        <code>http://&lt;ip address&gt;:6680</code>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <strong>Navidrome Streaming plus Mopidy Music Server plus Beets</strong>
-    <ul>
-      <li>
-        Configure with <code>mppinit import</code>, <code>mppinit mopidy</code>,
-        <code>mppinit navidrome</code>
-      </li>
-      <li>
-        Navidrome, Mopidy and Beets enabled and active, other services disabled
-      </li>
-      <li>
-        Use <code>beet ...</code>, <code>mpplus</code>, <code>mpcplus</code>,
-        <code>mpc</code>, to search, filter, play, …
-      </li>
-      <li>
-        Enables the Beets web plugin at
-        <code>http://&lt;ip address&gt;:8337</code>
-      </li>
-      <li>
-        Enables the Mopidy web client at
-        <code>http://&lt;ip address&gt;:6680</code>
-      </li>
-      <li>
-        Enables the Navidrome web client at
-        <code>http://&lt;ip address&gt;:4533</code>
-      </li>
-      <li>
-        Supports many clients available for all desktops, tablets, and phones
-      </li>
-      <li>
-        Run <code>mppinit import</code> after new
-        <code>mppinit bandcamp|soundcloud</code> downloads
-      </li>
-    </ul>
-  </li>
-  <li>
-    <strong>Navidrome Music Streaming Server without MPD/Mopidy/Beets</strong>
-    <ul>
-      <li>Configure with <code>mppinit navidrome</code></li>
-      <li>No need for <code>mppinit import|metadata|mopidy|yams</code></li>
-      <li>
-        Use <code>mpplus -i</code> menu system to stop and disable all other
-        services
-        <ul>
-          <li>Select “Manage Music Services” from the Main Menu</li>
-          <li>If active, Stop and Disable MPD, Mopidy, and Beets</li>
-        </ul>
-      </li>
-      <li>Navidrome enabled and active, other services disabled</li>
-      <li>
-        Enables the Navidrome web client at
-        <code>http://&lt;ip address&gt;:4533</code>
-      </li>
-      <li>
-        Supports many clients available for all desktops, tablets, and phones
-      </li>
-      <li>
-        No need for <code>mppinit import</code> after
-        <code>mppinit bandcamp|soundcloud</code> downloads
-      </li>
-    </ul>
-  </li>
-</ul>
-<h3 id="clients">Clients</h3>
-<p>The following clients are included with MusicPlayerPlus:</p>
-<ul>
-  <li>
-    <strong>mpplus MusicPlayerPlus front-end</strong>
-    <ul>
-      <li>Installed by default, see <code>man mpplus</code></li>
-      <li>
-        Front-ends <code>mpcplus</code> MPD client and
-        <code>mppcava</code> spectrum visualizer
-      </li>
-      <li>Example: <code>mpplus</code></li>
-    </ul>
-  </li>
-  <li>
-    <strong>mpcplus character-based feature-full MPD client</strong>
-    <ul>
-      <li>Installed by default, see <code>man mpcplus</code></li>
-      <li>Example: <code>mpcplus</code></li>
-    </ul>
-  </li>
-  <li>
-    <strong>mpc command-line MPD client</strong>
-    <ul>
-      <li>Installed by default, see <code>man mpc</code></li>
-      <li>
-        Examples: <code>mpc stop</code>, <code>mpc current</code>,
-        <code>mpc play</code>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <strong>beet command-line interface to Beets</strong>
-    <ul>
-      <li>Installed by default, see <code>man beet</code></li>
-      <li>
-        Examples: <code>beet play jethro tull</code>,
-        <code>beet info -l aqualung</code>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <strong>Beets web client</strong>
-    <ul>
-      <li>Installed by default</li>
-      <li>Open <code>http://&lt;ip address&gt;:8337</code></li>
-    </ul>
-  </li>
-  <li>
-    <strong>Mopidy web client</strong>
-    <ul>
-      <li>
-        Installed, configured, and activated with
-        <code>mppinit mopidy</code>
-      </li>
-      <li>Open <code>http://&lt;ip address&gt;:6680</code></li>
-    </ul>
-  </li>
-  <li>
-    <strong>Mopidy Iris web client</strong>
-    <ul>
-      <li>
-        Installed, configured, and activated with
-        <code>mppinit mopidy</code>
-      </li>
-      <li>Open <code>http://&lt;ip address&gt;:6680/iris</code></li>
-    </ul>
-  </li>
-  <li>
-    <strong>Mopidy-Mobile</strong>
-    <ul>
-      <li>
-        Installed, configured, and activated with
-        <code>mppinit mopidy</code>
-      </li>
-      <li>Open <code>http://&lt;ip address&gt;:6680/mobile</code></li>
-    </ul>
-  </li>
-  <li>
-    <strong>Navidrome web client</strong>
-    <ul>
-      <li>
-        Installed, configured, and activated with
-        <code>mppinit navidrome</code>
-      </li>
-      <li>Open <code>http://&lt;ip address&gt;:4533</code></li>
-    </ul>
-  </li>
-</ul>
+<h2 id="musicplayerplus-services-and-clients">MusicPlayerPlus Services and Clients</h2>
+See the
+<a href="https://musicplayerplus.dev/services">MusicPlayerPlus Services section</a>
+for details on MusicPlayerPlus services and clients.
 <h2 id="documentation">Documentation</h2>
 See the
-<a href="https://musicplayerplus.dev/documentation"
-  >MusicPlayerPlus Documentation section</a
->
+<a href="https://musicplayerplus.dev/documentation">MusicPlayerPlus Documentation section</a>
 for MusicPlayerPlus documentation and usage.
 <h2 id="removal">Removal</h2>
 <p>
@@ -983,9 +607,7 @@ for MusicPlayerPlus documentation and usage.
   The MusicPlayerPlus package can be removed by executing the “Uninstall” script
   in the MusicPlayerPlus source directory:
 </p>
-<pre
-  class="console"
-><code> git clone https://github.com/doctorfree/MusicPlayerPlus.git
+<pre class="console"><code> git clone https://github.com/doctorfree/MusicPlayerPlus.git
     cd MusicPlayerPlus
     ./Uninstall</code></pre>
 <h2 id="troubleshooting">Troubleshooting</h2>
@@ -1027,16 +649,14 @@ for MusicPlayerPlus documentation and usage.
 </p>
 <p>
   Finally, see the Troubleshooting section of the
-  <a href="https://github.com/doctorfree/MusicPlayerPlus/wiki"
-    >MusicPlayerPlus Wiki</a
-  >. for additional troubleshooting techniques and commonly resolved issues.
+  <a href="https://github.com/doctorfree/MusicPlayerPlus/wiki">MusicPlayerPlus Wiki</a>. for additional troubleshooting
+  techniques and commonly resolved issues.
 </p>
 <p>
   If an issue cannot be resolved and all troubleshooting efforts have failed,
   open an issue at
-  <a href="https://github.com/doctorfree/MusicPlayerPlus/issues"
-    >MusicPlayerPlus issues</a
-  >. Even if you do manage to resolve an issue, it may still be helpful to
+  <a href="https://github.com/doctorfree/MusicPlayerPlus/issues">MusicPlayerPlus issues</a>. Even if you do manage to
+  resolve an issue, it may still be helpful to
   report the issue at https://github.com/doctorfree/MusicPlayerPlus/issues so
   that a fix may be incorporated in the next release.
 </p>
@@ -1118,9 +738,7 @@ for MusicPlayerPlus documentation and usage.
 </p>
 <p>
   To get started, see the
-  <a href="https://wiki.archlinux.org/title/LIRC/Quick_start_guide"
-    >ArchLinux Step-by-step LIRC setup guide</a
-  >
+  <a href="https://wiki.archlinux.org/title/LIRC/Quick_start_guide">ArchLinux Step-by-step LIRC setup guide</a>
   for USB IR receiver with universal remote control.
 </p>
 <p>
@@ -1130,9 +748,7 @@ for MusicPlayerPlus documentation and usage.
 <p>
   A long list of LIRC supported remotes with corresponding LIRC configurations
   can be found at the
-  <a href="http://lirc-remotes.sourceforge.net/remotes-table.html"
-    >LIRC Remotes Databass</a
-  >.
+  <a href="http://lirc-remotes.sourceforge.net/remotes-table.html">LIRC Remotes Databass</a>.
 </p>
 <p>
   The hard part is getting the remote control device talking to the IR receiver
@@ -1226,32 +842,20 @@ for MusicPlayerPlus documentation and usage.
 </p>
 <h2 id="screenshots">Screenshots</h2>
 <p float="left">
-  <img
-    src="https://raw.githubusercontent.com/doctorfree/MusicPlayerPlus/master/screenshots/mpplus-tilix.png"
-    style="width: 800px; height: 600px"
-    alt="tilix"
-  />
-  <img
-    src="https://raw.githubusercontent.com/doctorfree/MusicPlayerPlus/master/screenshots/mpplus-lyrics.png"
-    alt="lyrics"
-    style="width: 800px; height: 600px"
-  />
+  <img src="https://raw.githubusercontent.com/doctorfree/MusicPlayerPlus/master/screenshots/mpplus-tilix.png"
+    style="width: 800px; height: 600px" alt="tilix" />
+  <img src="https://raw.githubusercontent.com/doctorfree/MusicPlayerPlus/master/screenshots/mpplus-lyrics.png"
+    alt="lyrics" style="width: 800px; height: 600px" />
 </p>
 <h2 id="videos">Videos</h2>
 <ul>
   <li>
-    <a
-      href="https://www.youtube.com/watch?v=r7XLA9tO45Q"
-      title="MusicPlayerPlus ASCIImatics Intro"
-      ><img src="https://i.imgur.com/UH2A21h.png" alt="MusicPlayerPlus Intro"
-    /></a>
+    <a href="https://www.youtube.com/watch?v=r7XLA9tO45Q" title="MusicPlayerPlus ASCIImatics Intro"><img
+        src="https://i.imgur.com/UH2A21h.png" alt="MusicPlayerPlus Intro" /></a>
   </li>
   <li>
-    <a
-      href="https://www.youtube.com/watch?v=y2yaHm04ELM"
-      title="MusicPlayerPlus Demo"
-      ><img src="https://i.imgur.com/ZntE1sH.jpg" alt="MusicPlayerPlus Demo"
-    /></a>
+    <a href="https://www.youtube.com/watch?v=y2yaHm04ELM" title="MusicPlayerPlus Demo"><img
+        src="https://i.imgur.com/ZntE1sH.jpg" alt="MusicPlayerPlus Demo" /></a>
   </li>
 </ul>
 <h2 id="building-musicplayerplus-from-source">
@@ -1291,14 +895,10 @@ for MusicPlayerPlus documentation and usage.
   <li>build-essentials</li>
   <li><a href="https://www.boost.org/">Boost library</a></li>
   <li>
-    <a href="http://www.gnu.org/software/ncurses/ncurses.html"
-      >NCurses library</a
-    >
+    <a href="http://www.gnu.org/software/ncurses/ncurses.html">NCurses library</a>
   </li>
   <li>
-    <a href="https://tiswww.case.edu/php/chet/readline/rltop.html"
-      >Readline library</a
-    >
+    <a href="https://tiswww.case.edu/php/chet/readline/rltop.html">Readline library</a>
   </li>
   <li><a href="https://curl.haxx.se/">Curl library</a></li>
   <li><a href="http://www.fftw.org/">fftw library</a></li>
@@ -1306,16 +906,12 @@ for MusicPlayerPlus documentation and usage.
   <li><a href="https://github.com/ndevilla/iniparser">iniparser</a></li>
   <li><a href="http://alsa-project.org/">ALSA dev files</a></li>
   <li>
-    <a href="http://freedesktop.org/software/pulseaudio/doxygen/"
-      >Pulseaudio dev files</a
-    >
+    <a href="http://freedesktop.org/software/pulseaudio/doxygen/">Pulseaudio dev files</a>
   </li>
   <li><a href="http://eigen.tuxfamily.org/">Eigen</a></li>
   <li><a href="https://github.com/MTG/gaia">Gaia</a></li>
   <li>
-    <a href="http://ffmpeg.org/"
-      >libavcodec/libavformat/libavutil/libswresample</a
-    >
+    <a href="http://ffmpeg.org/">libavcodec/libavformat/libavutil/libswresample</a>
   </li>
   <li><a href="http://www.mega-nerd.com/SRC/">libsamplerate</a></li>
   <li><a href="http://pyyaml.org/wiki/LibYAML">LibYAML</a></li>
@@ -1409,9 +1005,8 @@ for MusicPlayerPlus documentation and usage.
   have the time and will to put it through its paces, then issue reports on
   problems you encounter would greatly help improve the robustness and quality
   of MusicPlayerPlus. Open issue reports at
-  <a href="https://github.com/doctorfree/MusicPlayerPlus/issues"
-    >https://github.com/doctorfree/MusicPlayerPlus/issues</a
-  >
+  <a
+    href="https://github.com/doctorfree/MusicPlayerPlus/issues">https://github.com/doctorfree/MusicPlayerPlus/issues</a>
 </p>
 <h3 id="sponsor-musicplayerplus">Sponsor MusicPlayerPlus</h3>
 <p>
@@ -1434,9 +1029,7 @@ for MusicPlayerPlus documentation and usage.
 </p>
 <p>
   Sponsor the MusicPlayerPlus project at
-  <a href="https://github.com/sponsors/doctorfree"
-    >https://github.com/sponsors/doctorfree</a
-  >
+  <a href="https://github.com/sponsors/doctorfree">https://github.com/sponsors/doctorfree</a>
 </p>
 <h3 id="contribute-to-development">Contribute to Development</h3>
 <p>
@@ -1445,12 +1038,10 @@ for MusicPlayerPlus documentation and usage.
   MusicPlayerPlus development through the standard Github “fork, clone, pull
   request” process. There are many guides to contributing to Github hosted open
   source projects on the Internet. A good one is available at
-  <a href="https://www.dataschool.io/how-to-contribute-on-github/"
-    >https://www.dataschool.io/how-to-contribute-on-github/</a
-  >. Another short succinct guide is at
-  <a href="https://gist.github.com/MarcDiethelm/7303312"
-    >https://gist.github.com/MarcDiethelm/7303312</a
-  >.
+  <a
+    href="https://www.dataschool.io/how-to-contribute-on-github/">https://www.dataschool.io/how-to-contribute-on-github/</a>.
+  Another short succinct guide is at
+  <a href="https://gist.github.com/MarcDiethelm/7303312">https://gist.github.com/MarcDiethelm/7303312</a>.
 </p>
 <p>
   Once you have forked and cloned the MusicPlayerPlus repository, it’s time to
@@ -1526,57 +1117,30 @@ for MusicPlayerPlus documentation and usage.
 <div align="center">
   <h2 id="connect">Connect</h2>
   <a href="https://ronrecord.com">
-    <img
-      style="height: 40px"
-      alt="domain"
-      src="https://raw.githubusercontent.com/doctorfree/doctorfree/master/icons/domain.png"
-  /></a>
+    <img style="height: 40px" alt="domain"
+      src="https://raw.githubusercontent.com/doctorfree/doctorfree/master/icons/domain.png" /></a>
   <a href="https://www.reddit.com/user/No-Blackberry-3160">
-    <img
-      style="height: 40px"
-      alt="reddit"
-      src="https://raw.githubusercontent.com/doctorfree/doctorfree/master/icons/reddit.png"
-  /></a>
+    <img style="height: 40px" alt="reddit"
+      src="https://raw.githubusercontent.com/doctorfree/doctorfree/master/icons/reddit.png" /></a>
   <a href="https://gitlab.com/doctorfree">
-    <img
-      style="height: 40px"
-      alt="gitlab"
-      src="https://raw.githubusercontent.com/doctorfree/doctorfree/master/icons/gitlab.png"
-  /></a>
+    <img style="height: 40px" alt="gitlab"
+      src="https://raw.githubusercontent.com/doctorfree/doctorfree/master/icons/gitlab.png" /></a>
   <a href="https://twitter.com/ronrecord">
-    <img
-      style="height: 40px"
-      alt="twitter"
-      src="https://raw.githubusercontent.com/doctorfree/doctorfree/master/icons/twitter.png"
-  /></a>
+    <img style="height: 40px" alt="twitter"
+      src="https://raw.githubusercontent.com/doctorfree/doctorfree/master/icons/twitter.png" /></a>
   <a href="https://youtube.com/c/doctorfree">
-    <img
-      style="height: 40px"
-      alt="youtube"
-      src="https://raw.githubusercontent.com/doctorfree/doctorfree/master/icons/youtube.png"
-  /></a>
+    <img style="height: 40px" alt="youtube"
+      src="https://raw.githubusercontent.com/doctorfree/doctorfree/master/icons/youtube.png" /></a>
   <a href="https://linkedin.com/in/ronrecord">
-    <img
-      style="height: 40px"
-      alt="linkedin"
-      src="https://raw.githubusercontent.com/doctorfree/doctorfree/master/icons/linkedin.png"
-  /></a>
+    <img style="height: 40px" alt="linkedin"
+      src="https://raw.githubusercontent.com/doctorfree/doctorfree/master/icons/linkedin.png" /></a>
   <a href="https://instagram.com/doctorfree">
-    <img
-      style="height: 40px"
-      alt="instagram"
-      src="https://raw.githubusercontent.com/doctorfree/doctorfree/master/icons/instagram.png"
-  /></a>
+    <img style="height: 40px" alt="instagram"
+      src="https://raw.githubusercontent.com/doctorfree/doctorfree/master/icons/instagram.png" /></a>
   <a href="https://noc.social/@doctorwhen">
-    <img
-      style="height: 40px"
-      alt="mastodon"
-      src="https://raw.githubusercontent.com/doctorfree/doctorfree/master/icons/mastodon.png"
-  /></a>
+    <img style="height: 40px" alt="mastodon"
+      src="https://raw.githubusercontent.com/doctorfree/doctorfree/master/icons/mastodon.png" /></a>
   <a href="https://en.wikipedia.org/wiki/User:Doctorfree">
-    <img
-      style="height: 40px"
-      alt="wikipedia"
-      src="https://raw.githubusercontent.com/doctorfree/doctorfree/master/icons/wikipedia.png"
-  /></a>
+    <img style="height: 40px" alt="wikipedia"
+      src="https://raw.githubusercontent.com/doctorfree/doctorfree/master/icons/wikipedia.png" /></a>
 </div>
