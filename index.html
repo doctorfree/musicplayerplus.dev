@@ -655,7 +655,7 @@ for details on MusicPlayerPlus commands.
 </p>
 <pre
   class="console"
-><code> git clone https://github.com/doctorfree/MusicPlayerPlus.git
+><code>    git clone https://github.com/doctorfree/MusicPlayerPlus.git
     cd MusicPlayerPlus
     ./Uninstall</code></pre>
 <h2 id="troubleshooting">Troubleshooting</h2>
@@ -914,7 +914,7 @@ end</code></pre>
     ./Install</code></pre>
 <p>These steps are detailed below.</p>
 <h3 id="clone-musicplayerplus-repository">Clone MusicPlayerPlus repository</h3>
-<pre><code>git clone https://github.com/doctorfree/MusicPlayerPlus.git
+<pre><code>    git clone https://github.com/doctorfree/MusicPlayerPlus.git
     cd MusicPlayerPlus</code></pre>
 <p>
   <strong>[Note:]</strong> The <code>mkpkg</code> script in the top level of the
@@ -965,7 +965,7 @@ end</code></pre>
 <p>Install build dependencies via:</p>
 <pre><code>scripts/install-dev-env.sh</code></pre>
 <p>or manually with:</p>
-<pre><code>sudo apt-get install \
+<pre><code>  sudo apt-get install \
     build-essential libeigen3-dev libfftw3-dev clang \
     libavcodec-dev libavformat-dev libavutil-dev libswresample-dev \
     libsamplerate0-dev libtag1-dev libchromaprint-dev libmpdclient-dev \
@@ -978,7 +978,7 @@ end</code></pre>
   On RPM based systems like Fedora Linux, manually install build dependencies
   via:
 </p>
-<pre><code>sudo dnf install alsa-lib-devel ncurses-devel fftw3-devel \
+<pre><code>  sudo dnf install alsa-lib-devel ncurses-devel fftw3-devel \
     pulseaudio-libs-devel libtool automake iniparser-devel \
     SDL2-devel eigen3-devel libyaml-devel clang-devel \
     ffmpeg-devel libchromaprint-devel python-devel \
@@ -987,7 +987,7 @@ end</code></pre>
   On Arch Linux or other PKGBUILD based Linux systems, manually install build
   dependencies via:
 </p>
-<pre><code>sudo pacman -S --needed base-devel eigen fftw clang ffmpeg4.4 libsamplerate \
+<pre><code>  sudo pacman -S --needed base-devel eigen fftw clang ffmpeg4.4 libsamplerate \
     taglib chromaprint libmpdclient boost boost-libs iniparser libyaml swig \
     alsa-lib ncurses readline libpulse libcurl-compat sqlite qt5-base \
     qt5-tools python python-numpy python-six pandoc zip</code></pre>
@@ -1104,7 +1104,7 @@ end</code></pre>
   The development environment consists of several packages needed to build,
   package, and test MusicPlayerPlus components. These include:
 </p>
-<pre><code> build-essential libeigen3-dev libfftw3-dev clang
+<pre><code>    build-essential libeigen3-dev libfftw3-dev clang
     libavcodec-dev libavformat-dev libavutil-dev libswresample-dev
     libsamplerate0-dev libtag1-dev libchromaprint-dev libmpdclient-dev
     autotools-dev autoconf libtool libboost-all-dev fftw-dev
