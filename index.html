@@ -571,137 +571,30 @@ layout: page
   infrequent operations consume much less time on a more powerful CPU.
 </p>
 <h3 id="musicplayerplus-commands">MusicPlayerPlus Commands</h3>
-<p>MusicPlayerPlus adds the following commands to your system:</p>
-<ul>
-  <li>
-    <strong>mpplus</strong> : Primary user interface, invokes an MPD client,
-    spectrum visualizer, and more
-  </li>
-  <li>
-    <strong>mpcplus</strong> : Featureful NCurses MPD client, compiled with
-    spectrum visualizer
-  </li>
-  <li>
-    <strong>mppinit</strong> : One-time initializaton of a user’s mpcplus
-    configuration
-  </li>
-  <li>
-    <strong>mppcover</strong> : Display album cover art for currently playing
-    song
-  </li>
-  <li>
-    <strong>mppdl</strong> : Downloads audio tracks from Bandcamp, Soundcloud,
-    or a URL
-  </li>
-  <li>
-    <strong>mpcplus-tmux</strong> : Runs mpcplus, a visualizer, and displays
-    album art in a tmux session
-  </li>
-  <li>
-    <strong>mppsplash-tmux</strong> : Runs mppsplash, a visualizer, in a tmux
-    session
-  </li>
-  <li>
-    <strong>mppsplash</strong> : Fun ascii art screens using ASCIImatics
-    animations. Ascii art commands:
-    <ul>
-      <li>
-        <strong>mppjulia</strong> : ASCIImatics animated zoom on a Julia Set
-      </li>
-      <li><strong>mppplasma</strong> : ASCIImatics animated plasma graphic</li>
-      <li>
-        <strong>mpprocks</strong> : ASCIImatics animated MusicPlayerPlus splash
-        screen
-      </li>
-    </ul>
-  </li>
-  <li>
-    <strong>raise_cava</strong> : Raises the mppcava spectrum visualizer window
-  </li>
-  <li>
-    <strong>set_term_trans</strong> : Sets an xfce4-terminal window’s
-    transparency level
-  </li>
-  <li>
-    <strong>fzmp</strong> : Browse, search, and manage MPD library using
-    <code>fzf</code> fuzzy finder and <code>mpc</code> MPD client
-  </li>
-  <li>
-    <strong>artist_to_albumartist</strong> : Copies the Artist tag to the
-    AlbumArtist tag
-  </li>
-  <li>
-    <strong>create_playlist</strong> : Create a new playlist using a Beets query
-  </li>
-  <li><strong>listyt</strong> : List YouTube video titles and urls</li>
-  <li><strong>bliss-analyze</strong> : Acoustic analysis of audio files</li>
-  <li>
-    <strong>blissify</strong> : Create MPD playlists using song similarity
-  </li>
-  <li>
-    <strong>essentia_streaming_extractor_music</strong> : Analyze and extract
-    acoustic characteristics
-  </li>
-  <li>
-    <strong>mpd-configure</strong> : Create an MPD configuration file optimized
-    for bit perfect playback
-  </li>
-  <li>
-    <strong>mpd-monitor</strong> : Display info on currently playing MPD song
-  </li>
-</ul>
-<p>
-  The <code>bliss-analyze</code> and <code>blissify</code> commands are
-  currently not available on Raspberry Pi installations due to lack of support
-  for that architecture in the <code>ffmpeg</code> library.
-</p>
-<p>
-  <strong>[Note:]</strong> MusicPlayerPlus functions as a front-end and
-  management system for any MPD/Mopidy/Navidrome client. The default MPD client
-  is <code>mpcplus</code> but any MPD client can be configured by setting
-  <code>MPD_CLIENT</code> in <code>~/.config/mpprc</code>. While
-  <code>mpcplus</code> is the recommended MPD client, <code>ncmpcpp</code>
-  is also supported with some integration for visualizer data source management.
-  Other MPD clients available for use with MusicPlayerPlus include ncmpc, pms,
-  vimpc, pimpd2, nncmpp, mmtc, and mpq.
-</p>
-<p>
-  Additional detail and info can be found in the
-  <a href="https://github.com/doctorfree/MusicPlayerPlus/wiki"
-    >MusicPlayerPlus Wiki</a
-  >.
-</p>
+See the
+<a href="https://musicplayerplus.dev/commands">MusicPlayerPlus Commands section</a>
+for details on MusicPlayerPlus commands.
 <h2 id="quickstart">Quickstart</h2>
 See the
-<a href="https://musicplayerplus.dev/quickstart"
-  >MusicPlayerPlus Quickstart section</a
->
+<a href="https://musicplayerplus.dev/quickstart">MusicPlayerPlus Quickstart section</a>
 for details on getting started quickly.
 <h2 id="installation">Installation</h2>
 See the
-<a href="https://musicplayerplus.dev/install"
-  >MusicPlayerPlus Install section</a
->
+<a href="https://musicplayerplus.dev/install">MusicPlayerPlus Install section</a>
 for details on MusicPlayerPlus installation.
 <h2 id="post-installation-configuration">Post Installation Configuration</h2>
 See the
-<a href="https://musicplayerplus.dev/configuration"
-  >MusicPlayerPlus Configuration section</a
->
+<a href="https://musicplayerplus.dev/configuration">MusicPlayerPlus Configuration section</a>
 for details on MusicPlayerPlus post-installation configuration.
 <h2 id="musicplayerplus-services-and-clients">
   MusicPlayerPlus Services and Clients
 </h2>
 See the
-<a href="https://musicplayerplus.dev/services"
-  >MusicPlayerPlus Services section</a
->
+<a href="https://musicplayerplus.dev/services">MusicPlayerPlus Services section</a>
 for details on MusicPlayerPlus services and clients.
 <h2 id="documentation">Documentation</h2>
 See the
-<a href="https://musicplayerplus.dev/documentation"
-  >MusicPlayerPlus Documentation section</a
->
+<a href="https://musicplayerplus.dev/documentation">MusicPlayerPlus Documentation section</a>
 for MusicPlayerPlus documentation and usage.
 <h2 id="removal">Removal</h2>
 <p>
@@ -829,7 +722,7 @@ for MusicPlayerPlus documentation and usage.
   To resize the <code>mpcplus</code> tmux pane using keyboard shortcuts, use one
   of the default tmux key bindings:
 </p>
-<pre><code>bind-key -r -T prefix M-Up resize-pane -U 5
+<pre><code>    bind-key -r -T prefix M-Up resize-pane -U 5
     bind-key -r -T prefix M-Down resize-pane -D 5
     bind-key -r -T prefix M-Left resize-pane -L 5
     bind-key -r -T prefix M-Right resize-pane -R 5
@@ -893,79 +786,79 @@ for MusicPlayerPlus documentation and usage.
   the following to <code>~/.lircrc</code>:
 </p>
 <pre><code>## irexec
-    begin
-    prog = irexec
-    button = play_pause
-    config = mpc toggle
-    repeat = 0
-    end
+begin
+     prog = irexec
+     button = play_pause
+     config = mpc toggle
+     repeat = 0
+end
 
-    begin
-    prog = irexec
-    button = stop
-    config = mpc stop
-    repeat = 0
-    end
-    begin
-    prog = irexec
-    button = previous
-    config = mpc prev
-    repeat = 0
-    end
-    begin
-    prog = irexec
-    button = next
-    config = mpc next
-    repeat = 0
-    end
-    begin
-    prog = irexec
-    button = volup
-    config = mpc volume +2
-    repeat = 1
-    end
-    begin
-    prog = irexec
-    button = voldown
-    config = mpc volume -2
-    repeat = 1
-    end
-    begin
-    prog = irexec
-    button = pbc
-    config = mpc random
-    repeat = 0
-    end
-    begin
-    prog = irexec
-    button = pdvd
-    config = mpc update
-    repeat = 0
-    end
-    begin
-    prog = irexec
-    button = right
-    config = mpc seek +00:00:05
-    repeat = 0
-    end
-    begin
-    prog = irexec
-    button = left
-    config = mpc seek -00:00:05
-    repeat = 0
-    end
-    begin
-    prog = irexec
-    button = up
-    config = mpc seek +1%
-    repeat = 0
-    end
-    begin
-    prog = irexec
-    button = down
-    config = mpc seek -1%
-    repeat = 0
-    end</code></pre>
+begin
+     prog = irexec
+     button = stop
+     config = mpc stop
+     repeat = 0
+end
+begin
+     prog = irexec
+     button = previous
+     config = mpc prev
+     repeat = 0
+end
+begin
+     prog = irexec
+     button = next
+     config = mpc next
+     repeat = 0
+end
+begin
+     prog = irexec
+     button = volup
+     config = mpc volume +2
+     repeat = 1
+end
+begin
+     prog = irexec
+     button = voldown
+     config = mpc volume -2
+     repeat = 1
+end
+begin
+     prog = irexec
+     button = pbc
+     config = mpc random
+     repeat = 0
+end
+begin
+     prog = irexec
+     button = pdvd
+     config = mpc update
+     repeat = 0
+end
+begin
+     prog = irexec
+     button = right
+     config = mpc seek +00:00:05
+     repeat = 0
+end
+begin
+     prog = irexec
+     button = left
+     config = mpc seek -00:00:05
+     repeat = 0
+end
+begin
+     prog = irexec
+     button = up
+     config = mpc seek +1%
+     repeat = 0
+end
+begin
+     prog = irexec
+     button = down
+     config = mpc seek -1%
+     repeat = 0
+end</code></pre>
 <p>
   A guide for configuring <code>lirc</code> to control MPD using
   <code>mpc</code> can be found at
