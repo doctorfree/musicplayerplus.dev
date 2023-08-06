@@ -2,7 +2,3388 @@
 layout: page
 ---
 
-<p>Demo website</p>
+<div data-align="center">
+  <p>
+    <img
+      src="https://raw.githubusercontent.com/wiki/doctorfree/MusicPlayerPlus/img/musicplayerplus.png"
+      style="width: 800px; height: 140px"
+    />
+  </p>
+</div>
+<p>
+  MusicPlayerPlus is a character-based console and terminal window music player
+  - <strong><em>plus</em></strong> Beets media library management with
+  preconfigured plugins - <strong><em>plus</em></strong> Character-based
+  spectrum visualizer <code>mppcava</code> -
+  <strong><em>plus</em></strong> Music Player Daemon and ALSA configuration
+  management - <strong><em>plus</em></strong> Mopidy Music Server with
+  preconfigured extensions - <strong><em>plus</em></strong>
+  Navidrome Music Server/Streamer automated install/config/service -
+  <strong><em>plus</em></strong> Bliss acoustic analysis and song similarity
+  database - <strong><em>plus</em></strong> Essentia acoustic analysis and
+  metadata extraction - <strong><em>plus</em></strong> YAMS MPD Last.fm
+  scrobbler running as a service - <strong><em>plus</em></strong> Media fuzzy
+  finder using <code>fzf</code> - <strong><em>plus</em></strong> Album cover art
+  download - <strong><em>plus</em></strong> Bandcamp collections download -
+  <strong><em>plus</em></strong> Soundcloud favorites download -
+  <strong><em>plus</em></strong> Discogs user collection to markdown generator -
+  <strong><em>plus</em></strong> Automated setup, import and organization,
+  metadata, playlists, …
+</p>
+<p>
+  MusicPlayerPlus is one of the <a href="https://neoman.dev">Neoman</a> managed
+  projects:
+</p>
+<table>
+  <colgroup>
+    <col style="width: 30%" />
+    <col style="width: 33%" />
+    <col style="width: 36%" />
+  </colgroup>
+  <thead>
+    <tr class="header">
+      <th><strong>Neoman</strong></th>
+      <th><strong>Managed</strong></th>
+      <th><strong>Projects</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="odd">
+      <td><a href="https://asciiville.dev">Asciiville</a></td>
+      <td><a href="https://lazyman.dev">Lazyman</a></td>
+      <td><a href="https://mirrorcommand.dev">MirrorCommand</a></td>
+    </tr>
+    <tr class="even">
+      <td><a href="https://musicplayerplus.dev">MusicPlayerPlus</a></td>
+      <td><a href="https://neoman.dev">Neoman</a></td>
+      <td><a href="https://rooncommand.dev">RoonCommandLine</a></td>
+    </tr>
+  </tbody>
+</table>
+<h2 id="table-of-contents">Table of contents</h2>
+<ol type="1">
+  <li>
+    <a href="#overview">Overview</a>
+    <ol type="1">
+      <li><a href="#requirements">Requirements</a></li>
+      <li><a href="#musicplayerplus-commands">MusicPlayerPlus Commands</a></li>
+    </ol>
+  </li>
+  <li>
+    <a href="#quickstart">Quickstart</a>
+    <ol type="1">
+      <li><a href="#quickstart-summary">Quickstart summary</a></li>
+      <li><a href="#full-tilt-boogie">Full Tilt Boogie</a></li>
+    </ol>
+  </li>
+  <li>
+    <a href="#installation">Installation</a>
+    <ol type="1">
+      <li><a href="#supported-platforms">Supported platforms</a></li>
+      <li>
+        <a href="#debian-package-installation">Debian package installation</a>
+      </li>
+      <li><a href="#rpm-package-installation">RPM Package installation</a></li>
+      <li>
+        <a href="#arch-package-installation">Arch Package installation</a>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <a href="#post-installation-configuration"
+      >Post Installation Configuration</a
+    >
+    <ol type="1">
+      <li>
+        <a href="#client-configuration-required"
+          >Client Configuration (required)</a
+        >
+      </li>
+      <li>
+        <a href="#musicplayerplus-configuration-file"
+          >MusicPlayerPlus Configuration File</a
+        >
+      </li>
+      <li>
+        <a href="#mpd-music-directory-configuration"
+          >MPD Music Directory Configuration</a
+        >
+      </li>
+      <li>
+        <a href="#initializing-the-beets-media-library-management-system"
+          >Initializing the Beets media library management system</a
+        >
+      </li>
+      <li>
+        <a href="#additional-metadata-analysis-and-retrieval"
+          >Additional metadata analysis and retrieval</a
+        >
+        <ol type="1">
+          <li>
+            <a href="#acoustic-analysis-with-blissify"
+              >Acoustic analysis with Blissify</a
+            >
+          </li>
+          <li>
+            <a href="#acoustic-analysis-with-essentia"
+              >Acoustic analysis with Essentia</a
+            >
+          </li>
+          <li>
+            <a href="#acoustic-retrieval-with-acousticbrainz"
+              >Acoustic retrieval with AcousticBrainz</a
+            >
+          </li>
+        </ol>
+      </li>
+      <li>
+        <a href="#activating-the-yams-scrobbler-for-lastfm"
+          >Activating the YAMS scrobbler for Last.fm</a
+        >
+      </li>
+      <li>
+        <a href="#mpd-audio-output-configuration"
+          >MPD Audio Output Configuration</a
+        >
+      </li>
+      <li>
+        <a href="#fuzzy-finder-configuration">Fuzzy Finder Configuration</a>
+      </li>
+      <li><a href="#start-mpd">Start MPD</a></li>
+      <li>
+        <a href="#system-verification-checks">System verification checks</a>
+      </li>
+      <li>
+        <a href="#initialize-music-database">Initialize Music Database</a>
+      </li>
+      <li><a href="#installing-mopidy">Installing Mopidy</a></li>
+      <li>
+        <a href="#installing-navidrome">Installing Navidrome</a>
+        <ol type="1">
+          <li><a href="#navidrome-clients">Navidrome clients</a></li>
+        </ol>
+      </li>
+      <li>
+        <a href="#terminal-emulator-support">Terminal Emulator Support</a>
+      </li>
+      <li><a href="#discogs-user-collection">Discogs User Collection</a></li>
+    </ol>
+  </li>
+  <li>
+    <a href="#musicplayerplus-services-and-clients"
+      >MusicPlayerPlus Services and Clients</a
+    >
+    <ol type="1">
+      <li><a href="#services">Services</a></li>
+      <li>
+        <a href="#which-services-should-be-installed-and-activated"
+          >Which services should be installed and activated</a
+        >
+      </li>
+      <li><a href="#clients">Clients</a></li>
+    </ol>
+  </li>
+  <li>
+    <a href="#documentation">Documentation</a>
+    <ol type="1">
+      <li>
+        <a href="#readme-for-musicplayerplus-configuration"
+          >README for MusicPlayerPlus configuration</a
+        >
+      </li>
+      <li>
+        <a href="#readme-for-mpcplus-mpd-client"
+          >README for mpcplus MPD client</a
+        >
+      </li>
+      <li><a href="#readme-for-tmuxp-configs">README for tmuxp configs</a></li>
+      <li><a href="#man-pages">Man Pages</a></li>
+      <li><a href="#usage">Usage</a></li>
+      <li>
+        <a href="#example-client-invocations">Example client invocations</a>
+      </li>
+      <li><a href="#adding-album-cover-art">Adding Album Cover Art</a></li>
+      <li><a href="#custom-key-bindings">Custom key bindings</a></li>
+      <li><a href="#tmux-session-exit-issues">Tmux session exit issues</a></li>
+    </ol>
+  </li>
+  <li><a href="#removal">Removal</a></li>
+  <li>
+    <a href="#troubleshooting">Troubleshooting</a>
+    <ol type="1">
+      <li><a href="#known-issues">Known issues</a></li>
+    </ol>
+  </li>
+  <li>
+    <a href="#infrared-remote-control-of-mpd">Infrared remote control of MPD</a>
+  </li>
+  <li><a href="#screenshots">Screenshots</a></li>
+  <li><a href="#videos">Videos</a></li>
+  <li>
+    <a href="#building-musicplayerplus-from-source"
+      >Building MusicPlayerPlus from source</a
+    >
+  </li>
+  <li>
+    <a href="#contributing">Contributing</a>
+    <ol type="1">
+      <li>
+        <a href="#testing-and-Issue-Reporting">Testing and Issue Reporting</a>
+      </li>
+      <li><a href="#sponsor-musicplayerplus">Sponsor MusicPlayerPlus</a></li>
+      <li>
+        <a href="#contribute-to-development">Contribute to Development</a>
+      </li>
+    </ol>
+  </li>
+</ol>
+<h2 id="overview">Overview</h2>
+<p>
+  <a href="https://opensource.org/licenses/MIT"
+    ><img
+      src="https://img.shields.io/badge/License-MIT-yellow.svg"
+      alt="License: MIT"
+  /></a>
+</p>
+<p>
+  The MusicPlayerPlus project provides integration and extension of several
+  audio packages designed to stream and play music. MusicPlayerPlus interacts
+  with the Music Player Daemon (MPD). Outputs from the MPD streaming audio
+  server are used as MusicPlayerPlus inputs for playback and visualization.
+  MusicPlayerPlus components are used to manage and control MPD and ALSA
+  configuration.
+</p>
+<p>
+  MusicPlayerPlus integrations and extensions are primarily aimed at the
+  character-based terminal user. They enable an easy to use seamlessly
+  integrated control of audio streaming, playing, music library management, and
+  visualization in a lightweight character-based environment.
+</p>
+<p>
+  Audio streaming is provided by the Music Player Daemon (MPD). At the core of
+  MusicPlayerPlus is the <code>mpplus</code> command which acts as a front-end
+  for a variety of terminal and/or <code>tmux</code> sessions.
+</p>
+<p>The <code>mpplus</code> command can be used to invoke:</p>
+<ul>
+  <li>
+    The lightweight character-based MPD client,
+    <code>mpcplus</code>
+  </li>
+  <li>One or more terminal emulators running an MPD client and visualizer</li>
+  <li>
+    A tmux session using the tmux session manager
+    <code>tmuxp</code>
+  </li>
+  <li>A spectrum visualizer</li>
+  <li>A download of album cover art for every album in a music library</li>
+  <li>
+    Conversion of all WAV/M4A format media in a music library to MP3 format
+    media
+  </li>
+  <li>An import of a music library to the Beets media library manager</li>
+  <li>
+    A download of lyrics for all songs in the music library without lyrics
+  </li>
+  <li>
+    Analysis and retrieval of audio-based information for media matching a query
+  </li>
+  <li>YAMS MPD Last.fm scrobbler activation</li>
+  <li>Any MPD client the user wishes to run</li>
+  <li>One of several asciimatics animations optionally accompanied by audio</li>
+  <li>
+    A fuzzy listing and searching of the audio library using
+    <code>fzf</code>
+  </li>
+</ul>
+<p>
+  <strong>[Note:]</strong> Typical use of <code>mpplus</code> as a music player
+  and spectrum visualizer will invoke a <code>tmux</code>
+  session to display the MPD client, spectrum visualizer, and album cover art
+  all in a single terminal window. MusicPlayerPlus configures
+  <code>tmux</code> with a custom key binding to exit tmux sessions. To exit an
+  <code>mpplus</code> tmux session, the <code>Alt-x</code> key binding can be
+  used.
+</p>
+<p>Integration is provided for:</p>
+<ul>
+  <li><a href="https://www.musicpd.org/">mpd</a>, the Music Player Daemon</li>
+  <li>
+    <a href="https://github.com/doctorfree/mpcplus/README.md">mpcplus</a>,
+    character-based MPD client
+  </li>
+  <li>
+    <a href="https://beets.io/">beets</a>, media library management system
+  </li>
+  <li>
+    <a href="https://github.com/doctorfree/mpplus-essentia/README.md"
+      >essentia</a
+    >, acoustic metadata analysis and extraction
+  </li>
+  <li>
+    <a href="https://mopidy.com/">mopidy</a>, music server with cool extensions
+  </li>
+  <li>
+    <a href="https://www.navidrome.org/">navidrome</a>, self-hosted music server
+    and streamer
+  </li>
+  <li>
+    <a href="https://github.com/Berulacks/yams/">yams</a>, MPD scrobbler for
+    Last.fm
+  </li>
+  <li>
+    <a href="https://github.com/karlstav/cava">cava</a>, an audio spectrum
+    visualizer
+  </li>
+  <li>
+    <a href="http://mplayerhq.hu/design7/info.html">mplayer</a>, a media player
+  </li>
+  <li>
+    <a href="https://github.com/junegunn/fzf">fzf</a>, interactive fuzzy finder
+  </li>
+  <li>
+    <a href="https://github.com/peterbrittain/asciimatics">asciimatics</a> -
+    automatically display a variety of character-based animation effects
+  </li>
+  <li>
+    <a href="https://asciinema.org/">asciinema</a> - automatically create ascii
+    character-based video clips
+  </li>
+  <li>
+    <a href="https://github.com/tmux/tmux/wiki">tmux</a>, a terminal multiplexer
+  </li>
+  <li>
+    <a href="https://github.com/tmux-python/tmuxp">tmuxp</a>, a tmux session
+    manager
+  </li>
+  <li>
+    Enhanced key bindings for extended control of terminal windows and tmux
+    sessions
+  </li>
+  <li>
+    Several terminal emulators
+    <ul>
+      <li>kitty (the default MusicPlayerPlus terminal emulator)</li>
+      <li>cool-retro-term</li>
+      <li>gnome-terminal</li>
+      <li>tilix</li>
+    </ul>
+  </li>
+</ul>
+<p>
+  The goal of MusicPlayerPlus is to provide the user with a sophisticated set of
+  complex music library tools that can be integrated and managed in a fairly
+  simple to understand fashion. Also, to make some cool looking powerful stuff
+  happen from the command-line in a character-based environment.
+</p>
+<h3 id="requirements">Requirements</h3>
+<p>
+  MusicPlayerPlus is compiled and packaged for installation on any Linux
+  platform. It has been tested on the following platforms:
+</p>
+<ul>
+  <li>Arch Linux</li>
+  <li>CentOS Linux</li>
+  <li>Fedora Linux</li>
+  <li>Raspberry Pi OS</li>
+  <li>Ubuntu Linux</li>
+</ul>
+<p>
+  Installation and initialization require admistrative privilege. The
+  <code>mppinit</code> command, executed after installing MusicPlayerPlus,
+  installs several packages and therefore requires access to the Internet along
+  with administrative privilege (e.g. <code>sudo</code>
+  privilege).
+</p>
+<p>
+  Memory and storage requirements depend upon the size of the music library.
+</p>
+<p>
+  With a moderate sized music library, the Music Player Daemon can exceed a 2GB
+  memory capacity. Therefore, 4GB or more of memory is recommended.
+</p>
+<p>
+  Storage should be sized to adequately host what will likely be a growing music
+  library. Plan ahead and leave your library room to grow. A few hundred
+  Gigabytes of storage might suffice for some music libraries but a Terabyte or
+  more will provide room to grow. Testing is performed on systems with 4GB RAM
+  and 2TB storage using a 600GB music library.
+</p>
+<p>
+  Essentia metadata extraction, Blissify similarity analysis, and transcoding
+  all consume significant CPU resources. Testing has been performed on systems
+  with the following CPU resources:
+</p>
+<ul>
+  <li>8 x Intel(R) Core(TM) i7-7700K CPU @ 4.20GHz</li>
+  <li>2 x Intel(R) Celeron(R) CPU G1840 @ 2.80GHz</li>
+  <li>4 x ARMv7 Processor rev 3 (v7l)</li>
+</ul>
+<p>
+  All of these processors were able to handle significant loads. However,
+  import, metadata extraction, and transcoding are all much quicker on the 8 x
+  Intel(R) Core(TM) i7-7700K CPU @ 4.20GHz system. Although not necessary, these
+  infrequent operations consume much less time on a more powerful CPU.
+</p>
+<h3 id="musicplayerplus-commands">MusicPlayerPlus Commands</h3>
+<p>MusicPlayerPlus adds the following commands to your system:</p>
+<ul>
+  <li>
+    <strong>mpplus</strong> : Primary user interface, invokes an MPD client,
+    spectrum visualizer, and more
+  </li>
+  <li>
+    <strong>mpcplus</strong> : Featureful NCurses MPD client, compiled with
+    spectrum visualizer
+  </li>
+  <li>
+    <strong>mppinit</strong> : One-time initializaton of a user’s mpcplus
+    configuration
+  </li>
+  <li>
+    <strong>mppcover</strong> : Display album cover art for currently playing
+    song
+  </li>
+  <li>
+    <strong>mppdl</strong> : Downloads audio tracks from Bandcamp, Soundcloud,
+    or a URL
+  </li>
+  <li>
+    <strong>mpcplus-tmux</strong> : Runs mpcplus, a visualizer, and displays
+    album art in a tmux session
+  </li>
+  <li>
+    <strong>mppsplash-tmux</strong> : Runs mppsplash, a visualizer, in a tmux
+    session
+  </li>
+  <li>
+    <strong>mppsplash</strong> : Fun ascii art screens using ASCIImatics
+    animations. Ascii art commands:
+    <ul>
+      <li>
+        <strong>mppjulia</strong> : ASCIImatics animated zoom on a Julia Set
+      </li>
+      <li><strong>mppplasma</strong> : ASCIImatics animated plasma graphic</li>
+      <li>
+        <strong>mpprocks</strong> : ASCIImatics animated MusicPlayerPlus splash
+        screen
+      </li>
+    </ul>
+  </li>
+  <li>
+    <strong>raise_cava</strong> : Raises the mppcava spectrum visualizer window
+  </li>
+  <li>
+    <strong>set_term_trans</strong> : Sets an xfce4-terminal window’s
+    transparency level
+  </li>
+  <li>
+    <strong>fzmp</strong> : Browse, search, and manage MPD library using
+    <code>fzf</code> fuzzy finder and <code>mpc</code> MPD client
+  </li>
+  <li>
+    <strong>artist_to_albumartist</strong> : Copies the Artist tag to the
+    AlbumArtist tag
+  </li>
+  <li>
+    <strong>create_playlist</strong> : Create a new playlist using a Beets query
+  </li>
+  <li><strong>listyt</strong> : List YouTube video titles and urls</li>
+  <li><strong>bliss-analyze</strong> : Acoustic analysis of audio files</li>
+  <li>
+    <strong>blissify</strong> : Create MPD playlists using song similarity
+  </li>
+  <li>
+    <strong>essentia_streaming_extractor_music</strong> : Analyze and extract
+    acoustic characteristics
+  </li>
+  <li>
+    <strong>mpd-configure</strong> : Create an MPD configuration file optimized
+    for bit perfect playback
+  </li>
+  <li>
+    <strong>mpd-monitor</strong> : Display info on currently playing MPD song
+  </li>
+</ul>
+<p>
+  The <code>bliss-analyze</code> and <code>blissify</code> commands are
+  currently not available on Raspberry Pi installations due to lack of support
+  for that architecture in the <code>ffmpeg</code> library.
+</p>
+<p>
+  <strong>[Note:]</strong> MusicPlayerPlus functions as a front-end and
+  management system for any MPD/Mopidy/Navidrome client. The default MPD client
+  is <code>mpcplus</code> but any MPD client can be configured by setting
+  <code>MPD_CLIENT</code> in <code>~/.config/mpprc</code>. While
+  <code>mpcplus</code> is the recommended MPD client, <code>ncmpcpp</code>
+  is also supported with some integration for visualizer data source management.
+  Other MPD clients available for use with MusicPlayerPlus include ncmpc, pms,
+  vimpc, pimpd2, nncmpp, mmtc, and mpq.
+</p>
+<p>
+  Additional detail and info can be found in the
+  <a href="https://github.com/doctorfree/MusicPlayerPlus/wiki"
+    >MusicPlayerPlus Wiki</a
+  >.
+</p>
+<h2 id="quickstart">Quickstart</h2>
+<h3 id="required-setup">Required setup</h3>
+<ul>
+  <li>
+    Create a music library if you do not already have one
+    <ul>
+      <li>
+        Default MusicPlayerPlus location for the music library is
+        <code>$HOME/Music</code>
+      </li>
+      <li>
+        Recommended structure of the music library is
+        <code>artist/album/songs</code>
+      </li>
+    </ul>
+  </li>
+  <li>
+    Install the latest Arch, Debian, or RPM format installation package from the
+    <a href="https://github.com/doctorfree/MusicPlayerPlus/releases"
+      >MusicPlayerPlus Releases</a
+    >
+    page
+  </li>
+  <li>
+    Run the <code>mppinit</code> command as your normal user
+    <ul>
+      <li>
+        Searches <code>$HOME/Music</code> and <code>$HOME/music</code> for music
+        library location
+      </li>
+      <li>
+        The music library location can be specified with
+        <code>mppinit -l /path/to/library</code>
+      </li>
+    </ul>
+  </li>
+</ul>
+<h3 id="optional-additional-setup-steps">Optional additional setup steps</h3>
+<p>
+  For many installations, installing the MusicPlayerPlus package and
+  initializing the user configuration with the <code>mppinit</code> command is
+  all that need be done.
+</p>
+<p>Some common additional setup steps that can be performed include:</p>
+<ul>
+  <li>Configuring the music library location</li>
+  <li>Download albums in your Bandcamp collections</li>
+  <li>Download favorites in your Soundcloud account</li>
+  <li>Converting WAV/M4A format media files to MP3 format</li>
+  <li>Importing a music library into the Beets library management system</li>
+  <li>Downloading album cover art</li>
+  <li>Downloading additional lyrics</li>
+  <li>Activation of YAMS scrobbler for Last.fm</li>
+  <li>
+    Analysis and retrieval of audio-based information for media matching a query
+  </li>
+</ul>
+<p>
+  Configure the music library location by editing
+  <code>~/.config/mpprc</code> and setting <code>MUSIC_DIR</code> to your music
+  library location (default setting is <code>~/Music</code>). Optionally
+  configure any additional settings in <code>~/.config/mpprc</code> such as your
+  preferred terminal emulator, Bandcamp username, Soundcloud slug, or more. Any
+  changes to <code>~/.config/mpprc</code> must be followed by running the
+  command <code>mppinit sync</code>.
+</p>
+<p>
+  <strong>[Important Note:]</strong> MusicPlayerPlus integrates several
+  services, each of which has its own configuration for the location of the
+  music library. Because of this, MusicPlayerPlus provides its own configuration
+  file <code>~/.config/mpprc</code>. The <code>MUSIC_DIR</code> setting in that
+  config file is used as the source of truth for the location of the music
+  library. In order to keep all of the services in sync with respect to the
+  music library location, set the location in <code>~/.config/mpprc</code> and
+  run the command <code>mppinit sync</code>. If the music library is moved to a
+  new location, repeat this procedure.
+</p>
+<p>
+  Download albums in your Bandcamp collections with
+  <code>mppinit bandcamp</code>.
+</p>
+<p>
+  Download favorites in your Soundcloud account with
+  <code>mppinit soundcloud</code>.
+</p>
+<h4 id="two-step-post-initialization-setup">
+  Two step post-initialization setup
+</h4>
+<p>
+  The following optional post-initialization steps can be performed individually
+  as described below or they can be performed in two steps using
+  <code>mppinit</code>.
+</p>
+<p><strong>Step 1</strong>, import the music library into Beets:</p>
+<pre class="shell"><code>mppinit import</code></pre>
+<p>
+  The <code>mppinit import</code> command converts any WAV format media to MP3
+  format and imports the music library into the Beets media library management
+  system.
+</p>
+<p>
+  <strong>[Note:]</strong> A Beets import can take hours for a large music
+  library. A test import using a music library over 500GB in size, with nearly
+  4000 artists, 3000 albums, and over 30,000 tracks consumed nearly 12 hours.
+  Import times will vary from system to system and library to library depending
+  on several factors. The above test may provide a ballpark idea of the length
+  of time a Beets library import might take.
+</p>
+<p>When the import is complete</p>
+<p><strong>Step 2</strong>, retrieve additional metadata:</p>
+<pre class="shell"><code>mppinit metadata</code></pre>
+<p>
+  The <code>mppinit metadata</code> command identifies and deletes duplicate
+  tracks, retrieves album genres from Last.fm, downloads album cover art, and
+  (optionally) analyzes and retrieves metadata for all songs in the music
+  library.
+</p>
+<p>
+  <strong>[Note:]</strong> A Beets metadata retrieval can take hours for a large
+  music library. The MusicPlayerPlus default Beets configuration uses
+  <code>ffmpeg</code> to compute checksums for every track in the library to
+  find duplicates.
+</p>
+<p>
+  An optional audio analysis can be performed during metadata retrieval.
+  MusicPlayerPlus provides several optional methods for acoustic analysis. The
+  method used for acoustic analysis and retrieval can be specified on the
+  command line:
+</p>
+<ul>
+  <li>
+    AcousticBrainz metadata retrieval (deprecated)
+    <ul>
+      <li><code>mppinit -a metadata</code></li>
+    </ul>
+  </li>
+  <li>
+    Blissify acoustic analysis of the MPD music library (the default)
+    <ul>
+      <li><code>mppinit -b metadata</code></li>
+    </ul>
+  </li>
+  <li>
+    Essentia acoustic analysis and Beets metadata retrieval (long)
+    <ul>
+      <li><code>mppinit -e metadata</code></li>
+    </ul>
+  </li>
+</ul>
+<p>
+  If none of the <code>-a, -b, or -e</code> options are specified then acoustic
+  analysis, extraction, and retrieval is performed by Essentia.
+</p>
+<p>
+  The AcousticBrainz service is the fastest method but is being retired in 2023,
+  the service is no longer being updated, and it is often inaccurate.
+</p>
+<p>
+  The Essentia acoustic analysis is the most thorough, adds acoustic metadata to
+  the Beets library management system, and provides the greatest flexibility but
+  at a cost of possibly days of analysis and extraction time. Metadata analysis
+  and extraction with Essentia is the default behavior.
+</p>
+<p>
+  The Blissify analysis creates a similarity database of all songs in the music
+  library. This can be used to automate the creation of playlists and other
+  actions. The drawback of using Blissify is it does not add acoustic metadata
+  to the Beets library so the results of a Blissify analysis are only available
+  to Blissify and not Beets.
+</p>
+<p>
+  <strong>[Note:]</strong> Acoustic analysis with <code>blissify</code> is
+  currently not available on Raspberry Pi installations due to lack of support
+  for that architecture in the <code>ffmpeg</code> library.
+</p>
+<p>
+  It is sometimes desirable to augment one acoustic analysis with another. For
+  example, the AcousticBrainz service seems to think a lot of songs have 0 beets
+  per minute and tags them erroneously. After retrieving metadata using
+  AcousticBrainz, list the songs that have a bpm value of 0:
+</p>
+<pre class="shell"><code>beet list bpm:0</code></pre>
+<p>
+  These songs can get an accurate setting for bpm and other audio parameters by
+  following the <code>mppinit -a metadata</code> command with
+  <code>mpplus -X bpm:0</code>.
+</p>
+<h4 id="individual-commands-post-initialization-setup">
+  Individual commands post-initialization setup
+</h4>
+<p>
+  Download albums in your Bandcamp collections with
+  <code>mppinit bandcamp</code>.
+</p>
+<p>
+  Download favorites in your Soundcloud account with
+  <code>mppinit soundcloud</code>.
+</p>
+<p>
+  Convert WAV or M4A format media files in your library to MP3 format files with
+  the command <code>mpplus -F</code> or <code>mpplus -G</code>. Conversion from
+  WAV to MP3 allows these files to be imported into the Beets media library
+  management system. Conversion from M4A (Apple ALAC) to MP3 allows these files
+  to be streamed and played in all browsers supporting HTML5 audio (not
+  necessary with Navidrome streaming).
+</p>
+<p>
+  If you wish to manage your music library with Beets, import the music library
+  with the command <code>mpplus -I</code>.
+</p>
+<p>
+  Album cover art can be downloaded with the command <code>mpplus -D art</code>.
+</p>
+<p>
+  Bandcamp collections can be downloaded with the command
+  <code>mpplus -D bandcamp</code>.
+</p>
+<p>
+  Soundcloud favorites can be downloaded with the command
+  <code>mpplus -D soundcloud</code>.
+</p>
+<p>Download additional lyrics with the command <code>mpplus -L</code>.</p>
+<p>
+  Activate the YAMS scrobbler for Last.fm with the command
+  <code>mpplus -Y</code>.
+</p>
+<p>
+  Analysis and retrieval of audio-based information can be performed with the
+  command <code>mpplus -X 'query'</code> where ‘query’ is a Beets library query.
+  The special query term ‘all’ indicates the entire music library, i.e.
+  <code>mpplus -X all</code>. Alternatively, query the AcousticBrainz service
+  with <code>mpplus -x all</code> or create a “song similarity” database using
+  Blissify with <code>mpplus -B</code>.
+</p>
+<p>
+  These common additional setup steps and more are covered in greater detail in
+  the <a href="beets/README.md">MusicPlayerPlus Beets README</a> and the
+  <a href="#post-installation-configuration">Post Installation Configuration</a>
+  section below.
+</p>
+<h3 id="quickstart-summary">Quickstart summary</h3>
+<p>To summarize, a MusicPlayer quickstart can be accomplished by:</p>
+<ul>
+  <li>Install the latest Arch, Debian, or RPM format installation package</li>
+  <li>
+    Run <code>mppinit</code> or <code>mppinit -l /path/to/library</code> as your
+    normal user
+  </li>
+  <li>
+    If the music library location was not properly detected:
+    <ul>
+      <li>
+        Configure <code>MUSIC_DIR</code> by editing
+        <code>~/.config/mpprc</code>
+      </li>
+      <li>Run the command <code>mppinit sync</code></li>
+    </ul>
+  </li>
+  <li>
+    Optionally:
+    <ul>
+      <li>
+        Modify user-specific settings in <code>~/.config/mpprc</code> and run
+        <code>mppinit sync</code>
+      </li>
+      <li>
+        Download albums in your Bandcamp collections with
+        <code>mppinit bandcamp</code>
+      </li>
+      <li>
+        Download favorites in your Soundcloud account with
+        <code>mppinit soundcloud</code>
+      </li>
+      <li>
+        Perform these steps with the command <code>mppinit import</code>
+        <ul>
+          <li>
+            Convert WAV format files to MP3 format with the command
+            <code>mpplus -F</code>
+          </li>
+          <li>
+            Import your music library into Beets with the command
+            <code>mpplus -I</code>
+          </li>
+        </ul>
+      </li>
+      <li>
+        Perform these steps with the command <code>mppinit metadata</code>
+        <ul>
+          <li>
+            Remove duplicate tracks with the command
+            <code>beet duplicates -d</code>
+          </li>
+          <li>
+            Rename tracks left after duplicate removal with
+            <code>beet move</code>
+          </li>
+          <li>
+            Download album cover art with the command
+            <code>mpplus -D art</code>
+          </li>
+          <li>
+            Analyze and retrieve audio-based information with a command like:
+            <ul>
+              <li>
+                <code>mpplus -B</code> creates a “song similarity” database with
+                Blissify
+              </li>
+              <li>
+                <code>mpplus -X all</code> analyze the entire Beets library with
+                Essentia
+              </li>
+              <li>
+                <code>mpplus -X 'query'</code> where ‘query’ is a Beets library
+                query
+              </li>
+              <li>
+                <code>mpplus -x all</code> query AcousticBrainz for the entire
+                Beets library
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        Activate the YAMS scrobbler for Last.fm with the command
+        <code>mpplus -Y</code>
+      </li>
+      <li>
+        Download additional lyrics with the command
+        <code>mpplus -L</code>
+      </li>
+    </ul>
+  </li>
+</ul>
+<h3 id="full-tilt-boogie">Full Tilt Boogie</h3>
+<p>
+  The entire full tilt boogie initialization, for those with both Bandcamp and
+  Soundcloud accounts with songs and albums in a collection or liked, and who
+  wish to apply thorough, reliable, complete, and accurate metadata:
+</p>
+<pre
+  class="shell"
+><code># Initialize MusicPlayerPlus, activate Music Player Daemon
+    # This is the only required setup step
+    mppinit
+
+    # For Bandcamp and Soundcloud users, a convenient way to download
+    mppinit bandcamp
+    mppinit soundcloud
+
+    # Beets library import (can take hours)
+    mppinit import
+
+    # Install, configure, and activate Mopidy music server
+    mppinit mopidy
+
+    # Install, configure, and activate Navidrome streaming music server
+    mppinit navidrome
+
+    # Perform analysis and extraction of acoustic metadata with Essentia
+    # This background process can take hours or even days for a large library
+    mppinit metadata</code></pre>
+<h2 id="installation">Installation</h2>
+<p>
+  MusicPlayerPlus v2.0.1 and later can be installed on Linux systems using the
+  Arch packaging format, the Debian packaging format, or the Red Hat Package
+  Manager (RPM).
+</p>
+<h3 id="supported-platforms">Supported platforms</h3>
+<p>MusicPlayerPlus has been tested successfully on the following platforms:</p>
+<ul>
+  <li>
+    <strong>Arch Linux 2022.07.01</strong>
+    <ul>
+      <li>
+        <code
+          >MusicPlayerPlus_&lt;version&gt;-&lt;release&gt;-any.pkg.tar.zst</code
+        >
+      </li>
+    </ul>
+  </li>
+  <li>
+    <strong>Ubuntu Linux 20.04</strong>
+    <ul>
+      <li><code>MusicPlayerPlus_&lt;version&gt;-&lt;release&gt;.deb</code></li>
+    </ul>
+  </li>
+  <li>
+    <strong>Fedora Linux 36</strong>
+    <ul>
+      <li><code>MusicPlayerPlus_&lt;version&gt;-&lt;release&gt;.rpm</code></li>
+    </ul>
+  </li>
+  <li>
+    <strong>CentOS Linux 8</strong>
+    <ul>
+      <li><code>MusicPlayerPlus_&lt;version&gt;-&lt;release&gt;.rpm</code></li>
+    </ul>
+  </li>
+  <li>
+    <strong>Raspbian Linux 11</strong>
+    <ul>
+      <li><code>MusicPlayerPlus_&lt;version&gt;-&lt;release&gt;.deb</code></li>
+    </ul>
+  </li>
+</ul>
+<h3 id="debian-package-installation">Debian package installation</h3>
+<p>
+  Many Linux distributions, most notably Ubuntu and its derivatives, use the
+  Debian packaging system.
+</p>
+<p>
+  To tell if a Linux system is Debian based it is usually sufficient to check
+  for the existence of the file <code>/etc/debian_version</code>
+  and/or examine the contents of the file
+  <code>/etc/os-release</code>.
+</p>
+<p>
+  To install on a Debian based Linux system, download the latest Debian format
+  package from the
+  <a href="https://github.com/doctorfree/MusicPlayerPlus/releases"
+    >MusicPlayerPlus Releases</a
+  >.
+</p>
+<p>Install the MusicPlayerPlus package by executing the command</p>
+<pre
+  class="console"
+><code>sudo apt install ./MusicPlayerPlus_&lt;version&gt;-&lt;release&gt;.deb</code></pre>
+<p>or</p>
+<pre
+  class="console"
+><code>sudo dpkg -i ./MusicPlayerPlus_&lt;version&gt;-&lt;release&gt;.deb</code></pre>
+<p>or, on a Raspberry Pi:</p>
+<pre
+  class="console"
+><code>sudo apt install ./MusicPlayerPlus_&lt;version&gt;-&lt;release&gt;.deb</code></pre>
+<p>or</p>
+<pre
+  class="console"
+><code>sudo dpkg -i ./MusicPlayerPlus_&lt;version&gt;-&lt;release&gt;.deb</code></pre>
+<h3 id="rpm-package-installation">RPM Package installation</h3>
+<p>
+  Red Hat Linux, SUSE Linux, and their derivatives use the RPM packaging format.
+  RPM based Linux distributions include Fedora, AlmaLinux, CentOS, openSUSE,
+  OpenMandriva, Mandrake Linux, Red Hat Linux, and Oracle Linux.
+</p>
+<p>
+  To install on an RPM based Linux system, download the latest RPM format
+  package from the
+  <a href="https://github.com/doctorfree/MusicPlayerPlus/releases"
+    >MusicPlayerPlus Releases</a
+  >.
+</p>
+<p>Install the MusicPlayerPlus package by executing the command</p>
+<pre
+  class="console"
+><code>sudo dnf localinstall ./MusicPlayerPlus_&lt;version&gt;-&lt;release&gt;.rpm</code></pre>
+<p>or</p>
+<pre
+  class="console"
+><code>sudo rpm -i ./MusicPlayerPlus_&lt;version&gt;-&lt;release&gt;.rpm</code></pre>
+<h3 id="arch-package-installation">Arch Package installation</h3>
+<p>
+  Arch Linux, Manjaro, and other Arch Linux derivatives use the Pacman packaging
+  format. In addition to Arch Linux, Arch based Linux distributions include
+  ArchBang, Arch Linux, Artix Linux, ArchLabs, Asahi Linux, BlackArch, Chakra
+  Linux, EndeavourOS, Frugalware Linux, Garuda Linux, Hyperbola GNU/Linux-libre,
+  LinHES, Manjaro, Parabola GNU/Linux-libre, SteamOS, and SystemRescue.
+</p>
+<p>
+  To install on an Arch based Linux system, download the latest Pacman format
+  package from the
+  <a href="https://github.com/doctorfree/MusicPlayerPlus/releases"
+    >MusicPlayerPlus Releases</a
+  >.
+</p>
+<p>Install the MusicPlayerPlus package by executing the command</p>
+<pre
+  class="console"
+><code>sudo pacman -U ./MusicPlayerPlus_&lt;version&gt;-&lt;release&gt;-any.pkg.tar.zst</code></pre>
+<h2 id="post-installation-configuration">Post Installation Configuration</h2>
+<p>
+  <strong>[Note:]</strong> Extensive post-installation steps are covered here.
+  Minimal post-installation configuration required is the execution of the
+  command <code>mppinit</code>. If the MPD music library is located in the
+  default <code>$HOME/Music</code> directory then no further configuration may
+  be necessary. See the <a href="#quickstart">Quickstart</a> section.
+</p>
+<p>
+  After installing MusicPlayerPlus there are several recommended configuration
+  steps. If not already configured, the MPD server will need to know where to
+  locate your music library. This can be configured by editing the
+  MusicPlayerPlus configuration file <code>~/.config/mpprc</code> and running
+  the command <code>mppinit sync</code>.
+</p>
+<h3 id="client-configuration-required">Client Configuration (required)</h3>
+<p>Initialize the MusicPlayerPlus configuration by executing the command:</p>
+<pre class="console"><code>mppinit</code></pre>
+<p>
+  Examine the generated configuration in <code>~/.config/mpprc</code> and make
+  any desired changes.
+</p>
+<p>
+  The client configuration performed by <code>mppinit</code> includes the
+  configuration of an MPD user service. The configuration, files, and folders
+  used by this user level MPD service are stored in <code>~/.config/mpd/</code>.
+  Examine the generated MPD configuration file
+  <code>~/.config/mpd/mpd.conf</code>.
+</p>
+<h3 id="musicplayerplus-configuration-file">
+  MusicPlayerPlus Configuration File
+</h3>
+<p>
+  MusicPlayerPlus 2.0.1 release 3 and later provides the configuration file
+  <code>~/.config/mpprc</code> which serves as the primary source for
+  MusicPlayerPlus user configurable settings. This configuration file is the
+  “source of truth” for several settings including the music library location.
+  Settings in <code>mpprc</code> are propogated throughout several other
+  component’s configurations.
+</p>
+<p>
+  The settings in <code>mpprc</code> are <em>dynamic</em> and preserved across
+  command invocations. The dynamic nature of this configuration file means that
+  options specified on the <code>mpplus</code> command line or in the
+  <code>mpplus</code> menu system are written back out to
+  <code>~/.config/mpprc</code> so the next invocation of
+  <code>mpplus</code> will use the previous invocation’s options and settings as
+  the default.
+</p>
+<p>The default installed <code>mpprc</code> contains:</p>
+<pre class="shell"><code>## MusicPlayerPlus runtime configuration
+    #
+    # After modifying any of the following settings, run the command:
+    # mppinit sync
+    # as your normal MusicPlayerPlus user
+
+    ## Music library location
+    #
+    MUSIC_DIR=&quot;~/Music&quot;
+
+    # MPD client
+    MPD_CLIENT=&quot;mpcplus&quot;
+
+    ## General settings
+    #
+    # To enable any of these, set to 1
+    # For example, to enable cover art display in tmux sessions set COVER_ART=1
+    #
+    # Play audio during asciimatics animations
+    AUDIO=1
+    # Display cover art in tmux sessions
+    COVER_ART=1
+    # Display mpcplus and mppcava in a tmux session
+    USE_TMUX=1
+
+    ## Terminal emulator / display mode
+    #
+    # Can be one of: console, current, gnome, kitty, retro, simple, tilix
+    # Where:
+    # &#39;console&#39; will force a tmux session
+    # &#39;current&#39; will force a tmux session in the current terminal window
+    # &#39;gnome&#39; will use the gnome-terminal emulator if installed
+    # &#39;kitty&#39; will use the Kitty terminal emulator if installed
+    # &#39;retro&#39; will use cool-retro-term if installed
+    # &#39;simple&#39; will use the ST terminal emulator if installed
+    # &#39;tilix&#39; will use the Tilix terminal emulator if installed
+    # Default fallback if none specified or not available is Kitty
+    #
+    # Uncomment the preferred mode
+    #MPP_MODE=console
+    #MPP_MODE=current
+    #MPP_MODE=gnome
+    #MPP_MODE=retro
+    #MPP_MODE=simple
+    #MPP_MODE=tilix
+    MPP_MODE=kitty
+
+    ## Service access
+    #
+    # The Bandcamp username can be found by visiting Bandcamp &#39;Settings&#39; -&gt; &#39;Fan&#39;
+    # If you do not have a Bandcamp account, leave blank
+    BANDCAMP_USER=
+
+    # The Discogs username can be found by visiting discogs.com. Login, use the
+    # dropdown of your user icon in the upper right corner, click on &#39;Profile&#39;.
+    # Your Discogs username is the last component of the profile URL.
+    DISCOGS_USER=
+    # The Discogs API token can be found by visiting
+    # https://www.discogs.com/settings/developers
+    DISCOGS_TOKEN=
+    # Location of the generated custom Discogs Obsidian vault
+    # Can be anywhere you have write permission
+    DISCOGS_DIR=&quot;~/Documents/Obsidian/Discogs&quot;
+
+    # Your Last.fm username, api key, and api secret
+    # If you do not have a Last.fm account, leave blank
+    LASTFM_USER=
+    LASTFM_APIKEY=
+    LASTFM_SECRET=
+
+    # The Soundcloud user slug can be found by logging in to Soundcloud
+    # click on the username at top right then &#39;Profile&#39;. The user slug
+    # is the last component of the URL when viewing your Soundcloud Profile.
+    # If you do not have a Soundcloud account, leave blank
+    SOUNDCLOUD_SLUG=
+
+    # Your Spotify client id and client secret
+    # If you do not have a Spotify account, leave blank
+    SPOTIFY_CLIENT=
+    SPOTIFY_SECRET=
+
+    # Your YouTube api key
+    # If you do not have a YouTube account, leave blank
+    YOUTUBE_APIKEY=</code></pre>
+<p>
+  After <code>mppinit</code> completes the MusicPlayerPlus initialization, edit
+  the <code>~/.config/mpprc</code> configuration file and run
+  <code>mppinit sync</code>.
+</p>
+<h3 id="mpd-music-directory-configuration">
+  MPD Music Directory Configuration
+</h3>
+<p>
+  <strong>[Note:]</strong> MusicPlayerPlus version 1.0.3 release 1 and later
+  perform an automated MPD user configuration and systemd service activation.
+  This is performed by the <code>mppinit</code> command. MusicPlayerPlus 1.0.3r1
+  and later installations need not perform the following manual procedures but
+  users may wish to review the automated MPD configuration and alter the default
+  MPD music directory location.
+</p>
+<p>The default MPD and <code>mpcplus</code> music directory is set to:</p>
+<p><code>$HOME/Music</code></p>
+<p>
+  If your media library resides in another location then perform the following
+  steps and run <code>mppinit sync</code>:
+</p>
+<ul>
+  <li>
+    Edit <code>$HOME/.config/mpprc</code> and set the
+    <code>MUSIC_DIR</code> entry to the location of your music library
+    (e.g. <code>vi ~/.config/mpprc</code>)
+  </li>
+  <li>Run the <code>mppinit sync</code> command</li>
+</ul>
+<p>
+  For example, to set the MPD music directory to the
+  <code>/u/audio/music</code> directory, edit
+  <code>$HOME/.config/mpprc</code> and change the <em>MUSIC_DIR</em>
+  setting:
+</p>
+<pre class="shell"><code>MUSIC_DIR=&quot;/u/audio/music&quot;</code></pre>
+<p>The <em>MUSIC_DIR</em> location must be writeable by your user.</p>
+<p>
+  Any time the MPD music directory is manually modified, run
+  <code>mppinit sync</code>.
+</p>
+<h3 id="initializing-the-beets-media-library-management-system">
+  Initializing the Beets media library management system
+</h3>
+<p>
+  <strong>[Note:]</strong> Beets is NOT the now defunct music service purchased
+  by Apple. It is an open source media library management system.
+</p>
+<p>
+  MusicPlayerPlus includes the Beets media library management system and
+  preconfigured settings to allow easy integration with MPD and
+  <code>mpcplus</code>. Beets is an application that catalogs your music
+  collection, automatically improving its metadata. It then provides a suite of
+  tools for manipulating and accessing your music. Beets includes an extensive
+  set of plugins that can be used to enhance and extend the functionality of the
+  media library management Beets provides. Many Beets plugins are installed and
+  configured automatically by MusicPlayerPlus.
+</p>
+<p>
+  To get started using the Beets media library management system, it is
+  necessary to import your music library into the Beets database. This process
+  catalogs your music collection and improves its metadata. The default Beets
+  configuration provided by MusicPlayerPlus moves and tags files in the music
+  library during this process. It adds music library data to the Beets database.
+  To import your music library into Beets, issue the following command:
+</p>
+<pre class="console"><code>mppinit import</code></pre>
+<p>or to skip WAV format media conversion and just perform the Beets import:</p>
+<pre class="console"><code>mpplus -I</code></pre>
+<p>
+  <strong>[Note:]</strong> If additional songs or albums are added to the music
+  library after the initial Beets import is performed, simply rerun
+  <code>mppinit import</code> or <code>beet import /path/to/new/items</code> to
+  import any new library items. To remove duplicates and retrieve metadata for
+  the newly imported items, run <code>mppinit metadata</code>.
+</p>
+<p>After importing the music library into Beets, try playing something with:</p>
+<pre class="console"><code>beet play QUERY</code></pre>
+<p>
+  Where ‘QUERY’ is a valid
+  <a href="https://beets.readthedocs.io/en/stable/reference/query.html"
+    >Beets query</a
+  >. This can be a simple string like “blue” or “love” or a more complicated
+  expression as described in the Beets query documentation. The Beets
+  <code>play</code> plugin should match the query string to songs in your music
+  library, add those songs to the MPD queue, and play them. Use
+  <code>beet ls QUERY</code> to see what would be played.
+</p>
+<p>
+  <strong>[Note:]</strong> MusicPlayerPlus has configured the Beets play plugin
+  to use the command
+  <code>/usr/share/musicplayerplus/scripts/mpcplay.sh</code> to play media with
+  this plugin. This script clears the MPD queue, adds any songs matching the
+  query to the queue, and plays the MPD queue. In addition, two arguments are
+  supported: <code>--shuffle</code> and <code>--debug</code>. These additional
+  arguments are passed using the <code>--args</code> feature. For example, to
+  play all media matching the string “velvet” and shuffle the order of play,
+  issue the command <code>beet play --args --shuffle velvet</code>.
+</p>
+<p>Example usage of the <code>beet play</code> command:</p>
+<ul>
+  <li><code>beet play velvet</code></li>
+  <li><code>beet play playlist:1970s</code></li>
+  <li><code>beet play --args --shuffle playlist:1990s</code></li>
+  <li><code>beet play --args "--debug --shuffle" green eyes</code></li>
+</ul>
+<p>
+  For instructions on Beets media library setup and use see the
+  <a href="beets/README.md">MusicPlayerPlus Beets README</a>.
+</p>
+<p>
+  Learn more about the Beets media library management system at
+  https://beets.io/
+</p>
+<h3 id="additional-metadata-analysis-and-retrieval">
+  Additional metadata analysis and retrieval
+</h3>
+<p>
+  MusicPlayerPlus includes three methods for augmenting music library metadata
+  through acoustic analysis. These three methods are:
+</p>
+<ul>
+  <li>
+    AcousticBrainz metadata retrieval (deprecated)
+    <ul>
+      <li>initialized with <code>mppinit -a metadata</code></li>
+    </ul>
+  </li>
+  <li>
+    Blissify acoustic analysis of the MPD music library
+    <ul>
+      <li>initialized with <code>mppinit -b metadata</code></li>
+    </ul>
+  </li>
+  <li>
+    Essentia acoustic analysis and Beets metadata retrieval
+    <ul>
+      <li>initialized with <code>mppinit -e metadata</code></li>
+    </ul>
+  </li>
+</ul>
+<h4 id="acoustic-analysis-with-blissify">Acoustic analysis with Blissify</h4>
+<p>
+  Acoustic analysis with Blissify does not require a prior Beets import. The
+  Blissify acoustic analysis creates a song similarity database for all the
+  songs in the MPD music library. Initialize the Blissify database with the
+  command <code>blissify update &lt;mpd music directory&gt;</code>. For example,
+  assuming the default MPD music directory:
+</p>
+<pre class="console"><code>blissify update ~/Music</code></pre>
+<p>
+  Blissify database initialization would have been automatically performed
+  during setup if metadata initialization were done with:
+</p>
+<pre class="console"><code>mppinit -b metadata</code></pre>
+<p>
+  After initialization of the Blissify database, the
+  <code>blissify</code> command can be used to create an MPD playlist based on
+  song similarities. For example, to make a 30 song playlist that queues the
+  closest song to the currently playing song, then the closest song to the
+  second song, etc, effectively making a “path” through the songs, execute the
+  command:
+</p>
+<pre class="console"><code>blissify playlist --seed-song 30</code></pre>
+<p>To save the current MPD playlist (queue), execute the command:</p>
+<pre class="console"><code>mpc save &lt;playlist-name&gt;</code></pre>
+<p>
+  Note that the acoustic analysis and database creation performed by Blissify
+  does not update the Beets library database. In order to add this additional
+  acoustic metadata to the Beets library it is necessary to perform an acoustic
+  analysis with Essentia or acoustic metadata retrieval with AcousticBrainz,
+  both described in the next sections.
+</p>
+<h4 id="acoustic-analysis-with-essentia">Acoustic analysis with Essentia</h4>
+<p>
+  After completing the Beets music library import with either
+  <code>mppinit import</code> or <code>mpplus -I</code>, additional Beets
+  metadata can be retrieved with the command:
+</p>
+<pre class="console"><code>mppinit -e metadata</code></pre>
+<p>
+  This will identify and delete duplicate tracks, retrieve album genres,
+  download album cover art, and optionally analyze and retrieve metadata for all
+  songs in the music library using the
+  <a href="https://essentia.upf.edu/index.html">Essentia extractor</a> and
+  <a href="https://essentia.upf.edu/models.html">Essentia trained models</a>.
+</p>
+<p>
+  MusicPlayerPlus <code>mppinit -e metadata</code> uses Essentia for extracting
+  acoustic characteristics of music, including low-level spectral information,
+  rhythm, keys, scales, and much more, and automatic annotation by genres,
+  moods, and instrumentation.
+</p>
+<p>
+  This is the same sort of thing that
+  <a href="https://acousticbrainz.org/">AcousticBrainz</a> does but the
+  AcousticBrainz project is no longer collecting data and will be withdrawn in
+  2023. MusicPlayerPlus provides the same functionality using pre-compiled and
+  packaged Essentia binaries and models.
+</p>
+<p>
+  However, the process of analyzing, extracting, and retrieving metadata can be
+  time consuming for a large music library. The
+  <code>mppinit -e metadata</code> command performs several metadata retrieval
+  steps in a non-interactive manner and in the background so it can be left
+  unattended if desired.
+</p>
+<h4 id="acoustic-retrieval-with-acousticbrainz">
+  Acoustic retrieval with AcousticBrainz
+</h4>
+<p>
+  While it still exists the AcousticBrainz service can be queried to provide a
+  relatively quick way to update the Beets library with additional acoustic
+  metadata. The AcousticBrainz service has already analyzed the acoustic
+  characteristics of songs in the MusicBrainz catalog. To retrieve this metadata
+  for songs in your music library, after Beets import is complete, run the
+  command <code>mppinit -a metadata</code>. Or, at any time after Beets import
+  run the command <code>beet acousticbrainz</code>. The AcousticBrainz service
+  is no longer updated and will be retired in 2023.
+</p>
+<p>
+  The individual metadata retrieval steps performed automatically by
+  <code>mppinit [-a|-b|-e] metadata</code> can be performed manually using the
+  instructions in the
+  <a href="beets/README.md">MusicPlayerPlus Beets README</a>.
+</p>
+<h3 id="activating-the-yams-scrobbler-for-last.fm">
+  Activating the YAMS scrobbler for Last.fm
+</h3>
+<p>
+  YAMS is an acronym for “Yet Another MPD Scrobbler”. When YAMS is configured
+  and running, any songs, artists, or albums played through MPD get “scrobbled”
+  to <a href="https://www.last.fm">Last.fm</a>. This enables a tracking of your
+  listening patterns and habits, creating a fairly extensive set of statistics
+  viewable on Last.fm.
+</p>
+<p>Features:</p>
+<ul>
+  <li>
+    Authenticate with the new Last.fm Scrobbling API v2.0 - without the need to
+    input/store your username/password locally.
+  </li>
+  <li>
+    Update your profile’s “Now Playing” track via Last.fm’s “Now Playing” API
+  </li>
+  <li>Save failed scrobbles to a disk and upload them at a later date.</li>
+  <li>
+    Timing configuration (e.g. scrobble percentage, real world timing values for
+    scrobbling, etc.).
+  </li>
+  <li>
+    Prevent accidental duplicate scrobbles on rewind/playback restart/etc.
+  </li>
+  <li>Automatic daemonization and config file generation.</li>
+</ul>
+<p>
+  In order to activate the YAMS scrobbler you will need an account with Last.fm.
+  Free accounts with Last.fm include many of the service features and can
+  provide extensive listening history statistics. If you do not wish to use
+  Last.fm to analyze MPD track plays then this optional setup step can be
+  ignored and no action is required as MusicPlayerPlus disables YAMS by default.
+  Disable a previously activated YAMS service with the command
+  <code>mpplus -y</code>.
+</p>
+<p>Activate the YAMS scrobbler for Last.fm with the command:</p>
+<pre class="console"><code>mpplus -Y</code></pre>
+<p>
+  The activation process must be run in a terminal window and will provide you
+  with a URL. Copy the URL and navigate to it using a web browser. This will
+  take you to Last.fm to authenticate if not already logged in and authorize
+  YAMS access. Once access is authorized there is no need to authenticate for
+  future Last.fm access with YAMS. There is also no need to manually run the
+  <code>yams</code> command as a user service is activated to run it
+  automatically. Basically, nothing else to do, just play music and it will be
+  scrobbled by YAMS.
+</p>
+<p>
+  YAMS creates a configuration file <code>$HOME/.config/yams/yams.yml</code>.
+</p>
+<h4 id="using-yamscrobbler-with-libre.fm">Using YAMScrobbler with Libre.fm</h4>
+<p>
+  YAMS works fine with Libre.fm, a Free Software replacement for Last.fm. If you
+  prefer to use Libre.fm rather than Last.fm, do the following:
+</p>
+<ul>
+  <li>
+    Set the <code>base_url</code> config variable to
+    <code>https://libre.fm/2.0/</code> in
+    <code>$HOME/.config/yams/yams.yml</code> (don’t forget the trailing slash!)
+  </li>
+  <li>Delete any leftover <code>.lastfm_session</code> files</li>
+  <li>
+    Authenticate like you normally would with Last.fm, however replace
+    <code>last.fm</code> with <code>libre.fm</code> in the authorization URL
+    printed out by YAMS
+  </li>
+</ul>
+<h3 id="mpd-audio-output-configuration">MPD Audio Output Configuration</h3>
+<p>
+  Adjust the <code>audio_output</code> settings in
+  <code>~/.config/mpd/mpd.conf</code>. MPD must have at least one
+  <code>audio_output</code> configured and in order to use the spectrum
+  visualizer as configured by default it is necessary to configure a second
+  <code>audio_output</code> in MPD.
+</p>
+<p>
+  The default MPD <code>audio_output</code> setting is <code>PulseAudio</code>.
+  To modify the MPD audio output, uncomment one of <code>ALSA</code>,
+  <code>PulseAudio</code>, or <code>PipeWire</code>
+  and restart MPD.
+</p>
+<p>
+  A FIFO <code>audio_output</code> is used as a data source for the spectrum
+  visualizer. To configure this output, add the following to
+  <code>~/.config/mpd/mpd.conf</code>:
+</p>
+<pre><code>audio_output {
+    type &quot;fifo&quot;
+    name &quot;Visualizer feed&quot;
+    path &quot;~/.config/mpd/mpd.fifo&quot;
+    format &quot;44100:16:2&quot;
+    }</code></pre>
+<p>
+  An example ALSA <code>audio_output</code> configuration in
+  <code>~/.config/mpd/mpd.conf</code>:
+</p>
+<pre><code>audio_output {
+    type &quot;alsa&quot;
+    name &quot;ALSA&quot;
+    buffer_time &quot;50000&quot; # (50ms); default is 500000 microseconds (0.5s)
+    # device &quot;hw:0,0&quot; # optional
+    # mixer_type &quot;hardware&quot; # optional
+    # mixer_device &quot;default&quot; # optional
+    # mixer_control &quot;PCM&quot; # optional
+    # mixer_index &quot;0&quot; # optional
+    }</code></pre>
+<p>Or, to use PulseAudio:</p>
+<pre><code>audio_output {
+    type &quot;pulse&quot;
+    name &quot;pulse audio&quot;
+    device &quot;pulse&quot;
+    mixer_type &quot;hardware&quot;
+    }</code></pre>
+<p>Output with PipeWire can also be configured:</p>
+<pre><code>audio_output {
+    type &quot;pipewire&quot;
+    name &quot;PipeWire Sound Server&quot;
+    }</code></pre>
+<p>
+  MPD is a powerful and flexible music player server with many configuration
+  options. Additional MPD configuration may be desired. See the
+  <a href="https://mpd.readthedocs.io/en/stable/user.html">MPD User’s Manual</a>
+</p>
+<h3 id="fuzzy-finder-configuration">Fuzzy Finder Configuration</h3>
+<p>
+  The <code>fzmp</code> command lists, searches, and selects media from the MPD
+  library using the <code>fzf</code> fuzzy finder command line utility. A
+  default <code>fzmp</code> configuration file for each user is created when the
+  <code>mppinit</code> command is executed. The <code>fzmp</code> configuration
+  file is located at:
+</p>
+<pre><code>~/.config/mpcplus/fzmp.conf</code></pre>
+<p>
+  The initial default <code>fzmp</code> configuration should suffice for most
+  use cases. Some of the interactive key bindings may need to be modified if
+  they are already in use by other utilities. For example, the default key
+  binding to switch to playlist view is ‘F1’ but the
+  <code>xfce4-terminal</code> command binds ‘F1’ by default to its help window.
+  In this case either the <code>fzmp</code> playlist view key binding must be
+  changed or the XFCE4 terminal help window shortcut must be disabled.
+</p>
+<p>
+  To disable the XFCE4 terminal help window shortcut, in
+  <code>xfce4-terminal</code> select:
+</p>
+<p><em>Edit -&gt; Preferences -&gt; Advanced</em></p>
+<p>
+  Select the <em>Disable help window shortcut key (F1 by default)</em> and Close
+  the Preferences dialog. The XFCE4 terminal help window shortcut will no longer
+  be bound to ‘F1’ and no modification to the playlist view key binding for
+  <code>fzmp</code> would be necessary.
+</p>
+<p>
+  To modify the <code>fzmp</code> playlist view key binding, edit the
+  <code>fzmp</code> configuration file
+  <code>~/.config/mpcplus/fzmp.conf</code> and add a line like the following:
+</p>
+<pre class="console"><code>playlist_view_key F6</code></pre>
+<p>
+  This revised configuration would change the playlist view key binding from
+  ‘F1’ to ‘F6’ and the XFCE4 terminal help window shortcut could remain enabled
+  and bound to ‘F1’.
+</p>
+<p>
+  Several other <code>fzmp</code> bindings and options can be configured. See
+  <code>man fzmp</code> for details.
+</p>
+<h3 id="start-mpd">Start MPD</h3>
+<p>
+  <strong>[Note:]</strong> MusicPlayerPlus version 1.0.3 release 1 and later
+  perform an automated MPD user configuration and systemd service activation.
+  Initialization with <code>mppinit</code> for these installations should
+  automatically start the user MPD service. No further action should be required
+  for MusicPlayerPlus v1.0.3r1 or later installations.
+</p>
+<p>Status of the MPD service can be checked with:</p>
+<pre class="console"><code>systemctl --user status mpd.service</code></pre>
+<p>
+  Installation and initialization of MusicPlayerPlus prior to v1.0.3r1 will need
+  to start mpd as a system-wide service by executing the commands:
+</p>
+<p><code>sudo systemctl start mpd</code></p>
+<p>If you want MPD to start automatically on subsequent reboots, run:</p>
+<p><code>sudo systemctl enable mpd</code></p>
+<p>
+  Alternatively, if you want MPD to start automatically when a client attempts
+  to connect:
+</p>
+<p><code>sudo systemctl enable mpd.socket</code></p>
+<h3 id="system-verification-checks">System verification checks</h3>
+<p>
+  Once the music directory has been set correctly, album art downloaded, music
+  library imported, and <code>mppinit sync</code> has completed initialization,
+  some system checks can optionally be performed.
+</p>
+<ul>
+  <li>
+    Verify the <code>mpd</code> service is running and if not then start it:
+    <ul>
+      <li><code>systemctl --user is-active mpd.service</code></li>
+      <li><code>systemctl --user start mpd.service</code></li>
+    </ul>
+  </li>
+  <li>
+    Update the MPD client database:
+    <ul>
+      <li><code>mpc update</code></li>
+    </ul>
+  </li>
+  <li>
+    Verify the <code>mpd</code> service is enabled and if not enable it
+    <ul>
+      <li><code>systemctl --user is-enabled mpd.service</code></li>
+      <li><code>systemctl --user enable mpd.service</code></li>
+    </ul>
+  </li>
+  <li>
+    Play music with <code>mpplus</code>
+    <ul>
+      <li>
+        See the
+        <a
+          href="https://github.com/doctorfree/MusicPlayerPlus/wiki/mpcpluskeys.1"
+          >online mpcpluskeys cheat sheet</a
+        >
+        or <code>man mpcpluskeys</code> for help navigating the
+        <code>mpplus</code> windows
+      </li>
+      <li>
+        See the
+        <a href="https://github.com/doctorfree/MusicPlayerPlus/wiki/mpplus.1"
+          >online mpplus man page</a
+        >
+        or <code>man mpplus</code> for different ways to invoke the
+        <code>mpplus</code> command
+      </li>
+    </ul>
+  </li>
+</ul>
+<h3 id="initialize-music-database">Initialize Music Database</h3>
+<p>
+  <strong>[Note:]</strong> MusicPlayerPlus version 1.0.3 release 1 and later
+  perform an automated MPD music database initialization during execution of
+  <code>mppinit</code>.
+</p>
+<p>
+  For versions of MusicPlayerPlus prior to v1.0.3r1, initialize the music
+  database with an MPD client and update the database. The
+  <code>mpcplus</code> MPD client can be used for this or the standard
+  <code>mpc</code> MPD client can be used. With <code>mpcplus</code>, launch the
+  <code>mpcplus</code> MPD client, verify the client window has focus, and type
+  <code>u</code> to update the database. With <code>mpc</code> simply execute
+  the command <code>mpc update</code>.
+</p>
+<p>
+  If your music library is very large this process can take several minutes to
+  complete. Once the music database has been updated you should see the songs,
+  albums, and playlists in your music library appear in the client view.
+</p>
+<h3 id="installing-mopidy">Installing Mopidy</h3>
+<p>
+  To install, configure, and activate Mopidy issue the command
+  <code>mppinit mopidy</code>. After Mopidy initialization completes, open
+  <code>http://&lt;ip address&gt;:6680/iris</code>. After adding music to the
+  local music library, run <code>mopidy local scan</code>.
+</p>
+<p>
+  <strong>[Note:]</strong> In order to use the Mopidy-Beets extension, perform a
+  <code>mppinit import</code> and optionally <code>mppinit metadata</code> prior
+  to <code>mppinit mopidy</code>.
+</p>
+<p>
+  The default music server in MusicPlayerPlus is the Music Player Daemon (MPD).
+  An alternate music server, Mopidy, is supported and can perform the same
+  functions as MPD, is compatible with MPD clients, and can be extended to offer
+  many more features.
+</p>
+<p>
+  Activating Mopidy will first deactivate MPD. The MusicPlayerPlus Mopidy
+  activation runs as a user level system service. Configuration for Mopidy and
+  Mopidy extensions resides in <code>$HOME/.config/mopidy/</code>. The
+  MusicPlayerPlus activation of Mopidy auto-configures Mopidy and the installed
+  extensions.
+</p>
+<p>
+  In addition to the
+  <a href="https://docs.mopidy.com/en/latest/">bundled Mopidy extensions</a>,
+  the <code>mppinit mopidy</code> command installs the following Mopidy
+  extensions:
+</p>
+<ul>
+  <li>
+    <strong>Mopidy-Beets</strong>
+    <ul>
+      <li>Mopidy extension for playing music from Beets’ web plugin</li>
+    </ul>
+  </li>
+  <li>
+    <strong>Mopidy-Iris</strong>
+    <ul>
+      <li>
+        A comprehensive and mobile-friendly client that presents your library
+        and extensions in a user-friendly and intuitive interface. Built using
+        React and Redux
+      </li>
+      <li>Open <code>http://&lt;ip address&gt;:6680/iris</code></li>
+    </ul>
+  </li>
+  <li>
+    <strong>Mopidy-Mobile</strong>
+    <ul>
+      <li>Fully control a Mopidy music server from your mobile device</li>
+      <li>
+        Android App available on
+        <a
+          href="https://play.google.com/store/apps/details?id=at.co.kemmer.mopidy_mobile"
+          >Google Play</a
+        >
+      </li>
+      <li>
+        Other devices open <code>http://IP_Address:6680</code> in a browser
+      </li>
+    </ul>
+  </li>
+  <li>
+    <strong>Mopidy-Mpd</strong>
+    <ul>
+      <li>Mopidy extension for controlling Mopidy from MPD clients</li>
+    </ul>
+  </li>
+  <li>
+    <strong>Mopidy-Podcast</strong>
+    <ul>
+      <li>Mopidy extension for searching and browsing podcasts</li>
+    </ul>
+  </li>
+  <li>
+    <strong>Mopidy-Podcast-iTunes</strong>
+    <ul>
+      <li>Mopidy extension for searching and browsing iTunes podcasts</li>
+    </ul>
+  </li>
+  <li>
+    <strong>Mopidy-TuneIn</strong>
+    <ul>
+      <li>A backend for playing music from the TuneIn online radio service</li>
+    </ul>
+  </li>
+  <li>
+    <strong>Mopidy-Scrobbler</strong>
+    <ul>
+      <li>Mopidy extension for scrobbling music to Last.fm</li>
+      <li>
+        Requires Last.fm username/password added to
+        <code>~/.config/mopidy/mopidy.conf</code>
+      </li>
+    </ul>
+  </li>
+</ul>
+<p>
+  Additional Mopidy extensions can be installed and configured. For example, to
+  stream Spotify with Mopidy, install and configure the Mopidy-Spotify
+  extension. Learn more at https://mopidy.com/ext/
+</p>
+<p>
+  To view the effective Mopidy configuration run the command
+  <code>mopidy config</code>. This will display the full Mopidy configuration
+  with passwords masked out so that you can safely share the output with others
+  for debugging.
+</p>
+<p>
+  <strong>[Note:]</strong> The Mopidy MPD extension provides compatibility with
+  MPD clients but does not implement all MPD features. MPD is much more powerful
+  and flexible in terms of its configurable inputs and outputs. After activating
+  Mopidy some features may not work the same as they did with MPD. For example,
+  spectrum visualization may fail or player stats may not be available. However,
+  Mopidy offers many features unavailable with MPD. It’s a tradeoff.
+</p>
+<p>
+  To re-activate MPD and disable Mopidy, issue the command
+  <code>mppinit mpd</code>. Easily switch back and forth between MPD and Mopidy
+  with <code>mppinit mpd</code> and <code>mppinit mopidy</code>. Note that
+  MusicPlayerPlus continues to use the configured <code>MUSIC_DIR</code> as the
+  master music library location. To change the location of the music library,
+  edit <code>~/.config/mpprc</code>, set <code>MUSIC_DIR</code> to the new
+  location, and run <code>mppinit sync</code> to synchronize the music library
+  location across Beets, MPD, Mopidy, and downloaders.
+</p>
+<h3 id="installing-navidrome">Installing Navidrome</h3>
+<p>
+  The default music server in MusicPlayerPlus is the Music Player Daemon (MPD).
+  An alternate music server and streamer, Navidrome, is also supported. To
+  install, configure, and activate Navidrome issue the command:
+</p>
+<pre class="console"><code>mppinit navidrome</code></pre>
+<p>
+  The MusicPlayerPlus Navidrome activation runs as a user level system service.
+  Configuration for Navidrome resides in
+  <code>$HOME/.config/navidrome/navidrome.toml</code>. The MusicPlayerPlus
+  activation of Navidrome auto-configures, starts, and enables the Navidrome
+  service. The Navidrome log file can be found at
+  <code>$HOME/.config/navidrome/navidrome.log</code>.
+</p>
+<p>
+  After installing Navidrome, you need to create your first user. This will be
+  your admin user, a super user that can manage all aspects of Navidrome,
+  including the ability to manage other users. Browse to Navidrome’s homepage at
+  http://localhost:4533
+</p>
+<p>
+  Fill out the username and password you want to use, confirm the password and
+  click on the “Create Admin” button. You should now be able to browse and
+  listen to all your music.
+</p>
+<p>
+  <strong>[Note:]</strong> It usually take a couple of minutes for your music to
+  start appearing in Navidrome’s UI. Check the logs to see what is the scan
+  progress.
+</p>
+<p>
+  <strong>[Security Note:]</strong> Navidrome comes with an embedded,
+  full-featured HTTP server but in order to provide additional security
+  (e.g. SSL) Navidrome should be run behind a reverse proxy like Nginx or
+  Apache. MusicPlayerPlus does not configure a reverse proxy for Navidrome. See
+  the Navidrome network configuration documentation at
+  https://www.navidrome.org/docs/usage/security/ to get started securing
+  Navidrome. To use the MusicPlayerPlus default configuration of Navidrome, use
+  <code>http://...</code> rather than <code>https://...</code>.
+</p>
+<p>
+  If all you want is a Navidrome streaming music server and you do not care
+  about Beets library management, additional downloads, or a Mopidy server then
+  setup can be accomplished with just <code>mppinit</code> followed by
+  <code>mppinit navidrome</code>.
+</p>
+<h4 id="navidrome-clients">Navidrome clients</h4>
+<p>
+  The Navidrome self-hosted music service can stream your music to many devices.
+</p>
+<p>
+  MusicPlayerPlus tested and recommended free open source Navidrome clients:
+</p>
+<ul>
+  <li>
+    <strong>iPhone/iPad</strong>
+    <ul>
+      <li><a href="http://www.subsonic.org/pages/apps.jsp#isub">iSub</a></li>
+    </ul>
+  </li>
+  <li>
+    <strong>Android</strong>
+    <ul>
+      <li><a href="http://www.subsonic.org/pages/apps.jsp#dsub">Dsub</a></li>
+    </ul>
+  </li>
+  <li>
+    <strong>Linux/MacOS/Windows</strong>
+    <ul>
+      <li><a href="https://github.com/jeffvli/sonixd">Sonixd</a></li>
+    </ul>
+  </li>
+</ul>
+<p>Character based terminal/console Navidrome clients:</p>
+<ul>
+  <li>
+    <strong>Linux/Windows</strong>
+    <ul>
+      <li><a href="https://github.com/tryffel/jellycli">Jellycli</a></li>
+    </ul>
+  </li>
+  <li>
+    <strong>Linux</strong>
+    <ul>
+      <li><a href="https://github.com/wildeyedskies/stmp">Stmp</a></li>
+    </ul>
+  </li>
+</ul>
+<p>
+  Navidrome clients are not installed by MusicPlayerPlus. Install Navidrome
+  clients using your device’s app store or following the installation
+  instructions at the client link above.
+</p>
+<p>
+  If you do not have or wish to use a Navidrome client, then most modern
+  browsers are supported Navidrome clients. To use a browser as a Navidrome web
+  client, open the URL <code>http://ip-address:4533</code> where
+  <em>ip-address</em> is the IP address of the Navidrome server.
+</p>
+<p>
+  For a list of Airsonic compatible applications, see
+  https://airsonic.github.io/docs/apps/
+</p>
+<p>
+  For a list of Subsonic compatible clients, see
+  https://www.navidrome.org/docs/overview/#apps
+</p>
+<p>
+  <a href="https://github.com/jeffvli/sonixd">Sonixd</a> is a cross-platform
+  desktop Subsonic client compatible with Navidrome. On Apple MacOS, install
+  sonixd with Homebrew:
+</p>
+<pre class="console"><code>brew install --cask sonixd</code></pre>
+<p>
+  <a href="https://sublime-music.gitlab.io/sublime-music/index.html">Sublime</a>
+  is a native Subsonic client compatible with Navidrome for the Linux Desktop.
+  See https://sublime-music.gitlab.io/sublime-music/index.html to install
+  Sublime on a variety of Linux distributions.
+</p>
+<h3 id="terminal-emulator-support">Terminal Emulator Support</h3>
+<p>
+  Supported terminal emulators in MusicPlayerPlus include <code>kitty</code>,
+  <code>tilix</code>, <code>gnome-terminal</code>, <code>st</code>, and
+  <code>cool-retro-term</code>. Kitty is the default terminal emulator used by
+  MusicPlayerPlus except on Raspberry Pi OS where <code>st</code> is used as the
+  default.
+</p>
+<p>
+  <strong>[Note:]</strong> The
+  <a href="https://sw.kovidgoyal.net/kitty/">kitty terminal emulator</a> is very
+  cool. A default kitty theme is provided (the ‘Music Player Plus’ theme) and
+  should suffice for most users. An alternate kitty theme can be configured
+  using the kitty themes kitten. To use this kitten, run:
+</p>
+<pre class="console"><code>kitty +kitten themes</code></pre>
+<p>
+  An alternate terminal emulator can be specified on the
+  <code>mpplus</code> command line:
+</p>
+<pre
+  class="console"
+><code>mpplus -c ... # indicates use the current terminal and a tmux session
+    mpplus -e ... # indicates use the simple terminal emulator (st)
+    mpplus -g ... # indicates use the gnome terminal emulator
+    mpplus -k ... # indicates use the kitty terminal emulator
+    mpplus -r ... # indicates use the cool-retro-term terminal emulator
+    mpplus -t ... # indicates use the tilix terminal emulator</code></pre>
+<p>
+  If an alternate terminal emulator is not specified on the command line then
+  the default will be used unless console mode is detected. Console mode is used
+  when no DISPLAY can be opened (e.g. running on a console, running over SSH
+  without a display, running on a headless server). In console mode
+  MusicPlayerPlus utilizes <code>tmux</code>
+  sessions to display the character-based music player
+  <code>mpcplus</code> and spectrum visualizer <code>mppcava</code>.
+</p>
+<p>
+  The <code>mppcava</code> spectrum visualizer looks better when the font used
+  by the terminal emulator in which it is running is a small sized font. Some
+  terminal emulators rely on a profile from which they draw much of their
+  configuration. Profiles are used in MusicPlayerPlus to provide an enhanced
+  visual presentation.
+</p>
+<p>
+  In order to use the Gnome, Simple, or Tilix terminal emulators they must be
+  installed manually (except on Raspberry Pi OS where the Simple terminal
+  emulator is installed if no supported terminal emulator is found). If you wish
+  to use the Gnome, Simple, or Tilix terminal emulators, then use your system’s
+  package manager to install them prior to initializing MusicPlayerPlus with the
+  <code>mppinit</code> command. If either or both of Gnome or Tilix terminal
+  emulators are installed after MusicPlayerPlus initialization with
+  <code>mppinit</code> then run <code>mppinit profiles</code> after installing
+  gnome-terminal or tilix terminal emulator(s).
+</p>
+<p>
+  There are four terminal profiles in two terminal emulators used by
+  MusicPlayerPlus. The <code>gnome-terminal</code> emulator and the
+  <code>tilix</code> terminal emulator each have two custom profiles created
+  during <code>mppinit</code> initialization. These profiles are named
+  “MusicPlayer” and “Visualizer”.
+</p>
+<p>
+  The custom MusicPlayerPlus terminal profiles are used to provide font sizes
+  and background transparencies that enhance the visual appeal of both the
+  MusicPlayerPlus control window and the spectrum visualizer.
+</p>
+<p>
+  To modify these terminal emulator profiles, launch the desired terminal
+  emulator and modify the desired profile in the Preferences dialog.
+</p>
+<h3 id="discogs-user-collection">Discogs User Collection</h3>
+<p>
+  MusicPlayerPlus includes support for the auto-generation of an
+  <a href="https://obsidian.md">Obsidian</a> vault from either a
+  <a href="https://discogs.com">Discogs</a> user collection or a local music
+  library. The extremely rich data available from Discogs can be used to
+  generate markdown format files reflecting the artists, albums, tracks, and
+  items in your collection or library. The generated markdown reflecting your
+  Discogs collection or music library includes a preconfigured Obsidian vault
+  along with plugins, settings, and theme. The Obsidian Dataview plugin can be
+  used to query the Obsidian vault in a variety of ways similar to a database of
+  your library. Several example Dataview queries are included.
+</p>
+<p>
+  In order to use this facility, both <code>DISCOGS_USER</code> and
+  <code>DISCOGS_TOKEN</code> must be configured in
+  <code>$HOME/.config/mpprc</code>. If these are set then the resulting Obsidian
+  vault from the either the command <code>mppinit discogs</code> or
+  <code>mppinit discogs local</code> will be located in the folder specified by
+  <code>DISCOGS_DIR</code> in <code>mpprc</code>.
+</p>
+<p>
+  See the
+  <a href="https://github.com/doctorfree/Obsidian-Custom-Discogs#readme"
+    >Obsidian Custom Discogs README</a
+  >
+  for details on setup and maintenance of a Discogs Obsidian vault.
+</p>
+<h2 id="musicplayerplus-services-and-clients">
+  MusicPlayerPlus Services and Clients
+</h2>
+<p>
+  MusicPlayerPlus includes several services, some installed by default and
+  others optionally installed with the <code>mppinit</code> command
+  post-installation. Clients that can be used to access these services are also
+  provided.
+</p>
+<h3 id="services">Services</h3>
+<p>The following services are included with MusicPlayerPlus:</p>
+<ul>
+  <li>
+    <strong>Music Player Daemon (MPD)</strong>
+    <ul>
+      <li>Installed, configured, and activated by default</li>
+    </ul>
+  </li>
+  <li>
+    <strong>MPD Stats Service</strong>
+    <ul>
+      <li>Installed, configured, and activated by default</li>
+    </ul>
+  </li>
+  <li>
+    <strong>Beets Web Plugin Service</strong>
+    <ul>
+      <li>Installed, configured, and activated by default</li>
+    </ul>
+  </li>
+  <li>
+    <strong>Mopidy Music Server</strong>
+    <ul>
+      <li>
+        Installed, configured, and activated with
+        <code>mppinit mopidy</code>
+      </li>
+      <li>When activated, deactivates MPD, MPD Stats, and YAMS services</li>
+    </ul>
+  </li>
+  <li>
+    <strong>Navidrome Music Streaming Server</strong>
+    <ul>
+      <li>
+        Installed, configured, and activated with
+        <code>mppinit navidrome</code>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <strong>YAMS Last.FM Scrobbler</strong>
+    <ul>
+      <li>
+        Installed, configured, and activated with
+        <code>mppinit yams</code>
+      </li>
+    </ul>
+  </li>
+</ul>
+<p>
+  All of the MusicPlayerPlus services are user-level systemd services and can be
+  controlled by the MusicPlayerPlus user without the need for
+  <code>root</code> privilege. The <code>mpplus -i</code> interactive menu
+  system includes menu entries for controlling each of these services as well as
+  a status report on them by selecting the “Manage Music Services” from the Main
+  Menu. Alternately, each service can be controlled from the command line using
+  <code>systemctl --user ...</code>. For example, to stop the MPD Stats Service,
+  run the command <code>systemctl --user stop mpdstats</code>.
+</p>
+<h3 id="which-services-should-be-installed-and-activated">
+  Which services should be installed and activated
+</h3>
+<p>
+  Depending upon the use case and personal preference, a variety of combinations
+  of MusicPlayerPlus services can be activated. Mopidy with the Mopidy-MPD
+  extension conflicts with the MPD service. YAMS and MPD Stats only work with
+  MPD. Therefore, if Mopidy is activated the MPD, YAMS, and MPD Stats services
+  are automatically deactivated. Similarly, if the MPD service is reactivated,
+  the YAMS and MPD Stats services are reactivated and Mopidy deactivated.
+</p>
+<p>
+  Choose which service you prefer, MPD or Mopidy, and activate it with either
+  <code>mppinit mopidy</code> or <code>mppinit mpd</code> (after activating
+  Mopidy then deciding to reactivate MPD). Using these two commands,
+  <code>mppinit mopidy</code> and <code>mppinit mpd</code>, it is easy to switch
+  between the two conflicting services.
+</p>
+<p>
+  The advantage of MPD is its stability, maturity, flexibility, power, and
+  extensive configuration options. However, it is difficult to enable streaming
+  with MPD. The advantage of Mopidy is its streaming capability and the variety
+  of useful extensions, many of which are installed by default with
+  <code>mppinit mopidy</code>.
+</p>
+<p>
+  An even better streaming solution is provided by Navidrome. Activating
+  Navidrome enables access to the music library from any desktop, phone, tablet,
+  or remote device with a browser. There are numerous Navidrome clients
+  available for all devices and platforms. Activating Navidrome does not
+  conflict with any of the other MusicPlayerPlus services so it can be streaming
+  the music library while MPD or Mopidy is serving up the same library locally.
+  Navidrome can optionally scrobble to Last.FM so if that option is enabled then
+  deactivate the YAMS service.
+</p>
+<p>
+  <strong>[Summary]</strong> MusicPlayerPlus provides several different
+  selections of services appropriate for a variety of use cases. All service
+  configurations require a prior MusicPlayerPlus initialization with
+  <code>mppinit</code>. Some common MusicPlayerPlus service configurations
+  include:
+</p>
+<ul>
+  <li>
+    <strong>Basic Music Player Daemon</strong>
+    <ul>
+      <li>Configured automatically with <code>mppinit</code></li>
+      <li>MPD enabled and active, all other services disabled</li>
+      <li>
+        Use <code>mpplus</code>, <code>mpcplus</code>, <code>mpc</code>, etc to
+        play music on local system
+      </li>
+    </ul>
+  </li>
+  <li>
+    <strong>Music Player Daemon plus Beets</strong>
+    <ul>
+      <li>Configured with <code>mppinit import</code></li>
+      <li>MPD and Beets enabled and active, all other services disabled</li>
+      <li>
+        Use <code>beet ...</code>, <code>mpplus</code>, <code>mpcplus</code>,
+        <code>mpc</code>, to search, filter, play, …
+      </li>
+      <li>
+        Enables the Beets web plugin at
+        <code>http://&lt;ip address&gt;:8337</code>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <strong>Mopidy Music Server plus Beets</strong>
+    <ul>
+      <li>
+        Configured with <code>mppinit import</code>, and
+        <code>mppinit mopidy</code>
+      </li>
+      <li>Mopidy and Beets enabled and active, other services disabled</li>
+      <li>
+        Use <code>beet ...</code>, <code>mpplus</code>, <code>mpcplus</code>,
+        <code>mpc</code>, to search, filter, play, …
+      </li>
+      <li>
+        Enables the Beets web plugin at
+        <code>http://&lt;ip address&gt;:8337</code>
+      </li>
+      <li>
+        Enables the Mopidy web client at
+        <code>http://&lt;ip address&gt;:6680</code>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <strong>Navidrome Streaming plus Mopidy Music Server plus Beets</strong>
+    <ul>
+      <li>
+        Configure with <code>mppinit import</code>, <code>mppinit mopidy</code>,
+        <code>mppinit navidrome</code>
+      </li>
+      <li>
+        Navidrome, Mopidy and Beets enabled and active, other services disabled
+      </li>
+      <li>
+        Use <code>beet ...</code>, <code>mpplus</code>, <code>mpcplus</code>,
+        <code>mpc</code>, to search, filter, play, …
+      </li>
+      <li>
+        Enables the Beets web plugin at
+        <code>http://&lt;ip address&gt;:8337</code>
+      </li>
+      <li>
+        Enables the Mopidy web client at
+        <code>http://&lt;ip address&gt;:6680</code>
+      </li>
+      <li>
+        Enables the Navidrome web client at
+        <code>http://&lt;ip address&gt;:4533</code>
+      </li>
+      <li>
+        Supports many clients available for all desktops, tablets, and phones
+      </li>
+      <li>
+        Run <code>mppinit import</code> after new
+        <code>mppinit bandcamp|soundcloud</code> downloads
+      </li>
+    </ul>
+  </li>
+  <li>
+    <strong>Navidrome Music Streaming Server without MPD/Mopidy/Beets</strong>
+    <ul>
+      <li>Configure with <code>mppinit navidrome</code></li>
+      <li>No need for <code>mppinit import|metadata|mopidy|yams</code></li>
+      <li>
+        Use <code>mpplus -i</code> menu system to stop and disable all other
+        services
+        <ul>
+          <li>Select “Manage Music Services” from the Main Menu</li>
+          <li>If active, Stop and Disable MPD, Mopidy, and Beets</li>
+        </ul>
+      </li>
+      <li>Navidrome enabled and active, other services disabled</li>
+      <li>
+        Enables the Navidrome web client at
+        <code>http://&lt;ip address&gt;:4533</code>
+      </li>
+      <li>
+        Supports many clients available for all desktops, tablets, and phones
+      </li>
+      <li>
+        No need for <code>mppinit import</code> after
+        <code>mppinit bandcamp|soundcloud</code> downloads
+      </li>
+    </ul>
+  </li>
+</ul>
+<h3 id="clients">Clients</h3>
+<p>The following clients are included with MusicPlayerPlus:</p>
+<ul>
+  <li>
+    <strong>mpplus MusicPlayerPlus front-end</strong>
+    <ul>
+      <li>Installed by default, see <code>man mpplus</code></li>
+      <li>
+        Front-ends <code>mpcplus</code> MPD client and
+        <code>mppcava</code> spectrum visualizer
+      </li>
+      <li>Example: <code>mpplus</code></li>
+    </ul>
+  </li>
+  <li>
+    <strong>mpcplus character-based feature-full MPD client</strong>
+    <ul>
+      <li>Installed by default, see <code>man mpcplus</code></li>
+      <li>Example: <code>mpcplus</code></li>
+    </ul>
+  </li>
+  <li>
+    <strong>mpc command-line MPD client</strong>
+    <ul>
+      <li>Installed by default, see <code>man mpc</code></li>
+      <li>
+        Examples: <code>mpc stop</code>, <code>mpc current</code>,
+        <code>mpc play</code>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <strong>beet command-line interface to Beets</strong>
+    <ul>
+      <li>Installed by default, see <code>man beet</code></li>
+      <li>
+        Examples: <code>beet play jethro tull</code>,
+        <code>beet info -l aqualung</code>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <strong>Beets web client</strong>
+    <ul>
+      <li>Installed by default</li>
+      <li>Open <code>http://&lt;ip address&gt;:8337</code></li>
+    </ul>
+  </li>
+  <li>
+    <strong>Mopidy web client</strong>
+    <ul>
+      <li>
+        Installed, configured, and activated with
+        <code>mppinit mopidy</code>
+      </li>
+      <li>Open <code>http://&lt;ip address&gt;:6680</code></li>
+    </ul>
+  </li>
+  <li>
+    <strong>Mopidy Iris web client</strong>
+    <ul>
+      <li>
+        Installed, configured, and activated with
+        <code>mppinit mopidy</code>
+      </li>
+      <li>Open <code>http://&lt;ip address&gt;:6680/iris</code></li>
+    </ul>
+  </li>
+  <li>
+    <strong>Mopidy-Mobile</strong>
+    <ul>
+      <li>
+        Installed, configured, and activated with
+        <code>mppinit mopidy</code>
+      </li>
+      <li>Open <code>http://&lt;ip address&gt;:6680/mobile</code></li>
+    </ul>
+  </li>
+  <li>
+    <strong>Navidrome web client</strong>
+    <ul>
+      <li>
+        Installed, configured, and activated with
+        <code>mppinit navidrome</code>
+      </li>
+      <li>Open <code>http://&lt;ip address&gt;:4533</code></li>
+    </ul>
+  </li>
+</ul>
+<h2 id="documentation">Documentation</h2>
+<p>
+  <strong>[NEW:]</strong> MusicPlayerPlus documentation is now available on
+  <a href="https://musicplayerplus.readthedocs.io/en/latest/">Read the Docs</a>
+</p>
+<p>
+  All MusicPlayerPlus commands have manual pages. Execute
+  <code>man &lt;command-name&gt;</code> to view the manual page for a command.
+  The <code>mpplus</code> frontend is the primary user interface for
+  MusicPlayerPlus and the manual page for <code>mpplus</code> can be viewed with
+  the command <code>man mpplus</code>. Most commands also have help/usage
+  messages that can be viewed with the <strong>-u</strong> argument option,
+  e.g. <code>mpplus -u</code>.
+</p>
+<h3 id="readme-for-musicplayerplus-configuration">
+  README for MusicPlayerPlus configuration
+</h3>
+<ul>
+  <li>
+    <a href="config/README.md"><strong>config/README.md</strong></a> - Overview
+    and details of the MusicPlayerPlus configuration
+  </li>
+</ul>
+<h3 id="readme-for-mpcplus-mpd-client">README for mpcplus MPD client</h3>
+<ul>
+  <li>
+    <a href="https://github.com/doctorfree/mpcplus/README.md"
+      ><strong>mpcplus/README.md</strong></a
+    >
+    - Introduction to the mpcplus MPD client
+  </li>
+</ul>
+<h3 id="readme-for-tmuxp-configs">README for tmuxp configs</h3>
+<ul>
+  <li>
+    <a href="config/tmuxp/README.md"><strong>config/tmuxp/README.md</strong></a>
+    - How to invoke the MusicPlayerPlus provided <code>tmuxp</code> session
+    configurations
+  </li>
+</ul>
+<h3 id="man-pages">Man Pages</h3>
+<ul>
+  <li>
+    <a href="markdown/mpplus.1.md"><strong>mpplus</strong></a> : Primary
+    MusicPlayerPlus user interface
+  </li>
+  <li>
+    <a href="markdown/mppcava.1.md"><strong>mppcava</strong></a> : Audio
+    Spectrum Visualizer
+  </li>
+  <li>
+    <a href="markdown/mppjulia.1.md"><strong>mppjulia</strong></a> : asciimatics
+    animation of a Julia Set
+  </li>
+  <li>
+    <a href="markdown/mpprocks.1.md"><strong>mpprocks</strong></a> : asciimatics
+    animation of MusicPlayerPlus intro
+  </li>
+  <li>
+    <a href="markdown/mppplasma.1.md"><strong>mppplasma</strong></a> :
+    asciimatics animation with Plasma effect
+  </li>
+  <li>
+    <a href="markdown/mppinit.1.md"><strong>mppinit</strong></a> :
+    MusicPlayerPlus initialization
+  </li>
+  <li>
+    <a href="markdown/mppcover.1.md"><strong>mppcover</strong></a> : Displays
+    album cover art for currently playing song
+  </li>
+  <li>
+    <a href="markdown/mppdl.1.md"><strong>mppdl</strong></a> : Downloads audio
+    tracks from Bandcamp, Soundcloud, or a URL
+  </li>
+  <li>
+    <a href="markdown/mpcplus-tmux.1.md"><strong>mpcplus-tmux</strong></a> :
+    MusicPlayerPlus in a tmux session
+  </li>
+  <li>
+    <a href="markdown/mpcplus.1.md"><strong>mpcplus</strong></a> :
+    MusicPlayerPlus MPD client
+  </li>
+  <li>
+    <a href="markdown/mpcpluskeys.1.md"><strong>mpcpluskeys</strong></a> : Cheat
+    sheet for <code>mpcplus</code> MPD client navigation
+  </li>
+  <li>
+    <a href="markdown/mppsplash-tmux.1.md"><strong>mppsplash-tmux</strong></a> :
+    MusicPlayerPlus asciimatics animations in a tmux session
+  </li>
+  <li>
+    <a href="markdown/mppsplash.1.md"><strong>mppsplash</strong></a> :
+    MusicPlayerPlus asciimatics animations
+  </li>
+  <li>
+    <a href="markdown/mpd-configure.1.md"><strong>mpd-configure</strong></a> :
+    MPD configuration generator
+  </li>
+  <li>
+    <a href="markdown/mpd-monitor.1.md"><strong>mpd-monitor</strong></a> :
+    Display info on currently playing MPD song
+  </li>
+  <li>
+    <a href="markdown/beet.1.md"><strong>beet</strong></a> : Beets media library
+    management command-line interface
+  </li>
+  <li>
+    <a href="markdown/beetsconfig.5.md"><strong>beetsconfig</strong></a> : Beets
+    media library management configuration
+  </li>
+  <li>
+    <a href="markdown/bandcamp-dl.1.md"><strong>bandcamp-dl</strong></a> :
+    Download Bandcamp collections
+  </li>
+  <li>
+    <a href="markdown/blissify.1.md"><strong>blissify</strong></a> : create MPD
+    playlists using song similarity database
+  </li>
+  <li>
+    <a href="markdown/scdl.1.md"><strong>scdl</strong></a> : Download Soundcloud
+    favorites
+  </li>
+  <li>
+    <a href="markdown/fzmp.1.md"><strong>fzmp</strong></a> : List and search MPD
+    media using fuzzy find
+  </li>
+  <li>
+    <a href="markdown/artist_to_albumartist.1.md"
+      ><strong>artist_to_albumartist</strong></a
+    >
+    : Copies the Artist tag to the AlbumArtist tag
+  </li>
+  <li>
+    <a href="markdown/listyt.1.md"><strong>listyt</strong></a> : List YouTube
+    video titles and urls
+  </li>
+  <li>
+    <a href="markdown/yt-dlp.1.md"><strong>yt-dlp</strong></a> : Download
+    YouTube and other sites videos and audio
+  </li>
+  <li>
+    <a href="markdown/create_playlist.1.md"><strong>create_playlist</strong></a>
+    : Create playlists using Beets queries
+  </li>
+</ul>
+<h3 id="usage">Usage</h3>
+<p>
+  The primary MusicPlayerPlus user interface is the <code>mpplus</code> command.
+  The default action of the <code>mpplus</code> command is to open the
+  <code>mpcplus</code> MPD client and the <code>mppcava</code> spectrum
+  visualizer. The command <code>mpplus -i</code> displays a series of
+  interactive menus from which most of the MusicPlayerPlus tasks can be
+  launched.
+</p>
+<p>
+  The <code>mpc</code> command provides a quick and easy command line interface
+  to control the Music Player Daemon playback. The <code>mpc</code> command has
+  many command line options, see <code>man mpc</code> for a full description. To
+  get started with simple MPD playback control using <code>mpc</code>:
+</p>
+<dl>
+  <dt><strong>mpc toggle</strong></dt>
+  <dd>start playback if stopped or paused, and pause playback if playing</dd>
+  <dt><strong>mpc stop</strong></dt>
+  <dd>stop playback</dd>
+  <dt><strong>mpc next</strong></dt>
+  <dd>move to next song in playlist</dd>
+  <dt><strong>mpc prev</strong></dt>
+  <dd>move to previous song in playlist</dd>
+  <dt><strong>mpc volume +|- percent</strong></dt>
+  <dd>increase or decrease volume by ‘percent’</dd>
+</dl>
+<p>
+  The <code>beet play [QUERY]</code> command can be used to specify a song or
+  songs to play where ‘QUERY’ is a Beets query matching songs in the music
+  library.
+</p>
+<p>
+  The usage messages for <code>mppinit</code>, <code>mpplus</code>,
+  <code>mpcplus</code>, and <code>mppcava</code> provide a brief summary of the
+  command line options.
+</p>
+<p>The <code>mppinit</code> performs one-time initializations:</p>
+<pre
+  class="text"
+><code>Usage: mppinit [-a] [-b] [-d] [-e] [-l music_dir] [-o] [-q] [-r] [-U] [-y] [-u]
+    [bandcamp|discogs|discogs local|import|kitty|metadata|mopidy|mpd|navidrome|soundcloud|sync|yams]
+    Where:
+    &#39;-a&#39; use AcousticBrainz for acoustic audio analysis (deprecated)
+    &#39;-b&#39; use Blissify for MPD acoustic audio analysis
+    &#39;-d&#39; install latest Beets development branch rather than
+    the latest stable release (for testing purposes)
+    &#39;-e&#39; use Essentia for Beets acoustic audio analysis (default)
+    &#39;-l music_dir&#39; specifies the location of the music library
+    &#39;-o&#39; indicates overwrite any pre-existing configuration
+    &#39;-q&#39; indicates quiet execution, no status messages
+    &#39;-r&#39; indicates remove service
+    supported service removals: mopidy navidrome
+    &#39;-U&#39; indicates do not upgrade installed Python modules
+    &#39;-y&#39; indicates answer &#39;yes&#39; to all and proceed
+    &#39;-u&#39; displays this usage message and exits
+
+    &#39;bandcamp&#39; downloads all albums in your Bandcamp collections
+    &#39;discogs&#39; generates an Obsidian vault from your Discogs user collection
+    &#39;discogs local&#39; generates an Obsidian vault from your local music library
+    (DISCOGS_USER and DISCOGS_TOKEN in &#39;~/.config/mpprc must be set)
+    &#39;import&#39; performs a Beets music library import
+    &#39;kitty&#39; installs the Kitty terminal emulator
+    &#39;metadata&#39; performs a library metadata update
+    &#39;mopidy&#39; installs and configures Mopidy extensible music server
+    Note: activating Mopidy deactivates MPD
+    &#39;mpd&#39; activates the MPD music server and deactivates Mopidy
+    &#39;navidrome&#39; installs and configures Navidrome music server
+    Note: &#39;mppinit navidrome &lt;version&gt;&#39; can be used to specify
+    an alternate version of Navidrome to download and install
+    &#39;soundcloud&#39; downloads all favorites in your Soundcloud account
+    &#39;sync&#39; synchronizes MusicPlayerPlus configuration across configs
+    &#39;yams&#39; activates the YAMS Last.fm scrobbler service
+
+
+    &#39;mppinit&#39; must be run as the MusicPlayerPlus user, not root.
+    &#39;mppinit&#39; must be run prior to &#39;mppinit sync&#39;, &#39;mppinit kitty&#39;,
+    &#39;mppinit metadata&#39;, &#39;mppinit bandcamp&#39;, &#39;mppinit mopidy&#39;,
+    &#39;mppinit navidrome&#39;, &#39;mppinit soundcloud&#39;, or &#39;mppinit import&#39;
+  </code></pre>
+<p>
+  The <code>mpplus</code> command serves as a general user interface for all of
+  the MusicPlayerPlus capabilities:
+</p>
+<pre
+  class="text"
+><code>Usage: mpplus [-A] [-a] [-b] [-B] [-c] [-C client] [-E] [-e] [-F] [-f]
+    [-G] [-g] [-D art|bandcamp|soundcloud] [-d music_directory] [-h]
+    [-H] [-I] [-i] [-jJ] [-k] [-K] [-L] [-m] [-n num] [-N]
+    [-M alsaconf|enable|disable|restart|start|stop|status] [-p]
+    [-P script] [-q] [-r] [-R] [-s song] [-S] [-t] [-T on|off] [-uU]
+    [-v viz_comm] [-w|W] [-x query] [-X query] [-y] [-Y] [-z fzmpopt]
+    MPCplus/Visualizer options:
+    -A indicates display album cover art (implies tmux session)
+    -C &#39;client&#39; indicates use &#39;client&#39; MPD client rather than mpcplus
+    -E indicates do not use gradient colors for spectrum visualizer
+    -f indicates fullscreen display
+    -h indicates half-height for visualizer window (with -f only)
+    -H indicates disable use of extended window manager hints
+    -P script specifies the ASCIImatics script to run in visualizer pane
+    -q indicates quarter-height for visualizer window (with -f only)
+    -c indicates use current terminal emulator / console mode
+    -e indicates use simple terminal emulator
+    -g indicates use gnome terminal emulator
+    -k indicates use kitty terminal emulator
+    -r indicates use retro terminal emulator
+    -t indicates use tilix terminal emulator
+    -U indicates use tmuxp to create tmux sessions
+    -v &#39;viz_comm&#39; indicates use visualizer &#39;viz_comm&#39; rather than mppcava
+    ASCIImatics animation options:
+    -a indicates play audio during ASCIImatics display
+    -b indicates use backup audio during ASCIImatics display
+    -j indicates use Julia Set scenes in ASCIImatics display
+    -J indicates Julia Set with several runs using different parameters
+    -m indicates use MusicPlayerPlus scenes in ASCIImatics display
+    -n num specifies the number of times to cycle ASCIImatics scenes
+    -N indicates use alternate comments in Plasma ASCIImatics scenes
+    -p indicates use Plasma scenes in ASCIImatics display
+    -s song specifies a song to accompany an ASCIImatics animation
+    &#39;song&#39; can be the full pathname to an audio file or a
+    relative pathname to an audio file in the MPD music library
+    or $HOME/Music/
+    -S indicates display ASCIImatics splash animation
+    General options:
+    -B indicates analyze MPD music dir with Blissify and exit
+    -D &#39;art&#39; indicates download album cover art and exit
+    -D &#39;bandcamp&#39; indicates download Bandcamp songs and exit
+    -D &#39;soundcloud&#39; indicates download Soundcloud songs and exit
+    -d &#39;music_directory&#39; specifies the music directory to use for
+    downloaded album cover art. Without this option -D will use
+    the &#39;MUSIC_DIR&#39; setting in &#39;~/.config/mpprc&#39;
+    -F indicates convert WAV format files in the music library
+    to MP3 format files and exit. A subsequent &#39;mpplus -I&#39; import
+    will be necessary to import these newly converted music files.
+    -G indicates convert M4A format files in the music library
+    to MP3 format files and exit. A subsequent &#39;mpplus -I&#39; import
+    will be necessary to import these newly converted music files.
+    -I indicates import albums and songs from &#39;music_directory&#39; to beets and exit
+    In conjunction with &#39;-I&#39;, the &#39;-A&#39; flag disables auto-tagging
+    -i indicates start mpplus in interactive mode
+    -K indicates kill MusicPlayerPlus tmux sessions and ASCIImatics scripts
+    -L indicates download lyrics to the Beets library and exit
+    -M &#39;action&#39; can be used to control the Music Player Daemon (MPD)
+    or configure the ALSA sound system
+    ALSA configuration will update the ALSA configuration in &#39;/etc/asound.conf&#39;
+    -R indicates record tmux session with asciinema
+    Asciinema is not installed by MusicPlayerPlus
+    To record tmux sessions with asciinema, use your system&#39;s
+    package manager to install it (e.g. apt install asciinema)
+    -T &#39;on|off&#39; specifies whether to use a tmux session
+    -w indicates write metadata during beets import
+    -W indicates do not write metadata during beets import
+    -x &#39;query&#39; uses AcousticBrainz to retrieve audio-based information
+    for all music library media matching &#39;query&#39;. A query
+    of &#39;all&#39; performs the retrieval on the entire music library.
+    -X &#39;query&#39; performs an analysis and retrieval, using Essentia,
+    of audio-based information for all music library media
+    matching &#39;query&#39;. A query of &#39;all&#39; performs the analysis
+    and retrieval on the entire music library.
+    -Y initializes the YAMS last.fm scrobbler service
+    -y disables the YAMS last.fm scrobbler service
+    -z fzmpopt specifies the fzmp option and invokes fzmp to
+    list/search/select media in the MPD library.
+    Valid values for fzmpopt are &#39;a&#39;, &#39;A&#39;, &#39;g&#39;, &#39;p&#39;, or &#39;P&#39;
+    -u displays this usage message and exits</code></pre>
+<p>
+  The <code>mpcplus</code> command is an MPD client and acts as the primary
+  MusicPlayerPlus music player:
+</p>
+<pre class="text"><code>Usage: mpcplus [options]...
+    Options:
+    -h [ --host ] HOST (=localhost) connect to server at host
+    -p [ --port ] PORT (=6600) connect to server at port
+    --current-song [=FORMAT(=&lt;format string&gt;)]
+    print current song using given format
+    and exit
+    -c [ --config ] PATH (=~/.config/mpcplus/config AND ~/.mpcplus/config)
+    specify configuration file(s)
+    --ignore-config-errors ignore unknown and invalid options in
+    configuration files
+    --test-lyrics-fetchers check if lyrics fetchers work
+    -b [ --bindings ] PATH (=~/.config/mpcplus/bindings AND ~/.mpcplus/bindings)
+    specify bindings file(s)
+    -s [ --screen ] SCREEN specify the startup screen
+    -S [ --slave-screen ] SCREEN specify the startup slave screen
+    -? [ --help ] show help message
+    -v [ --version ] display version information
+    -q [ --quiet ] suppress logs and excess output</code></pre>
+<p>
+  The mpcplus MPD client has a customized set of key bindings that allow quick
+  and easy control of MPD, searches, lyrics display, client navigation, and much
+  more via the keyboard. View the
+  <a href="markdown/mpcpluskeys.1.md"><strong>mpcpluskeys man page</strong></a>
+  with the command <code>man mpcpluskeys</code>.
+</p>
+<p>
+  The <code>mppsplash</code> command can be used to display a variety of
+  character based animations optionally accompanied by audio:
+</p>
+<pre
+  class="text"
+><code>Usage: mppsplash [-A] [-a] [-b] [-C] [-c num] [-d] [-jJ] [-m] [-p] [-s song] [-u]
+    Where:
+    -A indicates use all effects
+    -a indicates play audio during ASCIImatics display
+    -b indicates use backup audio during ASCIImatics display
+    -C indicates use alternate comments in Plasma effect
+    -c num specifies the number of times to cycle
+    -d indicates enable debug mode
+    -j indicates use Julia Set effect
+    -J indicates Julia Set with several runs using different parameters
+    -m indicates use MusicPlayerPlus effect
+    -p indicates use Plasma effect
+    -s song specifies the audio file to play as accompaniment
+    &#39;song&#39; can be the full pathname to an audio file or a relative
+    pathname to an audio file in the MPD music library or
+    $HOME/Music/
+    -u displays this usage message and exits</code></pre>
+<p>
+  The <code>mppcava</code> command is the MusicPlayerPlus custom character based
+  audio spectrum visualizer:
+</p>
+<pre class="text"><code>Usage : mppcava [options]
+    Visualize audio input in terminal.
+
+    Options:
+    -p path to config file
+    -v print version
+
+    Keys:
+    Up Increase sensitivity
+    Down Decrease sensitivity
+    Left Decrease number of bars
+    Right Increase number of bars
+    r Reload config
+    c Reload colors only
+    f Cycle foreground color
+    b Cycle background color
+    q Quit
+
+    All options are specified in a config file. See `$HOME/.config/mppcava/config`</code></pre>
+<h3 id="example-client-invocations">Example client invocations</h3>
+<p>
+  The <code>mpplus</code> command is intended to serve as the primary interface
+  to invoke the <code>mpcplus</code> MPD client and
+  <code>mppcava</code> spectrum visualizer. The <code>mpplus</code>
+  command utilizes several different terminal emulators and can also be used to
+  invoke any specified MPD client. Some example invocations of
+  <code>mpplus</code> follow.
+</p>
+<p>Open the mpcplus client and spectrum visualizer in fullscreen mode:</p>
+<p><code>mpplus -f</code></p>
+<p>
+  Open the mpcplus client and mppcava visualizer in fullscreen mode using the
+  tilix terminal emulator and displaying the visualizer using quarter-height:
+</p>
+<p><code>mpplus -f -q -t</code></p>
+<p>Open the cantata MPD graphical client and mppcava visualizer:</p>
+<p><code>mpplus -C cantata</code></p>
+<p>
+  Open the mpcplus client in the cool-retro-term terminal and mppcava visualizer
+  in kitty:
+</p>
+<p><code>mpplus -r</code></p>
+<p>
+  Browse, list, search, and select media in the MPD library using the
+  <code>fzf</code> fuzzy finder utility.
+</p>
+<p>Search artist then filter by album using <code>fzf</code>:</p>
+<p><code>mpplus -z a</code></p>
+<p>Search all songs in the library using <code>fzf</code>:</p>
+<p><code>mpplus -z A</code></p>
+<p>Search the current playlist using <code>fzf</code>:</p>
+<p><code>mpplus -z p</code></p>
+<p>
+  The mpcplus MPD client can be opened directly without using mpplus. Similarly,
+  the mppcava spectrum visualizer can be opened directly without mpplus.
+</p>
+<p><code>mpcplus</code> # In one terminal window</p>
+<p><code>mppcava</code> # In another terminal window</p>
+<p>To test the mpcplus lyrics fetchers:</p>
+<p><code>mpcplus --test-lyrics-fetchers</code></p>
+<h3 id="adding-album-cover-art">Adding Album Cover Art</h3>
+<p>
+  The <code>mpcplus</code> MPD client is a character-based application. As such,
+  it is difficult to display graphical images. However, this limitation can be
+  overcome using <code>tmux</code> and additional tools. In this way we can add
+  album cover art to MusicPlayerPlus when using the character-based
+  <code>mpcplus</code> client.
+</p>
+<p>
+  See <a href="config/README.md">Adding album art to MusicPlayerPlus</a> to get
+  started integrating album art in MusicPlayerPlus.
+</p>
+<p>
+  An album cover art downloader is included in MusicPlayerPlus. To download
+  cover art for all of the albums in your MPD music directory, run the command:
+</p>
+<pre class="console"><code>mpplus -D art</code></pre>
+<p>
+  Cover art for each album is saved as the file <code>cover.jpg</code> in the
+  album folder. Existing cover art is preserved. If an album has incorrect album
+  cover art and Beets library management has been activated with
+  <code>mppinit import</code>, update the album cover art for that album with
+  the command <code>beet fetchart -f &lt;query&gt;</code> where
+  <code>&lt;query&gt;</code> is a Beets query that identifies that album. For
+  example, to update the album cover art for the album “Eldorado” by Electric
+  Light Orchestra, issue the command
+  <code>beet fetchart -f electric eldorado</code>.
+</p>
+<h3 id="custom-key-bindings">Custom key bindings</h3>
+<p>
+  A few custom key bindings are configured during MusicPlayerPlus initialization
+  with the <code>mppinit</code> command. These are purely for convenience and
+  can be altered or removed if desired.
+</p>
+<p>
+  Tmux custom key bindings are defined in <code>$HOME/.tmux.conf</code>.
+  MusicPlayerPlus custom key bindings for tmux sessions include the following:
+</p>
+<ul>
+  <li><code>[ Alt-PgDn ]</code> - Next window</li>
+  <li><code>[ Shift-Right ]</code> - Next window</li>
+  <li><code>[ Alt-PgUp ]</code> - Previous window</li>
+  <li><code>[ Shift-Left ]</code> - Previous window</li>
+  <li><code>[ Alt-x ]</code> - Prompt to kill session</li>
+  <li><code>[ Alt-X ]</code> - Kill session</li>
+  <li><code>[ Alt-Left ]</code> - Move pane focus to left</li>
+  <li><code>[ Alt-Right ]</code> - Move pane focus to right</li>
+  <li><code>[ Alt-Up ]</code> - Move pane focus up</li>
+  <li><code>[ Alt-Down ]</code> - Move pane focus down</li>
+  <li><code>[ Prefix q ]</code> - Prompt to kill session</li>
+  <li><code>[ Prefix Q ]</code> - Kill session</li>
+</ul>
+<p>
+  The tmux prefix key is remapped from <code>Ctrl-b</code> to
+  <code>Ctrl-a</code> and the status bar is configured to display a
+  <code>Ctrl</code> message when the prefix key is pressed.
+</p>
+<p>
+  The MusicPlayerPlus tmux customization enables tmux mouse mode. The mouse can
+  be used to select and resize tmux panes and windows.
+</p>
+<p>
+  There are hundreds of tmux key bindings. To view the currently configured tmux
+  key bindings, execute the command <code>tmux list-keys</code>.
+</p>
+<p>
+  Custom key bindings are also defined for the <code>mpcplus</code>
+  music player client command. Mpcplus custom key bindings are defined in
+  <code>$HOME/.config/mpcplus/bindings</code>. MusicPlayerPlus custom key
+  bindings for <code>mpcplus</code> include the following:
+</p>
+<ul>
+  <li>
+    <code>[ Alt-c ]</code> - Display album cover art for currently playing song
+  </li>
+  <li><code>[ Alt-f ]</code> - Open the fuzzy finder to search/select media</li>
+  <li><code>[ Alt-m ]</code> - Open the MPD monitor in a terminal window</li>
+  <li><code>[ Alt-r ]</code> - Raise/lower the spectrum visualizer window</li>
+</ul>
+<h4 id="tmux-session-exit-issues">Tmux session exit issues</h4>
+<p>
+  In addition to the <code>Alt-x</code> and <code>Alt-X</code> key bindings
+  above to kill the current tmux session, MusicPlayerPlus tmux key bindings
+  include <code>Ctrl-a q</code> and <code>Ctrl-a Q</code> which also are mapped
+  to <code>kill-session</code> in a similar manner. This is because some
+  terminal emulators, in particular iTerm2, may already have key bindings for
+  the <code>Alt</code> key or the Meta key may be something other than
+  <code>Alt</code>.
+</p>
+<p>
+  In a MusicPlayerPlus tmux session, if <code>Alt-x</code> and
+  <code>Alt-X</code> do not initiate a <code>kill-session</code> then use the
+  configured tmux prefix key (e.g. <code>Ctrl-a</code>) followed by
+  <code>q</code> or <code>Q</code> to exit the current tmux session.
+</p>
+<p>
+  If a MusicPlayerPlus tmux session has been initiated over SSH using the
+  Terminal app on macOS then it may be necessary to configure the Terminal
+  profile in use to “Use Option as Meta key” in order to recognize the custom
+  tmux key bindings using the <code>Alt</code> key. To configure the Terminal
+  app profile in this manner, go to
+  <code>Terminal -&gt; Preferences -&gt; Profiles</code>. Select the profile you
+  are using (usually “Basic Default”) and select the <code>Keyboard</code> tab.
+  Click the “Use Option as Meta key” checkbox and exit Terminal preferences.
+</p>
+<h2 id="removal">Removal</h2>
+<p>
+  On Debian based Linux systems where the MusicPlayerPlus package was installed
+  using the MusicPlayerPlus Debian format package, remove the MusicPlayerPlus
+  package by executing the command:
+</p>
+<pre class="console"><code> sudo apt remove musicplayerplus</code></pre>
+<p>or</p>
+<pre class="console"><code> sudo dpkg -r musicplayerplus</code></pre>
+<p>
+  On RPM based Linux systems where the MusicPlayerPlus package was installed
+  using the MusicPlayerPlus RPM format package, remove the MusicPlayerPlus
+  package by executing the command:
+</p>
+<pre class="console"><code> sudo dnf remove MusicPlayerPlus</code></pre>
+<p>or</p>
+<pre class="console"><code> sudo rpm -e MusicPlayerPlus</code></pre>
+<p>
+  On Arch based Linux systems where the MusicPlayerPlus package was installed
+  using the MusicPlayerPlus Pacman format package, remove the MusicPlayerPlus
+  package by executing the command:
+</p>
+<pre class="console"><code> sudo pacman -Rs musicplayerplus</code></pre>
+<p>
+  The MusicPlayerPlus package can be removed by executing the “Uninstall” script
+  in the MusicPlayerPlus source directory:
+</p>
+<pre
+  class="console"
+><code> git clone https://github.com/doctorfree/MusicPlayerPlus.git
+    cd MusicPlayerPlus
+    ./Uninstall</code></pre>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p>
+  Many problems encountered with MusicPlayerPlus often resolve to problems with
+  the underlying Linux audio configuration. As a first step in troubleshooting,
+  verify the audio subsystem is functioning properly. Most systems use either
+  ALSA or PulseAudio and there are numerous audio test guides available.
+</p>
+<p>
+  MusicPlayerPlus includes a convenience script to test the ALSA audio
+  subsystem. The command <code>alsa_audio_test</code> can be run to test your
+  ALSA audio setup. If successful you will hear the test output of the
+  <code>aplay</code> command. To view a <code>alsa_audio_test</code>
+  usage message and current ALSA configuration settings, run the command
+  <code>alsa_audio_test -u</code>
+</p>
+<p>
+  Another source of problems to investigate is the Music Player Daemon (MPD).
+  This is the music streaming server that MusicPlayerPlus connects to. MPD is
+  run as a system service that runs automatically. You can check the status of
+  the MPD service by running the command
+  <code>systemctl --user status mpd</code>. You can restart the MPD service with
+  <code>systemctl --user restart mpd.service</code>. If the issue is not
+  resolved by a restart or reboot, check the MPD log file at
+  <code>$HOME/.config/mpd/log</code> looking for recent failures and exceptions.
+</p>
+<p>
+  It may be the case that the root of a problem is a missing dependency.
+  MusicPlayerPlus should have installed any missing dependencies but one may
+  have been overlooked, improperly installed, or subsequently removed. If the
+  system logs or error output indicates something was “not found” then check for
+  its existence. On Debian based systems there is a nice repository package
+  index maintained. If a command was not found, it is often possible to simply
+  type that command at a shell prompt and the Debian packaging system will be
+  searched for any packages that contain a command with that name. If a likely
+  looking package is returned, the problem may be solved by installing that
+  package.
+</p>
+<p>
+  Finally, see the Troubleshooting section of the
+  <a href="https://github.com/doctorfree/MusicPlayerPlus/wiki"
+    >MusicPlayerPlus Wiki</a
+  >. for additional troubleshooting techniques and commonly resolved issues.
+</p>
+<p>
+  If an issue cannot be resolved and all troubleshooting efforts have failed,
+  open an issue at
+  <a href="https://github.com/doctorfree/MusicPlayerPlus/issues"
+    >MusicPlayerPlus issues</a
+  >. Even if you do manage to resolve an issue, it may still be helpful to
+  report the issue at https://github.com/doctorfree/MusicPlayerPlus/issues so
+  that a fix may be incorporated in the next release.
+</p>
+<h3 id="known-issues">Known issues</h3>
+<h4 id="tmux-key-bindings-in-iterm2-terminal-emulator">
+  Tmux key bindings in iTerm2 terminal emulator
+</h4>
+<p>
+  The <code>iTerm2</code> terminal emulator has built-in support for tmux.
+  Several of the iTerm2 built-in tmux key bindings conflict with and override
+  the default tmux key bindings and the MusicPlayerPlus custom tmux key
+  bindings.
+</p>
+<p>
+  Unless you are quite familiar with iTerm2 and its tmux implementation, we do
+  not recommend using iTerm2 with MusicPlayerPlus when running tmux sessions.
+</p>
+<p>
+  MusicPlayerPlus support for iTerm2 may be forthcoming in future releases but
+  at this time iTerm2 is not a supported MusicPlayerPlus terminal emulator.
+</p>
+<h4 id="tmux-sessions-over-ssh-to-fedora-systems">
+  Tmux sessions over SSH to Fedora systems
+</h4>
+<p>
+  A tmux session initiated over SSH to a Fedora Linux system may size the tmux
+  panes incorrectly. This issue is not yet understood but will hopefully be
+  addressed in a future release of MusicPlayerPlus. If, for example, a
+  <code>mpplus</code> or <code>mpcplus-tmux</code> tmux session displays the
+  <code>mpcplus</code> pane with a small height while the spectrum visualizer
+  pane consumes most of the session window, then the <code>mpcplus</code> pane
+  will need to be resized manually.
+</p>
+<p>
+  Tmux panes can be resized either using keyboard shortcuts or with the mouse.
+</p>
+<p>
+  To resize the <code>mpcplus</code> tmux pane using the mouse, click and drag
+  the bottom of the upper pane in the session window. Drag the pane border down
+  until the <code>mpcplus</code> display of music media appears.
+</p>
+<p>
+  To resize the <code>mpcplus</code> tmux pane using keyboard shortcuts, use one
+  of the default tmux key bindings:
+</p>
+<pre><code>bind-key -r -T prefix M-Up resize-pane -U 5
+    bind-key -r -T prefix M-Down resize-pane -D 5
+    bind-key -r -T prefix M-Left resize-pane -L 5
+    bind-key -r -T prefix M-Right resize-pane -R 5
+    bind-key -r -T prefix C-Up resize-pane -U
+    bind-key -r -T prefix C-Down resize-pane -D
+    bind-key -r -T prefix C-Left resize-pane -L
+    bind-key -r -T prefix C-Right resize-pane -R</code></pre>
+<p>
+  This means you can resize a pane by <code>&lt;prefix&gt;</code>
+  <code>Alt ↓</code> (tmux prefix followed by “Alt-DownArrow”). The default
+  MusicPlayerPlus tmux prefix is <code>Ctrl-a</code> so in order to resize the
+  <code>mpcplus</code> pane using the keyboard, type <code>Ctrl-a</code> then
+  type <code>Alt ↓</code>. You can repeat <code>Alt ↓</code> several times
+  without needing to re-type the <code>Ctrl-a</code> prefix if you type it fast
+  enough (about a second). If the display of <code>Ctrl</code> on the tmux
+  status line disappears and you still need to resize the
+  <code>mpcplus</code> pane, then you will need to re-type the prefix key
+  <code>Ctrl-a</code>.
+</p>
+<p>
+  This issue has only been detected on Fedora Linux over SSH. However, it may
+  occur with other systems and may not be exclusive to either SSH or Fedora.
+</p>
+<h2 id="infrared-remote-control-of-mpd">Infrared remote control of MPD</h2>
+<p>
+  Advanced users may wish to add remote control capabilities to MusicPlayerPlus.
+  Getting IR remote control of MPD working is pretty geeky and fun. Also cool.
+</p>
+<p>
+  This can be accomplished on most Linux systems using LIRC (Linux Infrared
+  Remote Control). LIRC setup and usage is described at
+  https://wiki.archlinux.org/title/LIRC
+</p>
+<p>
+  To get started, see the
+  <a href="https://wiki.archlinux.org/title/LIRC/Quick_start_guide"
+    >ArchLinux Step-by-step LIRC setup guide</a
+  >
+  for USB IR receiver with universal remote control.
+</p>
+<p>
+  The only prerequisites are a USB IR receiver, preferably an MCE model, and an
+  old universal remote control you have lying around the house.
+</p>
+<p>
+  A long list of LIRC supported remotes with corresponding LIRC configurations
+  can be found at the
+  <a href="http://lirc-remotes.sourceforge.net/remotes-table.html"
+    >LIRC Remotes Databass</a
+  >.
+</p>
+<p>
+  The hard part is getting the remote control device talking to the IR receiver
+  since there are a number of different protocols and devices supported. The
+  LIRC setup guide linked above has pretty good step-by-step procedures for
+  establishing communication between the remote and the receiver.
+</p>
+<p>
+  Once the hardware is successfully communicating, you can control MPD with
+  <code>lirc</code> and <code>mpc</code> by configuring lirc. For example, add
+  the following to <code>~/.lircrc</code>:
+</p>
+<pre><code>## irexec
+    begin
+    prog = irexec
+    button = play_pause
+    config = mpc toggle
+    repeat = 0
+    end
+
+    begin
+    prog = irexec
+    button = stop
+    config = mpc stop
+    repeat = 0
+    end
+    begin
+    prog = irexec
+    button = previous
+    config = mpc prev
+    repeat = 0
+    end
+    begin
+    prog = irexec
+    button = next
+    config = mpc next
+    repeat = 0
+    end
+    begin
+    prog = irexec
+    button = volup
+    config = mpc volume +2
+    repeat = 1
+    end
+    begin
+    prog = irexec
+    button = voldown
+    config = mpc volume -2
+    repeat = 1
+    end
+    begin
+    prog = irexec
+    button = pbc
+    config = mpc random
+    repeat = 0
+    end
+    begin
+    prog = irexec
+    button = pdvd
+    config = mpc update
+    repeat = 0
+    end
+    begin
+    prog = irexec
+    button = right
+    config = mpc seek +00:00:05
+    repeat = 0
+    end
+    begin
+    prog = irexec
+    button = left
+    config = mpc seek -00:00:05
+    repeat = 0
+    end
+    begin
+    prog = irexec
+    button = up
+    config = mpc seek +1%
+    repeat = 0
+    end
+    begin
+    prog = irexec
+    button = down
+    config = mpc seek -1%
+    repeat = 0
+    end</code></pre>
+<p>
+  A guide for configuring <code>lirc</code> to control MPD using
+  <code>mpc</code> can be found at
+  https://wiki.archlinux.org/title/Music_Player_Daemon/Tips_and_tricks#Control_MPD_with_lirc
+</p>
+<h2 id="screenshots">Screenshots</h2>
+<p float="left">
+  <img src="screenshots/mpplus-tilix.png" style="width: 800px; height: 600px" />
+  <img
+    src="screenshots/mpplus-lyrics.png"
+    style="width: 800px; height: 600px"
+  />
+</p>
+<h2 id="videos">Videos</h2>
+<ul>
+  <li>
+    <a
+      href="https://www.youtube.com/watch?v=r7XLA9tO45Q"
+      title="MusicPlayerPlus ASCIImatics Intro"
+      ><img src="https://i.imgur.com/UH2A21h.png" alt="MusicPlayerPlus Intro"
+    /></a>
+  </li>
+  <li>
+    <a
+      href="https://www.youtube.com/watch?v=y2yaHm04ELM"
+      title="MusicPlayerPlus Demo"
+      ><img src="https://i.imgur.com/ZntE1sH.jpg" alt="MusicPlayerPlus Demo"
+    /></a>
+  </li>
+</ul>
+<h2 id="building-musicplayerplus-from-source">
+  Building MusicPlayerPlus from source
+</h2>
+<p>
+  MusicPlayerPlus can be compiled, packaged, and installed from the source code
+  repository. This should be done as a normal user with
+  <code>sudo</code> privileges:
+</p>
+<pre><code># Retrieve the source code from the repository
+    git clone https://github.com/doctorfree/MusicPlayerPlus.git
+    # Enter the MusicPlayerPlus source directory
+    cd MusicPlayerPlus
+    # Install the necessary build environment (not necessary on Arch Linux)
+    scripts/install-dev-env.sh
+    # Compile the MusicPlayerPlus components and create an installation package
+    ./mkpkg
+    # Install MusicPlayerPlus and its dependencies
+    ./Install</code></pre>
+<p>These steps are detailed below.</p>
+<h3 id="clone-musicplayerplus-repository">Clone MusicPlayerPlus repository</h3>
+<pre><code>git clone https://github.com/doctorfree/MusicPlayerPlus.git
+    cd MusicPlayerPlus</code></pre>
+<p>
+  <strong>[Note:]</strong> The <code>mkpkg</code> script in the top level of the
+  MusicPlayerPlus repository can be used to build an installation package on all
+  supported platforms. After cloning, <code>cd MusicPlayerPlus</code> and
+  <code>./mkpkg</code>. The resulting installation package(s) will be found in
+  <code>./releases/&lt;version&gt;/</code>.
+</p>
+<h3 id="install-build-dependencies">Install build dependencies</h3>
+<p>MusicPlayerPlus components have build dependencies on the following:</p>
+<ul>
+  <li>libtool</li>
+  <li>automake</li>
+  <li>build-essentials</li>
+  <li><a href="https://www.boost.org/">Boost library</a></li>
+  <li>
+    <a href="http://www.gnu.org/software/ncurses/ncurses.html"
+      >NCurses library</a
+    >
+  </li>
+  <li>
+    <a href="https://tiswww.case.edu/php/chet/readline/rltop.html"
+      >Readline library</a
+    >
+  </li>
+  <li><a href="https://curl.haxx.se/">Curl library</a></li>
+  <li><a href="http://www.fftw.org/">fftw library</a></li>
+  <li><a href="https://taglib.org/">tag library</a></li>
+  <li><a href="https://github.com/ndevilla/iniparser">iniparser</a></li>
+  <li><a href="http://alsa-project.org/">ALSA dev files</a></li>
+  <li>
+    <a href="http://freedesktop.org/software/pulseaudio/doxygen/"
+      >Pulseaudio dev files</a
+    >
+  </li>
+  <li><a href="http://eigen.tuxfamily.org/">Eigen</a></li>
+  <li><a href="https://github.com/MTG/gaia">Gaia</a></li>
+  <li>
+    <a href="http://ffmpeg.org/"
+      >libavcodec/libavformat/libavutil/libswresample</a
+    >
+  </li>
+  <li><a href="http://www.mega-nerd.com/SRC/">libsamplerate</a></li>
+  <li><a href="http://pyyaml.org/wiki/LibYAML">LibYAML</a></li>
+  <li><a href="https://github.com/acoustid/chromaprint">Chromaprint</a></li>
+  <li><a href="https://tensorflow.org/">TensorFlow</a></li>
+</ul>
+<p>Install build dependencies via:</p>
+<pre><code>scripts/install-dev-env.sh</code></pre>
+<p>or manually with:</p>
+<pre><code>sudo apt-get install \
+    build-essential libeigen3-dev libfftw3-dev clang \
+    libavcodec-dev libavformat-dev libavutil-dev libswresample-dev \
+    libsamplerate0-dev libtag1-dev libchromaprint-dev libmpdclient-dev \
+    autotools-dev autoconf libtool libboost-all-dev fftw-dev \
+    libiniparser-dev libyaml-dev swig python3-dev pkg-config \
+    libncurses-dev libasound2-dev libreadline-dev libpulse-dev \
+    libcurl4-openssl-dev qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools \
+    libavfilter-dev libavdevice-dev libsqlite3-dev</code></pre>
+<p>
+  On RPM based systems like Fedora Linux, manually install build dependencies
+  via:
+</p>
+<pre><code>sudo dnf install alsa-lib-devel ncurses-devel fftw3-devel \
+    pulseaudio-libs-devel libtool automake iniparser-devel \
+    SDL2-devel eigen3-devel libyaml-devel clang-devel \
+    ffmpeg-devel libchromaprint-devel python-devel \
+    python3-devel python3-yaml python3-six sqlite-devel</code></pre>
+<p>
+  On Arch Linux or other PKGBUILD based Linux systems, manually install build
+  dependencies via:
+</p>
+<pre><code>sudo pacman -S --needed base-devel eigen fftw clang ffmpeg4.4 libsamplerate \
+    taglib chromaprint libmpdclient boost boost-libs iniparser libyaml swig \
+    alsa-lib ncurses readline libpulse libcurl-compat sqlite qt5-base \
+    qt5-tools python python-numpy python-six pandoc zip</code></pre>
+<p>
+  <strong>[Note:]</strong> The MusicPlayerPlus <code>PKGBUILD</code> on Arch
+  Linux defines build dependencies and these will be automatically installed
+  when performing a <code>makepkg</code> build. It is not necessary to
+  pre-install these packages.
+</p>
+<h3 id="install-packaging-dependencies">Install packaging dependencies</h3>
+<p>MusicPlayerPlus components have packaging dependencies on the following:</p>
+<p>
+  On Debian based systems like Ubuntu Linux, install packaging dependencies via:
+</p>
+<pre><code>sudo apt install dpkg</code></pre>
+<p>
+  On RPM based systems like Fedora Linux, install packaging dependencies via:
+</p>
+<pre><code>sudo dnf install rpm-build rpm-devel rpmlint rpmdevtools</code></pre>
+<h3 id="build-and-package-musicplayerplus">
+  Build and package MusicPlayerPlus
+</h3>
+<p>To build and package MusicPlayerPlus, execute the command:</p>
+<pre><code>./mkpkg</code></pre>
+<p>
+  On Debian based systems like Ubuntu Linux, the <code>mkpkg</code> scripts
+  executes <code>scripts/mkdeb.sh</code>.
+</p>
+<p>
+  On RPM based systems like Fedora Linux, the <code>mkpkg</code> scripts
+  executes <code>scripts/mkrpm.sh</code>.
+</p>
+<p>
+  On PKGBUILD based systems like Arch Linux, the <code>mkpkg</code> scripts
+  executes <code>scripts/mkaur.sh</code>.
+</p>
+<h3 id="install-musicplayerplus-from-source-build">
+  Install MusicPlayerPlus from source build
+</h3>
+<p>
+  After successfully building and packaging MusicPlayerPlus with either
+  <code>./mkpkg</code>, install the MusicPlayerPlus package with the command:
+</p>
+<pre><code>./Install</code></pre>
+<h2 id="contributing">Contributing</h2>
+<p>
+  There are a variety of ways to contribute to the MusicPlayerPlus project. All
+  forms of contribution are appreciated and valuable. Also, it’s fun to
+  collaborate. Here are a few ways to contribute to the further improvement and
+  evolution of MusicPlayerPlus:
+</p>
+<h3 id="testing-and-issue-reporting">Testing and Issue Reporting</h3>
+<p>
+  MusicPlayerPlus is fairly complex with many components, features, options,
+  configurations, and use cases. Although currently only supported on Linux
+  platforms, there are a plethora of Linux platforms on which MusicPlayerPlus
+  can be deployed. Testing all of the above is time consuming and tedious. If
+  you have a Linux platform on which you can install MusicPlayerPlus and you
+  have the time and will to put it through its paces, then issue reports on
+  problems you encounter would greatly help improve the robustness and quality
+  of MusicPlayerPlus. Open issue reports at
+  <a href="https://github.com/doctorfree/MusicPlayerPlus/issues"
+    >https://github.com/doctorfree/MusicPlayerPlus/issues</a
+  >
+</p>
+<h3 id="sponsor-musicplayerplus">Sponsor MusicPlayerPlus</h3>
+<p>
+  MusicPlayerPlus is completely free and open source software. All of the
+  MusicPlayerPlus components are freely licensed and may be copied, modified,
+  and redistributed freely. Nobody gets paid, nobody is making any money, it’s a
+  project fully motivated by curiousity and love of music. However, it does take
+  some money to procure development and testing resources. Right now
+  MusicPlayerPlus needs a multi-boot test platform to extend support to a wider
+  variety of Linux platforms and potentially Mac OS X.
+</p>
+<p>
+  If you have the means and you would like to sponsor MusicPlayerPlus
+  development, testing, platform support, and continued improvement then your
+  monetary support could play a very critical role. A little bit goes a long way
+  in MusicPlayerPlus. For example, a bootable USB SSD device could serve as a
+  means of porting and testing support for additional platforms. Or, a decent
+  cup of coffee could be the difference between a bug filled release and a
+  glorious musical adventure.
+</p>
+<p>
+  Sponsor the MusicPlayerPlus project at
+  <a href="https://github.com/sponsors/doctorfree"
+    >https://github.com/sponsors/doctorfree</a
+  >
+</p>
+<h3 id="contribute-to-development">Contribute to Development</h3>
+<p>
+  If you have programming skills and find the management and ease-of-use of
+  digital music libraries to be an interesting area, you can contribute to
+  MusicPlayerPlus development through the standard Github “fork, clone, pull
+  request” process. There are many guides to contributing to Github hosted open
+  source projects on the Internet. A good one is available at
+  <a href="https://www.dataschool.io/how-to-contribute-on-github/"
+    >https://www.dataschool.io/how-to-contribute-on-github/</a
+  >. Another short succinct guide is at
+  <a href="https://gist.github.com/MarcDiethelm/7303312"
+    >https://gist.github.com/MarcDiethelm/7303312</a
+  >.
+</p>
+<p>
+  Once you have forked and cloned the MusicPlayerPlus repository, it’s time to
+  setup a development environment. Although many of the MusicPlayerPlus commands
+  are Bash shell scripts, there are also applicatons written in C and C++ along
+  with documentation in Markdown format, configuration files in a variety of
+  formats, examples, screenshots, video demos, build scripts, packaging, and
+  more.
+</p>
+<p>
+  The development environment consists of several packages needed to build,
+  package, and test MusicPlayerPlus components. These include:
+</p>
+<pre><code> build-essential libeigen3-dev libfftw3-dev clang
+    libavcodec-dev libavformat-dev libavutil-dev libswresample-dev
+    libsamplerate0-dev libtag1-dev libchromaprint-dev libmpdclient-dev
+    autotools-dev autoconf libtool libboost-all-dev fftw-dev
+    libiniparser-dev libyaml-dev swig python3-dev pkg-config
+    libncurses-dev libasound2-dev libreadline-dev libpulse-dev
+    libcurl4-openssl-dev qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools
+    libavfilter-dev libavdevice-dev libsqlite3-dev</code></pre>
+<p>Utilities and applications built from source in MusicPlayerPlus include:</p>
+<ul>
+  <li>mppcava character based spectrum visualizer</li>
+</ul>
+<p>
+  The build scripts in the <code>scripts/</code> directory of the
+  MusicPlayerPlus repository can be used to compile bliss-analyze, blissify, and
+  mppcava. These are:
+</p>
+<ul>
+  <li>scripts/build-bliss-analyze.sh</li>
+  <li>scripts/build-blissify.sh</li>
+  <li>scripts/build-mppcava.sh</li>
+</ul>
+<p>
+  Invoke the appropriate build script for the utility you wish to compile. For
+  example, to compile the <code>mppcava</code> spectrum visualizer from source,
+  run the command:
+</p>
+<pre><code>./scripts/build-mppcava.sh</code></pre>
+<p>
+  On Debian (e.g. Ubuntu), PKGBUILD (e.g. Arch) and RPM (e.g. Fedora) based
+  systems the MusicPlayerPlus installation package can be created with the
+  <code>mkpkg</code> scripts. The <code>mkpkg</code> script determines which
+  platform it is on and executes the appropriate build and packaging script in
+  the <code>scripts/</code> directory. These scripts invoke the build scripts
+  for each of the projects included with MusicPlayerPlus, populate a
+  distribution tree, and call the respective packaging utilities. Packages are
+  saved in the <code>./releases/&lt;version&gt;/</code> folder. Once a package
+  has been created it can be installed with the <code>Install</code> script.
+</p>
+<p>
+  It’s not necessary to have C/C++ expertise to contribute to MusicPlayerPlus
+  development. Many of the MusicPlayerPlus commands are Bash scripts and require
+  no compilaton. Script commands reside in the <code>bin</code> and
+  <code>share/scripts</code> directories. To modify a shell script, install
+  MusicPlayerPlus and edit the <code>bin/&lt;script&gt;</code> or
+  <code>share/scripts/&lt;script.sh&gt;</code> you wish to improve. After making
+  your changes simply copy the revised script to <code>/usr/bin</code> and test
+  your changes.
+</p>
+<p>
+  Modifying the configuration files is a little more tricky. Configuration files
+  generally live in the <code>config</code> directory but each has its own
+  installation location and some are modified by the
+  <code>mppinit</code> command during installation. If you are just modifying
+  the shell scripts or configuration files then you don’t need to worry about
+  the extensive list of dependencies listed above.
+</p>
+<p>Feel free to email me at github@ronrecord.com with questions or comments.</p>
 
 <div align="center">
   <h2 id="connect">Connect</h2>
