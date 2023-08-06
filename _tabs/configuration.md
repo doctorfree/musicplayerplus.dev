@@ -339,8 +339,8 @@ run the command `beet acousticbrainz`. The AcousticBrainz service is no longer
 updated and will be retired in 2023.
 
 The individual metadata retrieval steps performed automatically by
-`mppinit [-a|-b|-e] metadata` can be performed manually using the instructions in
-the [MusicPlayerPlus Beets README](beets/README.md).
+`mppinit [-a|-b|-e] metadata` can be performed manually using the instructions
+in the [MusicPlayerPlus Beets section](https://musicplayerplus.dev/beets).
 
 ### Activating the YAMS scrobbler for Last.fm
 
