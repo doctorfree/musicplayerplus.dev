@@ -1,0 +1,745 @@
+---
+title: Introduction to Beets Plugins
+author: doctorfree
+date: 2023-07-15 10:50:00 +0800
+categories: [Blogging, Tutorial]
+tags: [beets, plugins, media, library]
+pin: true
+img_path: '/posts/20230715'
+---
+
+## Beets Plugins Introduction
+
+MusicPlayerPlus installs and configures the
+[Beets media library management system](https://beets.io/).
+Beets is a powerful and flexible media library management system
+and a large part of that power and flexibility is provided by the
+very rich Beets plugin system. Plugins extend beets’ core functionality.
+They add new commands, fetch additional data during import, provide new
+metadata sources, and much more.
+
+MusicPlayerPlus includes many of the Beets plugins that address functionality
+related to the MusicPlayerPlus components and use cases. See
+https://beets.readthedocs.io/en/stable/plugins/ for more information
+on Beets plugins.
+
+## MusicPlayerPlus Beets Plugins
+
+MusicPlayerPlus installs and configures several Beets plugins during the
+post-installation initialization performed by `mppinit`. The following
+Beets plugins are installed:
+
+- [describe](https://github.com/doctorfree/MusicPlayerPlus/wiki/describe) - attempts to give you the full picture on a single attribute of your library item
+    - Usage: `beet describe field_name`
+    - Examples:
+        - `beet describe bpm`
+        - `beet describe genre`
+        - `beet describe genre albumartist:'Various Artists'`
+- [duplicates](https://github.com/doctorfree/MusicPlayerPlus/wiki/duplicates) - adds a new command, `beet duplicates` or `beet dup`, finds and lists duplicate tracks or albums in your collection
+    - Usage: `beet duplicates [QUERY]`
+    - Examples:
+        - `beet duplicates`
+        - `beet duplicates --help`
+        - `beet duplicates year:2008`
+        - `beet duplicates -k title -k albumartist -k album`
+- [edit](https://github.com/doctorfree/MusicPlayerPlus/wiki/edit) - lets you modify music metadata using your favorite text editor
+    - Usage: `beet edit QUERY`
+- [fetchart](https://github.com/doctorfree/MusicPlayerPlus/wiki/fetchart) -  retrieves album art images from various sources on the Web and stores them as image files
+    - Usage: `beet fetchart [OPTIONS] [QUERY]`
+    - Examples:
+        - Display missing album art for media matching 'beatles'
+            - `beet fetchart -q beatles`
+        - Fetch missing album art for media matching 'beatles'
+            - `beet fetchart beatles`
+- [fromfilename](https://github.com/doctorfree/MusicPlayerPlus/wiki/fromfilename) - helps to tag albums that are missing tags altogether but where the filenames contain useful information like the artist and title
+- [hook](https://github.com/doctorfree/MusicPlayerPlus/wiki/hook) - lets you run commands in response to events
+- [importadded](https://github.com/doctorfree/MusicPlayerPlus/wiki/importadded) - useful when an existing collection is imported and the time when albums and items were added should be preserved
+- [info](https://github.com/doctorfree/MusicPlayerPlus/wiki/info) - provides a command that dumps the current tag values for any file format supported by beets
+    - Usage: `beet info [PATH|QUERY]`
+    - Examples:
+        - `beet info /path/to/music.flac`
+        - `beet info beatles`
+        - `beet info -i 'title,mb_artistid' beatles`
+- [lyrics](https://github.com/doctorfree/MusicPlayerPlus/wiki/lyrics) - fetches and stores song lyrics from databases on the Web
+    - Usage: `beet lyrics [QUERY]`
+    - Examples:
+        - `beet lyrics`
+        - `beet lyrics magnetic fields`
+        - `beet lyrics magnetic fields absolutely cuckoo`
+- [lastgenre](https://github.com/doctorfree/MusicPlayerPlus/wiki/lastgenre) - fetches *tags* from [Last.fm](https://last.fm/) and assigns them as genres to your albums and items
+    - Usage: `beet lastgenre [QUERY]`
+- [missing](https://github.com/doctorfree/MusicPlayerPlus/wiki/missing) - adds a new command, `beet missing` or `beet miss`, which finds and lists, for every album in your collection, which or how many tracks are missing
+    - Usage: `beet missing [QUERY]`
+    - Examples:
+        - `beet missing`
+        - `beet missing -a`
+        - `beet missing year:2008`
+        - `beet ls -a -f '$albumartist - $album: $missing'`
+- [mbsync](https://github.com/doctorfree/MusicPlayerPlus/wiki/mbsync) - provides the `beet mbsync` command, which lets you fetch metadata from MusicBrainz for albums and tracks that already have MusicBrainz IDs
+    - Usage: `beet mbsync [QUERY]`
+    - Examples:
+        - `beet mbsync --pretend`
+- [mpdstats](https://github.com/doctorfree/MusicPlayerPlus/wiki/mpdstats) - collects statistics about your listening habits from [MPD](https://www.musicpd.org/)
+    - Usage: `beet mpdstats`
+- [play](https://github.com/doctorfree/MusicPlayerPlus/wiki/play) - allows you to pass the results of a query to a music player in the form of an m3u playlist or paths on the command line
+    - Usage: `beet play [QUERY]`
+    - Examples:
+        - `beet play beatles`
+        - `beet play --args -shuffle`
+- [playlist](https://github.com/doctorfree/MusicPlayerPlus/wiki/playlist) - use playlists in m3u format
+    - Examples:
+        - `beet ls playlist:/path/to/someplaylist.m3u`
+        - `beet ls playlist:mycoolplaylist`
+- [smartplaylist](https://github.com/doctorfree/MusicPlayerPlus/wiki/smartplaylist) - generates smart playlists in m3u format based on beets queries every time your library changes. This plugin is specifically created to work well with [MPD\'s](https://www.musicpd.org/) playlist functionality.
+    - Examples:
+        - `beet splupdate`
+        - `beet splupdate BeatlesUniverse.m3u MyTravelPlaylist`
+- [mpdupdate](https://github.com/doctorfree/MusicPlayerPlus/wiki/mpdupdate) - automatically updates [MPD](https://www.musicpd.org/)\'s index whenever you change your beets library
+- [unimported](https://github.com/doctorfree/MusicPlayerPlus/wiki/unimported) - list all files in the library folder which are not listed in the beets library database, including art files
+    - Usage: `beet unimported`
+- [xtractor](https://github.com/doctorfree/MusicPlayerPlus/wiki/xtractor) - obtain low and high level musical information from your songs
+    - Usage: `beet xtractor [options] [QUERY...]`
+    - Examples:
+        - `beet xtractor --force donovan`
+        - `beet xtractor -dry-run beatles`
+    - [Essentia: An Audio Analysis Library for Music Information Retrieval](https://github.com/doctorfree/MusicPlayerPlus/wiki/Essentia_An_Audio_Analysis_Library_for_M.pdf) (PDF)
+- [yearfixer](https://github.com/doctorfree/MusicPlayerPlus/wiki/yearfixer) - finds the original_year for each of your songs by querying the MusicBrainz database and finding the first release date that is associated with it.
+    - Usage: `beet yearfixer [--force] [QUERY...]`
+    - Examples:
+        - `beet yearfixer donovan`
+        - `beet yearfixer -f beatles`
+
+The Beets web plugin is not installed or configured by default. See the next
+section for detailed instructions on installing and configuring the web plugin.
+
+- [web](https://github.com/doctorfree/MusicPlayerPlus/wiki/web) - query, browse, and play your music in browsers that support HTML5 audio
+    - Usage: `beet web [HOSTNAME] [PORT]`
+
+## Beets web plugin
+
+The Beets web plugin provides a graphical user interface to browse, query,
+and play music in a Beets library. It requires the `flask` Python pip module
+and a browser that supports HTML5 audio. See the [web plugin manual](https://github.com/doctorfree/MusicPlayerPlus/wiki/web) for
+greater detail. What follows are the basics of setting up the Beets web plugin.
+
+Install the flask Python pip module:
+
+```
+pip install flask
+```
+
+Add the `web` plugin to the list of enabled plugins in
+`~/.config/beets/config.yaml` and add a `web` configuration in `config.yaml`.
+For example, to use the default web plugin configuration settings but run
+the web plugin server on port 8339 instead of 8337 and bind to all interfaces
+rather than just 127.0.0.1, add the following `web` configuration in
+`~/.config/beets/config.yaml`:
+
+```
+web:
+    # The server hostname. Set this to 0.0.0.0 to bind to all interfaces.
+    # Default: Bind to 127.0.0.1.
+    host: 0.0.0.0
+    # The server port. Default: 8337.
+    port: 8339
+    # The CORS allowed origin (see Cross-Origin Resource Sharing (CORS), below).
+    # Default: CORS is disabled.
+    # cors: no
+    # Support credentials when using CORS (see Cross-Origin Resource Sharing (CORS), below).
+    # Default: CORS_SUPPORTS_CREDENTIALS is disabled.
+    # cors_supports_credentials: no
+    # If true, enable reverse proxy support (see Reverse Proxy Support, below).
+    # Default: false.
+    # reverse_proxy: false
+    # If true, includes paths in item objects. Default: false.
+    # include_paths: false
+    # If true, DELETE and PATCH operations are not allowed. Only GET is permitted.
+    # Default: true.
+    # readonly: true
+```
+
+If you prefer to use the web plugin configuration defaults (bind to 127.0.0.1 with
+port 8337) then no `web` configuration section is necessary in `config.yaml`, just
+add the `web` plugin to the list of enabled plugins.
+
+To start the Beets web plugin server type `beet web`. To override the `host` and
+`port` settings in `config.yaml`, start the Beets web plugin server with
+`beet web [HOSTNAME] [PORT]`. For example, to run a Beets web server on localhost
+only with Beets web server port 8335, run `beet web localhost 8335`.
+To use the Beets web plugin with this example server startup, open a supported
+browser and go to http://localhost:8335/
+
+## Default Beets Configuration
+
+Beets plugins are configured in `~/.config/beets/config.yaml`.
+The default MusicPlayerPlus Beets `config.yaml` illustrates how
+the Beets plugins are configured.
+
+```yaml
+directory: ~/Music
+library: ~/.config/beets/musiclibrary.db
+
+# Uncomment if you wish to place secret paths/tokens/credentials in
+# ~/.config/beets/secrets.yaml
+#
+#include:
+#   - secrets.yaml
+
+import:
+    copy: yes
+    move: yes
+    write: yes
+    incremental: yes
+    incremental_skip_later: yes
+    quiet: no
+    quiet_fallback: asis
+    resume: yes
+    from_scratch: no
+    default_action: apply
+    detail: yes
+    non_rec_action: ask
+    # duplicate_action can be 'skip', 'keep', 'remove', 'merge' or 'ask'
+    duplicate_action: skip
+    group_albums: no
+    autotag: yes
+    bell: no
+    log: ~/.config/beets/logs/import.log
+
+plugins:
+    - acousticbrainz
+    - albumtypes
+    - bandcamp
+#   - convert
+    - describe
+#   - discogs
+    - duplicates
+    - edit
+    - fetchart
+    - fromfilename
+    - hook
+    - importadded
+    - info
+    - lyrics
+    - lastgenre
+    - missing
+    - mbsync
+    - mpdstats
+    - play
+    - playlist
+    - smartplaylist
+    - mpdupdate
+    - unimported
+    - web
+    - xtractor
+    - yearfixer
+
+acousticbrainz:
+    auto: no
+    force: no
+
+albumtypes:
+    types:
+        - album: ''
+        - ep: 'EP'
+        - single: 'Single'
+        - soundtrack: 'OST'
+        - live: 'Live'
+        - compilation: 'Anthology'
+        - remix: 'Remix'
+    ignore_va: compilation
+    bracket: '[]'
+
+bandcamp:
+    include_digital_only_tracks: true
+    search_max: 2
+    art: no
+    comments_separator: "\n---\n"
+    exclude_extra_fields:
+        - comments
+    genre:
+        capitalize: no
+        maximum: 0
+        always_include: []
+        mode: progressive # classical, progressive or psychedelic
+
+# Uncomment this and the convert plugin entry to enable format conversion
+# of media in your Beets library with the 'beet convert' command
+#
+#convert:
+#   dest: ~/Music/__Converted__
+#   quiet: true
+#   command: ffmpeg -i $source -y -vn -aq 2 $dest
+#   extension: mp3
+
+duplicates:
+    album: no
+    checksum: ffmpeg -i {file} -f crc -
+#   keys: [mb_trackid, mb_albumid]
+#   tiebreak:
+#       items: [bitrate]
+
+fetchart:
+  # Enable automatic album art fetching during import.
+  auto: no
+  # Pick only trusted album art by ignoring filenames that do not contain
+  # one of the keywords in "cover_names".
+  cautious: no
+  # Only allow images with 1:1 aspect ratio
+  enforce_ratio: yes
+  # Only images with a width bigger or equal to minwidth are considered as
+  # valid album art candidates.
+  minwidth: 256
+  # A maximum image width to downscale fetched images if they are too big.
+  # The height is recomputed so that the aspect ratio is preserved.
+  maxwidth: 3000
+  # An asterisk * expands to all available sources.
+  # Supported sources include:
+  #  filesystem coverart itunes amazon albumart wikipedia google fanarttv lastfm
+  # No remote art sources are queried if local art is found in the filesystem.
+  sources:
+    - filesystem
+    - coverart
+    - albumart
+#   - lastfm
+    - wikipedia
+  # API key to use for the fanart API.
+# lastfm_key: REDACTED
+  # Store the art source (e.g. filesystem) in the beets database as art_source.
+  store_source: yes
+
+mpdstats:
+    host: localhost
+    port: 6600
+    rating: yes
+    rating_mix: 0.75
+
+lastgenre:
+    # Fetch genres automatically during import. Default: yes.
+    auto: no
+    #
+    # Use a canonicalization tree. Setting this to yes will use a built-in tree.
+    # You can also set it to a path, like the whitelist config value,
+    # to use your own tree. Default: no (disabled).
+    #canonical: no
+    # Use a local copy of the built-in tree
+    canonical: ~/.config/beets/genres/genres-tree.yaml 
+    #
+    # Number of genres to fetch. Default: 1
+    count: 1
+    #
+    # A string if to use a fallback genre when no genre is found.
+    # You can use the empty string '' to reset the genre. Default: None.
+    fallback: Unknown
+    #
+    # By default, beets will always fetch new genres, even if the files already
+    # have one. To instead leave genres in place in when they pass the whitelist,
+    # set the force option to no. Default: yes.
+    # NOTE: May not be working as expected. Perhaps fixed in 1.6.1 Investigating
+    force: no
+    #
+    # Minimum popularity factor below which genres are discarded.
+    # Default: 10.
+    min_weight: 10
+    #
+    # Sort genres by the most to least specific, rather than most to least
+    # popular. Default: no.
+    # Setting this to yes may produce an interesting set of genres.
+    # To experiment, view genres set during import with 'beet describe genre'
+    # then change this to 'no' and run 'beet lastgenre'. View the updated
+    # genre tags with 'beet describe genre'. If you prefer to go back to using
+    # more specific genre tags rather than popular, set this back to 'yes' and
+    # re-run 'beet lastgenre'.
+    prefer_specific: yes
+    #
+    # Which entity to look up in Last.fm. Can be either artist, album or track.
+    # Default: album.
+    source: track
+    #
+    # A separator for multiple genres. Default: ', '.
+    separator: ', '
+    #
+    # The filename of a custom genre list, yes to use the internal whitelist,
+    # or no to consider all genres valid. Default: yes.
+    #whitelist: yes
+    # Use a local copy of the internal whitelist
+    whitelist: ~/.config/beets/genres/genres.txt
+    #
+    # Convert the new tags to TitleCase before saving. Default: yes.
+    title_case: yes
+
+lyrics:
+    # Fetch lyrics automatically during import. Default: yes.
+    # No lyrics are fetched during import. Run 'mpplus -L` after import.
+    auto: no
+    # List of sources to search for lyrics. An asterisk * expands to all
+    # available sources. Default: google musixmatch genius tekstowo
+    # Currently it appears MusixMatch and Genius are blocking Beets.
+    # Google requires an API key - use that if you have one.
+    # The only free no-setup-required service is the Polish one but
+    # they have changed their website so Beets lyrics scraping adds
+    # some untranslated Polish at the beginning and end of the lyrics.
+    # For now, we use the Polish service as default lyrics source.
+    # Users may wish to go through the trouble of activating Google.
+    sources: tekstowo
+    #
+    # Your Bing Translation application password
+    # (to Activate On-the-Fly Translation)
+    # bing_client_secret:
+    #
+    # By default all lyrics with a language other than bing_lang_to
+    # are translated. Use a list of lang codes to restrict the set of
+    # source languages to translate.
+    # Default: []
+    # bing_lang_from: [ en ]
+    #
+    # Language to translate lyrics into. Default: None.
+    # bing_lang_to: en
+    #
+    # By default, the file will be left unchanged when no lyrics are found.
+    # Use the empty string '' to reset the lyrics in such a case. Default: None.
+    # fallback:
+    #
+    # By default, beets won’t fetch lyrics if the files already have ones.
+    # To instead always fetch lyrics, set the force option to yes. Default: no.
+    # force: yes
+    #
+    # Your Google API key (to enable the Google Custom Search backend).
+    # Default: None.
+    #
+    # google_API_key:
+    #
+    # The custom search engine to use. Default: The beets custom search engine
+    # google_engine_ID:
+
+play:
+    # The command used to open the playlist. Default: xdg-open
+    # Insert $args to use the --args feature.
+    command: /usr/share/musicplayerplus/scripts/mpcplay.sh $args
+    # If set, emit paths relative to this directory. Default: None.
+    relative_to: ~/Music
+    # When using the -a option, the m3u will contain the paths to each track on
+    # the matched albums. Enable this option to store paths to folders instead.
+    # Default: no.
+    #use_folders: no
+    # Instead of creating a temporary m3u playlist and then opening it, simply
+    # call the command with the paths returned by the query as arguments.
+    # Default: no.
+    raw: yes
+    #  Set the minimum number of files to play which will trigger a warning to
+    # be emitted. If set to no, warning are never issued. Default: 100.
+    warning_threshold: 500
+    # Set whether or not a UTF-8 Byte Order Mark should be emitted into the m3u
+    # file. If you’re using foobar2000 or Winamp, this is needed. Default: no.
+    #bom: no
+
+playlist:
+  auto: yes
+  playlist_dir: ~/Music/Playlists
+# relative_to: ~/Music
+  relative_to: /
+
+smartplaylist:
+  auto: no
+# Default is absolute paths in playlists
+# relative_to: ~/Music
+  playlist_dir: ~/Music/Playlists
+  forward_slash: no
+  playlists:
+    - name: 'rating.m3u'
+      query: 'rating:0.4..1.0'
+
+#   - name: 'not_played.m3u'
+#     query: '-play_count: artist:'
+
+#   - name: beatles.m3u
+#     query: 'artist:Beatles'
+
+    - name: 1940s.m3u
+      query: 'original_year:1940..1949'
+
+    - name: 1950s.m3u
+      query: 'original_year:1950..1959'
+
+    - name: 1960s.m3u
+      query: 'original_year:1960..1969'
+
+    - name: 1970s.m3u
+      query: 'original_year:1970..1979'
+
+    - name: 1980s.m3u
+      query: 'original_year:1980..1989'
+
+    - name: 1990s.m3u
+      query: 'original_year:1990..1999'
+
+    - name: 2000s.m3u
+      query: 'original_year:2000..2009'
+
+    - name: 2010s.m3u
+      query: 'original_year:2010..2019'
+
+    - name: 2020s.m3u
+      query: 'original_year:2020..2029'
+
+    - name: 'ReleasedIn$original_year.m3u'
+      query: 'original_year::195(0|1|2|3|4|5|6|7|8|9)'
+
+    - name: 'ReleasedIn$original_year.m3u'
+      query: 'original_year::196(0|1|2|3|4|5|6|7|8|9)'
+
+    - name: 'ReleasedIn$original_year.m3u'
+      query: 'original_year::197(0|1|2|3|4|5|6|7|8|9)'
+
+    - name: 'ReleasedIn$original_year.m3u'
+      query: 'original_year::198(0|1|2|3|4|5|6|7|8|9)'
+
+    - name: 'ReleasedIn$original_year.m3u'
+      query: 'original_year::199(0|1|2|3|4|5|6|7|8|9)'
+
+    - name: 'ReleasedIn$original_year.m3u'
+      query: 'original_year::200(0|1|2|3|4|5|6|7|8|9)'
+
+    - name: 'ReleasedIn$original_year.m3u'
+      query: 'original_year::201(0|1|2|3|4|5|6|7|8|9)'
+
+    - name: 'ReleasedIn$original_year.m3u'
+      query: 'original_year::202(0|1|2)'
+
+mpd:
+    host: localhost
+    port: 6600
+    rating: yes
+    rating_mix: 0.75
+
+# Uncomment this and the discogs plugin entry to enable Discogs metadata source
+# Install the discogs-client with "python3 -m pip install python3-discogs-client"
+#
+#discogs:
+#   source_weight: 0.0
+#   index_tracks: yes
+#   user_token: Your_Discogs_User_Token
+
+musicbrainz:
+    # Default: 5
+    # Higher: better for albums with many releases in many formats/countries
+    # Lower: better for box sets
+    #searchlimit: 10
+    extra_tags: [year, catalognum, country, media, label]
+    #genres: yes
+#   Disable Musicbrainz: not in Beets 1.6.0, will be in 1.6.1
+#   enabled: no
+
+match:
+    strong_rec_thresh: 0.10
+    medium_rec_thresh: 0.25
+    #strong_rec_thresh: 0.075
+    #medium_rec_thresh: 0.125
+    max_rec:
+      unmatched_tracks: low
+      missing_tracks: strong
+    # The higher the weight, the lower the items go in the candidate list
+    # (greater distance) when this penalty is applied.
+    distance_weights:
+      # Default: 3.0
+      album: 6.0
+      # Default: 3.0
+      artist: 7.0
+      # Default: 2.0
+      totaltracks: 4.0
+      # Default: 0.9
+      missing_tracks: 1.0
+      # Default: 0.6
+      unmatched_tracks: 10.0
+    #preferred:
+    #    media: ['CD', 'Digital Media|File', 'Digital Media']
+    #    countries: ['US', 'GB|UK']    
+    preferred:
+      countries: ['US', 'XW', 'GB|UK']
+      media: ['Digital Media|File', 'CD']
+    ignored_media:
+      ['DVD', 'DVD-Video', 'Blu-ray', 'HD-DVD', 'VCD', 'SVCD', 'UMD', 'VHS']
+
+paths:
+    # Default paths configuration
+    #
+    # default: $albumartist/$album%aunique{}/$track $title
+    # singleton: Non-Album/$artist/$title
+    # comp: Compilations/$album%aunique{}/$track $title
+    #
+    # MusicPlayerPlus paths configuration
+    #
+    default: "%if{$albumartist,%title{$albumartist},%if{$artist,%title{$artist},Unknown Artist}}/[%if{$original_year,$original_year,%if{$year,$year,0000}}] %if{$album,$album%aunique{},Unknown Album}%if{$atypes, $atypes}/$track - $title"
+    singleton: "%if{$albumartist,%title{$albumartist},%if{$artist,%title{$artist},Unknown Artist}}/[%if{$original_year,$original_year,%if{$year,$year,0000}}] %if{$album,$album%aunique{},Unknown Album}/$track - $title"
+    comp: Compilations/[%if{$original_year,$original_year,%if{$year,$year,0000}}] %if{$album,$album%aunique{},Unknown Album}%if{$atypes, $atypes}/$track - $artist - $title
+    albumtype:soundtrack: Soundtracks/[%if{$original_year,$original_year,%if{$year,$year,0000}}] %if{$album,$album%aunique{},Unknown Album}%if{$atypes, $atypes}/$track - $title
+
+ignore: ['.DS_Store', '.*', '*~', 'System Volume Information', 'lost+found']
+
+importadded:
+    preserve_mtimes: yes
+    preserve_write_mtimes: yes
+
+threaded: yes
+
+unimported:
+    ignore_extensions: jpg png
+    ignore_subdirectories: data tmp
+
+web:
+    host: 0.0.0.0
+    port: 8337
+    cors: '*'
+    include_paths: false
+    readonly: true
+
+xtractor:
+    # auto not implemented yet, run xtractor manually after import
+    auto: no
+    dry-run: no
+    write: yes
+    threads: 2
+    force: no
+    quiet: no
+    keep_output: yes
+    keep_profiles: no
+    output_path: ~/.config/beets/xtraction_data
+    essentia_extractor: /usr/bin/essentia_streaming_extractor_music
+    extractor_profile:
+      outputFormat: json
+      outputFrames: 0
+      lowlevel:
+        frameSize: 2048
+        hopSize: 1024
+      chromaprint:
+        compute: 0
+      highlevel:
+        compute: 1
+        svm_models:
+          - /usr/share/mpplus-essentia/svm_models/danceability.history
+          - /usr/share/mpplus-essentia/svm_models/gender.history
+#         - /usr/share/mpplus-essentia/svm_models/genre_dortmund.history
+#         - /usr/share/mpplus-essentia/svm_models/genre_electronic.history
+#         - /usr/share/mpplus-essentia/svm_models/genre_tzanetakis.history
+          - /usr/share/mpplus-essentia/svm_models/genre_rosamerica.history
+          - /usr/share/mpplus-essentia/svm_models/ismir04_rhythm.history
+          - /usr/share/mpplus-essentia/svm_models/mood_acoustic.history
+          - /usr/share/mpplus-essentia/svm_models/mood_aggressive.history
+          - /usr/share/mpplus-essentia/svm_models/mood_electronic.history
+          - /usr/share/mpplus-essentia/svm_models/mood_happy.history
+          - /usr/share/mpplus-essentia/svm_models/mood_party.history
+          - /usr/share/mpplus-essentia/svm_models/mood_relaxed.history
+          - /usr/share/mpplus-essentia/svm_models/mood_sad.history
+          - /usr/share/mpplus-essentia/svm_models/moods_mirex.history
+          - /usr/share/mpplus-essentia/svm_models/timbre.history
+          - /usr/share/mpplus-essentia/svm_models/tonal_atonal.history
+          - /usr/share/mpplus-essentia/svm_models/voice_instrumental.history
+#
+# MusicPlayerPlus custom xtractor targets configuration
+#
+    low_level_targets:
+      bpm:
+        path: "rhythm.bpm"
+        type: integer
+        required: yes
+      danceability:
+        path: "rhythm.danceability"
+        type: float
+      beats_count:
+        path: "rhythm.beats_count"
+        type: integer
+      average_loudness:
+        path: "lowlevel.average_loudness"
+        type: float
+        required: yes
+#     initial_key:
+#       path: "tonal.initial_key"
+#       type: string
+    high_level_targets:
+#     acoustid_fingerprint:
+#       path: "chromaprint.string"
+#       type: string
+      key_key:
+        path: "tonal.key_edma.key"
+        type: string
+      key_scale:
+        path: "tonal.key_edma.scale"
+        type: string
+      chords_key:
+        path: "tonal.chords_key"
+        type: string
+      chords_scale:
+        path: "tonal.chords_scale"
+        type: string
+      replay_gain:
+        path: "metadata.audio_properties.replay_gain"
+        type: float
+      integrated_loudness:
+        path: "lowlevel.loudness_ebu128.integrated"
+        type: float
+      loudness_range:
+        path: "lowlevel.loudness_ebu128.loudness_range"
+        type: float
+      timbre:
+        path: "highlevel.timbre.value"
+        type: string
+        required: yes
+      danceable:
+        path: "highlevel.danceability.value"
+        type: string
+        required: yes
+      is_danceable:
+        path: "highlevel.danceability.all.danceable"
+        type: float
+      genre_rosamerica:
+        path: "highlevel.genre_rosamerica.value"
+        type: string
+      mood_acoustic:
+        path: "highlevel.mood_acoustic.value"
+        type: string
+        required: yes
+      mood_aggressive:
+        path: "highlevel.mood_aggressive.value"
+        type: string
+        required: yes
+      mood_electronic:
+        path: "highlevel.mood_electronic.value"
+        type: string
+        required: yes
+      mood_happy:
+        path: "highlevel.mood_happy.value"
+        type: string
+        required: yes
+      mood_sad:
+        path: "highlevel.mood_sad.value"
+        type: string
+        required: yes
+      mood_party:
+        path: "highlevel.mood_party.value"
+        type: string
+        required: yes
+      mood_relaxed:
+        path: "highlevel.mood_relaxed.value"
+        type: string
+        required: yes
+
+yearfixer:
+    force: yes
+
+ui:
+    color: yes
+    colors:
+        text_success: green
+        text_warning: yellow
+        text_error: red
+        text_highlight: red
+        text_highlight_minor: lightgray
+        action_default: turquoise
+        action: blue
+
+hook:
+    hooks:
+        - event: import_begin
+          command: /usr/share/musicplayerplus/scripts/beet_log.sh Import begin
+        - event: import
+          command: /usr/share/musicplayerplus/scripts/beet_log.sh Import end
+```

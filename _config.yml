@@ -77,10 +77,10 @@ img_cdn:
 avatar: "/assets/headphones.png"
 
 # boolean type, the global switch for TOC in posts.
-toc: false
+toc: true
 
 comments:
-  active: # The global switch for posts comments, e.g., 'disqus'.  Keep it empty means disable
+  active: "giscus" # The global switch for posts comments, e.g., 'disqus'. Empty means disable
   # The active options are as follows:
   disqus:
     shortname: # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
@@ -90,10 +90,10 @@ comments:
     issue_term: # < url | pathname | title | ...>
   # Giscus options › https://giscus.app
   giscus:
-    repo: # <gh-username>/<repo>
-    repo_id:
-    category:
-    category_id:
+    repo: doctorfree/musicplayerplus.dev
+    repo_id: R_kgDOKEE4kg
+    category: General
+    category_id: DIC_kwDOKEE4ks4CYa4S
     mapping: # optional, default to 'pathname'
     input_position: # optional, default to 'bottom'
     lang: # optional, default to the value of `site.lang`
