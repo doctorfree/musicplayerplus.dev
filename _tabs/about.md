@@ -6,11 +6,11 @@ order: 11
 
 <div data-align="center">
   <img
-    src="https://raw.githubusercontent.com/wiki/doctorfree/MusicPlayerPlus/img/mpplus.png"
-    style="width: 882px; height: 330px"
+    src="https://raw.githubusercontent.com/wiki/doctorfree/MusicPlayerPlus/img/musicplayerplus.png"
+    style="width: 783px; height: 140px"
     alt="MusicPlayerPlus"
   />
-</div>{: .shadow }
+</div>
 
 MusicPlayerPlus is a character-based console and terminal window music player
 

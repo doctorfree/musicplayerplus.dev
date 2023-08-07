@@ -6,7 +6,7 @@ order: 3
 toc: true
 ---
 
-## Post Installation Configuration
+# Post Installation Configuration
 
 **[Note:]** Extensive post-installation steps are covered here.
 Minimal post-installation configuration required is the execution
@@ -21,7 +21,7 @@ will need to know where to locate your music library. This can
 be configured by editing the MusicPlayerPlus configuration file
 `~/.config/mpprc` and running the command `mppinit sync`.
 
-### Client Configuration (required)
+## Client Configuration (required)
 
 Initialize the MusicPlayerPlus configuration by executing the command:
 
@@ -36,7 +36,7 @@ of an MPD user service. The configuration, files, and folders used by
 this user level MPD service are stored in `~/.config/mpd/`. Examine the
 generated MPD configuration file `~/.config/mpd/mpd.conf`.
 
-### MusicPlayerPlus Configuration File
+## MusicPlayerPlus Configuration File
 
 MusicPlayerPlus 2.0.1 release 3 and later provides the configuration file
 `~/.config/mpprc` which serves as the primary source for MusicPlayerPlus
@@ -142,7 +142,7 @@ YOUTUBE_APIKEY=
 After `mppinit` completes the MusicPlayerPlus initialization, edit the
 `~/.config/mpprc` configuration file and run `mppinit sync`.
 
-### MPD Music Directory Configuration
+## MPD Music Directory Configuration
 
 **[Note:]** MusicPlayerPlus version 1.0.3 release 1 and later perform
 an automated MPD user configuration and systemd service activation.
@@ -172,7 +172,7 @@ The *MUSIC_DIR* location must be writeable by your user.
 
 Any time the MPD music directory is manually modified, run `mppinit sync`.
 
-### Initializing the Beets media library management system
+## Initializing the Beets media library management system
 
 **[Note:]** Beets is NOT the now defunct music service purchased by Apple.
 It is an open source media library management system.
@@ -245,7 +245,7 @@ For instructions on Beets media library setup and use see the
 Learn more about the Beets media library management system at
 https://beets.io/
 
-### Additional metadata analysis and retrieval
+## Additional metadata analysis and retrieval
 
 MusicPlayerPlus includes three methods for augmenting music library
 metadata through acoustic analysis. These three methods are:
@@ -257,7 +257,7 @@ metadata through acoustic analysis. These three methods are:
 - Essentia acoustic analysis and Beets metadata retrieval
     - initialized with `mppinit -e metadata`
 
-#### Acoustic analysis with Blissify
+### Acoustic analysis with Blissify
 
 Acoustic analysis with Blissify does not require a prior Beets import.
 The Blissify acoustic analysis creates a song similarity database for
@@ -298,7 +298,7 @@ this additional acoustic metadata to the Beets library it is necessary
 to perform an acoustic analysis with Essentia or acoustic metadata
 retrieval with AcousticBrainz, both described in the next sections.
 
-#### Acoustic analysis with Essentia
+### Acoustic analysis with Essentia
 
 After completing the Beets music library import with either `mppinit import`
 or `mpplus -I`, additional Beets metadata can be retrieved with the command:
@@ -329,7 +329,7 @@ can be time consuming for a large music library. The `mppinit -e metadata`
 command performs several metadata retrieval steps in a non-interactive
 manner and in the background so it can be left unattended if desired.
 
-#### Acoustic retrieval with AcousticBrainz
+### Acoustic retrieval with AcousticBrainz
 
 While it still exists the AcousticBrainz service can be queried to provide
 a relatively quick way to update the Beets library with additional
@@ -344,7 +344,7 @@ The individual metadata retrieval steps performed automatically by
 `mppinit [-a|-b|-e] metadata` can be performed manually using the instructions
 in the [MusicPlayerPlus Beets section](https://musicplayerplus.dev/beets).
 
-### Activating the YAMS scrobbler for Last.fm
+## Activating the YAMS scrobbler for Last.fm
 
 YAMS is an acronym for "Yet Another MPD Scrobbler".
 When YAMS is configured and running, any songs, artists, or albums
@@ -386,7 +386,7 @@ and it will be scrobbled by YAMS.
 
 YAMS creates a configuration file `$HOME/.config/yams/yams.yml`.
 
-#### Using YAMScrobbler with Libre.fm
+### Using YAMScrobbler with Libre.fm
 
 YAMS works fine with Libre.fm, a Free Software replacement for Last.fm.
 If you prefer to use Libre.fm rather than Last.fm, do the following:
@@ -395,7 +395,7 @@ If you prefer to use Libre.fm rather than Last.fm, do the following:
 - Delete any leftover `.lastfm_session` files
 - Authenticate like you normally would with Last.fm, however replace `last.fm` with `libre.fm` in the authorization URL printed out by YAMS
 
-### MPD Audio Output Configuration
+## MPD Audio Output Configuration
 
 Adjust the `audio_output` settings in `~/.config/mpd/mpd.conf`.
 MPD must have at least one `audio_output` configured and in order
@@ -456,7 +456,7 @@ MPD is a powerful and flexible music player server with many configuration
 options. Additional MPD configuration may be desired. See the
 [MPD User's Manual](https://mpd.readthedocs.io/en/stable/user.html)
 
-### Fuzzy Finder Configuration
+## Fuzzy Finder Configuration
 
 The `fzmp` command lists, searches, and selects media from the MPD
 library using the `fzf` fuzzy finder command line utility. A default
@@ -498,7 +498,7 @@ and bound to 'F1'.
 Several other `fzmp` bindings and options can be configured. See `man fzmp`
 for details.
 
-### Start MPD
+## Start MPD
 
 **[Note:]** MusicPlayerPlus version 1.0.3 release 1 and later perform
 an automated MPD user configuration and systemd service activation.
@@ -526,7 +526,7 @@ attempts to connect:
 
 `sudo systemctl enable mpd.socket`
 
-### System verification checks
+## System verification checks
 
 Once the music directory has been set correctly, album art downloaded,
 music library imported, and `mppinit sync` has completed initialization,
@@ -544,7 +544,7 @@ some system checks can optionally be performed.
     * See the [online mpcpluskeys cheat sheet](https://github.com/doctorfree/MusicPlayerPlus/wiki/mpcpluskeys.1) or `man mpcpluskeys` for help navigating the `mpplus` windows
     * See the [online mpplus man page](https://github.com/doctorfree/MusicPlayerPlus/wiki/mpplus.1) or `man mpplus` for different ways to invoke the `mpplus` command
 
-### Initialize Music Database
+## Initialize Music Database
 
 **[Note:]** MusicPlayerPlus version 1.0.3 release 1 and later perform an
 automated MPD music database initialization during execution of `mppinit`.
@@ -560,7 +560,7 @@ If your music library is very large this process can take several minutes
 to complete. Once the music database has been updated you should see the
 songs, albums, and playlists in your music library appear in the client view.
 
-### Installing Mopidy
+## Installing Mopidy
 
 To install, configure, and activate Mopidy issue the command `mppinit mopidy`.
 After Mopidy initialization completes, open `http://<ip address>:6680/iris`.
@@ -629,7 +629,7 @@ To change the location of the music library, edit
 and run `mppinit sync` to synchronize the music library location across
 Beets, MPD, Mopidy, and downloaders.
 
-### Installing Navidrome
+## Installing Navidrome
 
 The default music server in MusicPlayerPlus is the Music Player Daemon (MPD).
 An alternate music server and streamer, Navidrome, is also supported.
@@ -670,7 +670,7 @@ about Beets library management, additional downloads, or a Mopidy server
 then setup can be accomplished with just `mppinit` followed by
 `mppinit navidrome`.
 
-#### Navidrome clients
+### Navidrome clients
 
 The Navidrome self-hosted music service can stream your music to many devices.
 
@@ -718,7 +718,7 @@ native Subsonic client compatible with Navidrome for the Linux Desktop.
 See https://sublime-music.gitlab.io/sublime-music/index.html to install
 Sublime on a variety of Linux distributions.
 
-### Terminal Emulator Support
+## Terminal Emulator Support
 
 Supported terminal emulators in MusicPlayerPlus include `kitty`, `tilix`,
 `gnome-terminal`, `st`, and `cool-retro-term`. Kitty is the default terminal
@@ -780,7 +780,7 @@ MusicPlayerPlus control window and the spectrum visualizer.
 To modify these terminal emulator profiles, launch the desired terminal
 emulator and modify the desired profile in the Preferences dialog.
 
-### Discogs User Collection
+## Discogs User Collection
 
 MusicPlayerPlus includes support for the auto-generation of an
 [Obsidian](https://obsidian.md) vault from either a [Discogs](https://discogs.com)
