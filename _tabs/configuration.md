@@ -6,7 +6,7 @@ order: 3
 toc: true
 ---
 
-# Post Installation Configuration
+## Post Installation Configuration
 
 **[Note:]** Extensive post-installation steps are covered here.
 Minimal post-installation configuration required is the execution
@@ -21,7 +21,7 @@ will need to know where to locate your music library. This can
 be configured by editing the MusicPlayerPlus configuration file
 `~/.config/mpprc` and running the command `mppinit sync`.
 
-## Client Configuration (required)
+### Client Configuration (required)
 
 Initialize the MusicPlayerPlus configuration by executing the command:
 
@@ -36,7 +36,7 @@ of an MPD user service. The configuration, files, and folders used by
 this user level MPD service are stored in `~/.config/mpd/`. Examine the
 generated MPD configuration file `~/.config/mpd/mpd.conf`.
 
-## MusicPlayerPlus Configuration File
+### MusicPlayerPlus Configuration File
 
 MusicPlayerPlus 2.0.1 release 3 and later provides the configuration file
 `~/.config/mpprc` which serves as the primary source for MusicPlayerPlus
@@ -142,7 +142,7 @@ YOUTUBE_APIKEY=
 After `mppinit` completes the MusicPlayerPlus initialization, edit the
 `~/.config/mpprc` configuration file and run `mppinit sync`.
 
-## MPD Music Directory Configuration
+### MPD Music Directory Configuration
 
 **[Note:]** MusicPlayerPlus version 1.0.3 release 1 and later perform
 an automated MPD user configuration and systemd service activation.
@@ -172,7 +172,7 @@ The *MUSIC_DIR* location must be writeable by your user.
 
 Any time the MPD music directory is manually modified, run `mppinit sync`.
 
-## Initializing the Beets media library management system
+### Initializing the Beets media library management system
 
 **[Note:]** Beets is NOT the now defunct music service purchased by Apple.
 It is an open source media library management system.
@@ -245,7 +245,7 @@ For instructions on Beets media library setup and use see the
 Learn more about the Beets media library management system at
 https://beets.io/
 
-## Additional metadata analysis and retrieval
+### Additional metadata analysis and retrieval
 
 MusicPlayerPlus includes three methods for augmenting music library
 metadata through acoustic analysis. These three methods are:
