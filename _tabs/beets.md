@@ -1,10 +1,11 @@
 ---
 # the default layout is 'page'
+layout: pagetab
 icon: fas fa-user-circle
 order: 6
 ---
 
-# Beets media library management
+## Beets media library management
 
 ## Table of contents
 
