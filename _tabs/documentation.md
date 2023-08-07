@@ -1,5 +1,6 @@
 ---
 # the default layout is 'page'
+layout: tab
 icon: fas fa-user-circle
 order: 5
 ---

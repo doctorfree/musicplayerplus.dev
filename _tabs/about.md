@@ -1,8 +1,11 @@
 ---
 # the default layout is 'page'
+layout: tab
 icon: fas fa-info-circle
 order: 11
 ---
+
+![](https://raw.githubusercontent.com/wiki/doctorfree/MusicPlayerPlus/img/mpplus.png){: .shadow }
 
 MusicPlayerPlus is a character-based console and terminal window music player
 
