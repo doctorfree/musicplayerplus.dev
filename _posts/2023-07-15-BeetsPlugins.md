@@ -8,8 +8,6 @@ pin: true
 img_path: '/posts/20230715'
 ---
 
-## Beets Plugins Introduction
-
 MusicPlayerPlus installs and configures the
 [Beets media library management system](https://beets.io/).
 Beets is a powerful and flexible media library management system
@@ -22,6 +20,10 @@ MusicPlayerPlus includes many of the Beets plugins that address functionality
 related to the MusicPlayerPlus components and use cases. See
 https://beets.readthedocs.io/en/stable/plugins/ for more information
 on Beets plugins.
+
+For an introduction to the Beets media library management system,
+see the MusicPlayerPlus article
+[Introduction to Beets](https://musicplayerplus.dev/posts/Introduction-to-Beets)
 
 ## MusicPlayerPlus Beets Plugins
 
