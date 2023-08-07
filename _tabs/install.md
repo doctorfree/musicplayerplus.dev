@@ -3,6 +3,7 @@
 layout: tab
 icon: fas fa-arrow-circle-down
 order: 2
+toc: true
 ---
 
 ## MusicPlayerPlus Installation

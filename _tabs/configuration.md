@@ -3,6 +3,7 @@
 layout: tab
 icon: fas fa-info-circle
 order: 3
+toc: true
 ---
 
 ## Post Installation Configuration

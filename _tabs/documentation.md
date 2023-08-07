@@ -3,6 +3,7 @@
 layout: tab
 icon: fas fa-user-circle
 order: 5
+toc: true
 ---
 
 ## MusicPlayerPlus Documentation
