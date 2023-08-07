@@ -157,9 +157,6 @@ Usage: mpcplus [options]...
 Options:
   -h [ --host ] HOST (=localhost)       connect to server at host
   -p [ --port ] PORT (=6600)            connect to server at port
-  --current-song [=FORMAT(={{{(%l) }{{%a - }%t}}|{%f}})]
-                                        print current song using given format
-                                        and exit
   -c [ --config ] PATH (=~/.config/mpcplus/config AND ~/.mpcplus/config)
                                         specify configuration file(s)
   --ignore-config-errors                ignore unknown and invalid options in
@@ -324,8 +321,7 @@ To test the mpcplus lyrics fetchers:
 - `[ P ]` - Toggle display mode
 - `[ \ ]` - Toggle user interface
 - `[ ! ]` - Toggle displaying separators between albums
-- `[ g ]` - Jump to given position in playing song (formats: mm:ss,
-  x%)
+- `[ g ]` - Jump to given position in playing song (formats: mm:ss, x%)
 - `[ i ]` - Show song info
 - `[ I ]` - Show artist info
 - `[ L ]` - Toggle lyrics fetcher
