@@ -1,12 +1,12 @@
 ---
-# the default layout is 'page'
+title: MusicPlayerPlus Documentation
 layout: post
 icon: fas fa-user-circle
 order: 5
 toc: true
 ---
 
-## MusicPlayerPlus Documentation
+## Introduction
 
 **[NEW:]** MusicPlayerPlus documentation is now available on [Read the Docs](https://musicplayerplus.readthedocs.io/en/latest/)
 
@@ -17,19 +17,19 @@ viewed with the command `man mpplus`. Most commands also have
 help/usage messages that can be viewed with the **-u** argument option,
 e.g. `mpplus -u`.
 
-### README for MusicPlayerPlus configuration
+## README for MusicPlayerPlus configuration
 
 - [**config/README.md**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/config/README.md) - Overview and details of the MusicPlayerPlus configuration
 
-### README for mpcplus MPD client
+## README for mpcplus MPD client
 
 - [**mpcplus/README.md**](https://github.com/doctorfree/mpcplus/README.md) - Introduction to the mpcplus MPD client
 
-### README for tmuxp configs
+## README for tmuxp configs
 
 - [**config/tmuxp/README.md**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/config/tmuxp/README.md) - How to invoke the MusicPlayerPlus provided `tmuxp` session configurations
 
-### Man Pages
+## Man Pages
 
 - [**mpplus**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/mpplus.1.md) : Primary MusicPlayerPlus user interface
 - [**mppcava**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/mppcava.1.md) : Audio Spectrum Visualizer
@@ -57,7 +57,7 @@ e.g. `mpplus -u`.
 - [**yt-dlp**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/yt-dlp.1.md) : Download YouTube and other sites videos and audio
 - [**create_playlist**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/create_playlist.1.md) : Create playlists using Beets queries
 
-### Usage
+## Usage
 
 The primary MusicPlayerPlus user interface is the `mpplus` command.
 The default action of the `mpplus` command is to open the `mpcplus`
@@ -299,7 +299,7 @@ Keys:
 All options are specified in a config file. See `$HOME/.config/mppcava/config`
 ```
 
-### Example client invocations
+## Example client invocations
 
 The `mpplus` command is intended to serve as the primary interface to invoke
 the `mpcplus` MPD client and `mppcava` spectrum visualizer. The `mpplus` command
@@ -350,7 +350,7 @@ To test the mpcplus lyrics fetchers:
 
 `mpcplus --test-lyrics-fetchers`
 
-### Adding Album Cover Art
+## Adding Album Cover Art
 
 The `mpcplus` MPD client is a character-based application. As such, it is
 difficult to display graphical images. However, this limitation can be
@@ -375,7 +375,7 @@ where `<query>` is a Beets query that identifies that album. For example,
 to update the album cover art for the album "Eldorado" by Electric Light
 Orchestra, issue the command `beet fetchart -f electric eldorado`.
 
-### Custom key bindings
+## Custom key bindings
 
 A few custom key bindings are configured during MusicPlayerPlus initialization
 with the `mppinit` command. These are purely for convenience and can be altered
@@ -416,7 +416,7 @@ command. Mpcplus custom key bindings are defined in
 - `[ Alt-m ]` - Open the MPD monitor in a terminal window
 - `[ Alt-r ]` - Raise/lower the spectrum visualizer window
 
-#### Tmux session exit issues
+### Tmux session exit issues
 
 In addition to the `Alt-x` and `Alt-X` key bindings above to kill the current
 tmux session, MusicPlayerPlus tmux key bindings include `Ctrl-a q` and

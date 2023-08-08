@@ -1,18 +1,18 @@
 ---
-# the default layout is 'page'
+title: MusicPlayerPlus Installation
 layout: post
 icon: fas fa-arrow-circle-down
 order: 2
 toc: true
 ---
 
-## MusicPlayerPlus Installation
+## Introduction
 
 MusicPlayerPlus v2.0.1 and later can be installed on Linux systems using
 the Arch packaging format, the Debian packaging format, or the Red Hat
 Package Manager (RPM).
 
-### Supported platforms
+## Supported platforms
 
 MusicPlayerPlus has been tested successfully on the following platforms:
 
@@ -27,7 +27,7 @@ MusicPlayerPlus has been tested successfully on the following platforms:
 - **Raspbian Linux 11**
   - `MusicPlayerPlus_<version>-<release>.deb`
 
-### Debian package installation
+## Debian package installation
 
 Many Linux distributions, most notably Ubuntu and its derivatives, use the
 Debian packaging system.
@@ -64,7 +64,7 @@ or
 sudo dpkg -i ./MusicPlayerPlus_<version>-<release>.deb
 ```
 
-### RPM Package installation
+## RPM Package installation
 
 Red Hat Linux, SUSE Linux, and their derivatives use the RPM packaging
 format. RPM based Linux distributions include Fedora, AlmaLinux, CentOS,
@@ -86,7 +86,7 @@ or
 sudo rpm -i ./MusicPlayerPlus_<version>-<release>.rpm
 ```
 
-### Arch Package installation
+## Arch Package installation
 
 Arch Linux, Manjaro, and other Arch Linux derivatives use the Pacman packaging
 format. In addition to Arch Linux, Arch based Linux distributions include

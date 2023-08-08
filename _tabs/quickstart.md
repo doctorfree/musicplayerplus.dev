@@ -1,14 +1,12 @@
 ---
-# the default layout is 'page'
+title: MusicPlayerPlus Quickstart
 layout: post
 icon: fas fa-arrow-circle-down
 order: 1
 toc: true
 ---
 
-## MusicPlayerPlus Quickstart
-
-### Required setup
+## Required setup
 
 - Create a music library if you do not already have one
   - Default MusicPlayerPlus location for the music library is `$HOME/Music`
@@ -18,7 +16,7 @@ toc: true
   - Searches `$HOME/Music` and `$HOME/music` for music library location
   - The music library location can be specified with `mppinit -l /path/to/library`
 
-### Optional additional setup steps
+## Optional additional setup steps
 
 For many installations, installing the MusicPlayerPlus package and initializing
 the user configuration with the `mppinit` command is all that need be done.
@@ -55,7 +53,7 @@ Download albums in your Bandcamp collections with `mppinit bandcamp`.
 
 Download favorites in your Soundcloud account with `mppinit soundcloud`.
 
-#### Two step post-initialization setup
+## Two step post-initialization setup
 
 The following optional post-initialization steps can be performed individually
 as described below or they can be performed in two steps using `mppinit`.
@@ -137,7 +135,7 @@ beet list bpm:0
 These songs can get an accurate setting for bpm and other audio parameters
 by following the `mppinit -a metadata` command with `mpplus -X bpm:0`.
 
-#### Individual commands post-initialization setup
+## Individual commands post-initialization setup
 
 Download albums in your Bandcamp collections with `mppinit bandcamp`.
 
@@ -175,7 +173,7 @@ and the
 [Post Installation Configuration](https://musicplayerplus.dev/configuration#post-installation-configuration)
 section.
 
-### Quickstart summary
+## Quickstart summary
 
 To summarize, a MusicPlayer quickstart can be accomplished by:
 
@@ -203,7 +201,7 @@ To summarize, a MusicPlayer quickstart can be accomplished by:
   - Activate the YAMS scrobbler for Last.fm with the command `mpplus -Y`
   - Download additional lyrics with the command `mpplus -L`
 
-### Full Tilt Boogie
+## Full Tilt Boogie
 
 The entire full tilt boogie initialization, for those with both Bandcamp
 and Soundcloud accounts with songs and albums in a collection or liked,

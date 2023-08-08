@@ -1,18 +1,18 @@
 ---
-# the default layout is 'page'
+title: MusicPlayerPlus Services and Clients
 layout: post
 icon: fas fa-info-circle
 order: 4
 toc: true
 ---
 
-## MusicPlayerPlus Services and Clients
+## Introduction
 
 MusicPlayerPlus includes several services, some installed by default and
 others optionally installed with the `mppinit` command post-installation.
 Clients that can be used to access these services are also provided.
 
-### Services
+## Services
 
 The following services are included with MusicPlayerPlus:
 
@@ -38,7 +38,7 @@ each of these services as well as a status report on them by selecting the
 be controlled from the command line using `systemctl --user ...`. For example,
 to stop the MPD Stats Service, run the command `systemctl --user stop mpdstats`.
 
-### Which services should be installed and activated
+## Which services should be installed and activated
 
 Depending upon the use case and personal preference, a variety of combinations
 of MusicPlayerPlus services can be activated. Mopidy with the Mopidy-MPD
@@ -67,7 +67,7 @@ music library while MPD or Mopidy is serving up the same library locally.
 Navidrome can optionally scrobble to Last.FM so if that option is enabled
 then deactivate the YAMS service.
 
-#### Common Service Configurations
+### Common Service Configurations
 
 MusicPlayerPlus provides several different selections of services appropriate
 for a variety of use cases. All service configurations require a prior
@@ -109,7 +109,7 @@ service configurations include:
   - Supports many clients available for all desktops, tablets, and phones
   - No need for `mppinit import` after `mppinit bandcamp|soundcloud` downloads
 
-### Clients
+## Clients
 
 The following clients are included with MusicPlayerPlus:
 

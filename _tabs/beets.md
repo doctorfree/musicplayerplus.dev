@@ -1,12 +1,12 @@
 ---
-# the default layout is 'page'
+title: Beets Media Library Management
 layout: post
 icon: fas fa-user-circle
 order: 6
 toc: true
 ---
 
-## Beets media library management
+## Introduction
 
 MusicPlayerPlus includes integrated installation and extensive configuration
 for the Beets media library management system. Beets is an open source,

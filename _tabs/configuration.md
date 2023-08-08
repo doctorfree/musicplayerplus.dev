@@ -1,12 +1,12 @@
 ---
-# the default layout is 'page'
+title: Post Installation Configuration
 layout: post
 icon: fas fa-info-circle
 order: 3
 toc: true
 ---
 
-## Post Installation Configuration
+## Introduction
 
 **[Note:]** Extensive post-installation steps are covered here.
 Minimal post-installation configuration required is the execution
