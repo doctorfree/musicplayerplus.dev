@@ -10,9 +10,9 @@ img_path: "/posts/20230805"
 
 ## MusicPlayerPlus Introduction
 
-[https://github.com/doctorfree/MusicPlayerPlus/mpcplus Mpcplus] is an mpd
-client (compatible with [https://mopidy.com/ mopidy]) with a UI very similar
-to ''ncmpc'', but it provides new useful features such as support for regular
+[Mpcplus](https://github.com/doctorfree/MusicPlayerPlus/mpcplus) is an mpd
+client (compatible with [mopidy](https://mopidy.com)) with a UI very similar
+to `ncmpc`, but it provides new useful features such as support for regular
 expressions for library searches, extended song format, items filtering, the
 ability to sort playlists, and a local filesystem browser.
 

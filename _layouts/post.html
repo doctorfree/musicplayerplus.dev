@@ -14,6 +14,9 @@ tail_includes:
 {% endif %}
 
 <div class="post-meta text-muted">
+  {% if page.post_style == 'page' %}
+  <!-- sharing icons at top in page style post -->
+  {% include post-sharing.html lang=lang %} {% else %}
   <!-- published date -->
   <span>
     {{ site.data.locales[lang].post.posted }} {% include datetime.html
@@ -68,6 +71,7 @@ tail_includes:
     </div>
   </div>
   <!-- .d-flex -->
+  {% endif %}
 </div>
 <!-- .post-meta -->
 
@@ -100,8 +104,7 @@ tail_includes:
     </a>
     {% endfor %}
   </div>
-  {% endif %}
-
+  {% endif %} {% if page.post_style != 'page' %}
   <div
     class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2"
   >
@@ -117,6 +120,7 @@ tail_includes:
 
     {% include post-sharing.html lang=lang %}
   </div>
+  {% endif %}
   <!-- .post-tail-bottom -->
 </div>
 <!-- div.post-tail-wrapper -->

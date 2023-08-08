@@ -1,8 +1,9 @@
 ---
-layout: page
+layout: post
 icon: fas fa-user-circle
 order: 6
 toc: true
+post_style: page
 ---
 
 ## Beets Media Library Management
