@@ -30,10 +30,10 @@ description: >- # used by seo meta and the atom feed
 url: ""
 
 github:
-  username: doctorfree # change to your github username
+  username: doctorfree/MusicPlayerPlus
 
 twitter:
-  username: ronrecord # change to your twitter username
+  username: ronrecord
 
 social:
   name: Ronald Record
