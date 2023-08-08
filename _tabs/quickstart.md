@@ -1,6 +1,6 @@
 ---
 # the default layout is 'page'
-layout: pagetab
+layout: tab
 icon: fas fa-arrow-circle-down
 order: 1
 toc: true
