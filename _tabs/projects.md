@@ -3,7 +3,8 @@ icon: fas fa-gg-circle
 order: 11
 ---
 
-MusicPlayerPlus has the following sister projects which may be of interest:
+[Doctorfree](https://github.com/doctorfree) maintains the following sister projects
+which may be of interest:
 
 [Asciiville](https://asciiville.dev)
 : Ascii art tools and media, Asciiville includes nearly 1,000 works of ASCII and ANSI Art!
@@ -11,8 +12,14 @@ MusicPlayerPlus has the following sister projects which may be of interest:
 [Lazyman](https://lazyman.dev)
 : The Lazyman project can be used to install, initialize, and manage multiple Neovim configurations. 100 popular Neovim configurations are supported.
 
+[MusicPlayerPlus](https://musicplayerplus.dev)
+: Easy to use seamlessly integrated control of audio streaming, playing, music library management, and visualization in a character-based environment.
+
 [RoonCommandLine](https://rooncommand.dev)
 : The Roon Command Line project provides Bash and Python scripts to enable command line control of the Roon audio system over a local network.
+
+[MirrorCommand](https://mirrorcommand.dev)
+: The Mirror Command Line project provides scripts to enable command line control of the MagicMirror system over a local network.
 
 [Neoman](https://neoman.dev)
 : The Neoman project can be used to install, initialize, configure, and manage neovim, neomutt, newsboat, btop++, kitty, neofetch, w3m, and tmux. All of these are powerful, configurable, character-based programs. Neoman automates the installation, initialization, configuration, and management of these tools using a command line and character menu interface.
