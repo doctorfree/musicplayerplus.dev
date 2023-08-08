@@ -1,12 +1,11 @@
 ---
-title: Beets Media Library Management
-layout: post
+layout: page
 icon: fas fa-user-circle
 order: 6
 toc: true
 ---
 
-## Introduction
+## Beets Media Library Management
 
 MusicPlayerPlus includes integrated installation and extensive configuration
 for the Beets media library management system. Beets is an open source,

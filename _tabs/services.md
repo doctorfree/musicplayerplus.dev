@@ -1,12 +1,11 @@
 ---
-title: MusicPlayerPlus Services and Clients
-layout: post
+layout: page
 icon: fas fa-info-circle
 order: 4
 toc: true
 ---
 
-## Introduction
+## MusicPlayerPlus Services and Clients
 
 MusicPlayerPlus includes several services, some installed by default and
 others optionally installed with the `mppinit` command post-installation.

@@ -1,12 +1,11 @@
 ---
-title: MusicPlayerPlus Documentation
-layout: post
+layout: page
 icon: fas fa-user-circle
 order: 5
 toc: true
 ---
 
-## Introduction
+## MusicPlayerPlus Documentation
 
 **[NEW:]** MusicPlayerPlus documentation is now available on [Read the Docs](https://musicplayerplus.readthedocs.io/en/latest/)
 

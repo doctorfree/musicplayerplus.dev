@@ -1,12 +1,11 @@
 ---
-title: Post Installation Configuration
-layout: post
+layout: page
 icon: fas fa-info-circle
 order: 3
 toc: true
 ---
 
-## Introduction
+## Post Installation Configuration
 
 **[Note:]** Extensive post-installation steps are covered here.
 Minimal post-installation configuration required is the execution

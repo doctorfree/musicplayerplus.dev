@@ -1,12 +1,11 @@
 ---
-title: MusicPlayerPlus Installation
-layout: post
+layout: page
 icon: fas fa-arrow-circle-down
 order: 2
 toc: true
 ---
 
-## Introduction
+## MusicPlayerPlus Installation
 
 MusicPlayerPlus v2.0.1 and later can be installed on Linux systems using
 the Arch packaging format, the Debian packaging format, or the Red Hat
