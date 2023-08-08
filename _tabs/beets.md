@@ -1,43 +1,12 @@
 ---
 # the default layout is 'page'
-layout: tab
+layout: post
 icon: fas fa-user-circle
 order: 6
+toc: true
 ---
 
 ## Beets media library management
-
-## Table of contents
-
-1. [Overview](#overview)
-1. [Getting started with Beets](#getting-started-with-beets)
-    1. [Quickstart with Beets](#quickstart-with-beets)
-    1. [Create a music library](#create-a-music-library)
-    1. [Configure the music library location](#configure-the-music-library-location)
-    1. [Initializing the Beets media library management system](#initializing-the-beets-media-library-management-system)
-    1. [Additional Beets metadata analysis and retrieval](#additional-beets-metadata-analysis-and-retrieval)
-        1. [Remove duplicate tracks](#remove-duplicate-tracks)
-        1. [Rename tracks that were duplicates](#rename-tracks-that-were-duplicates)
-        1. [Retrieve genres from Last.fm](#retrieve-genres-from-lastfm)
-        1. [Download album cover art](#download-album-cover-art)
-        1. [Analyze and extract additional metadata with Essentia](#analyze-and-extract-additional-metadata-with-essentia)
-    1. [Convert WAV format media files](#convert-wav-format-media-files)
-    1. [Import the music library into Beets](#import-the-music-library-into-beets)
-    1. [Beets import followup steps](#beets-import-followup-steps)
-        1. [Performing an interactive Beets import](#performing-an-interactive-beets-import)
-        1. [Performing a Beets import with a MusicBrainz ID](#performing-a-beets-import-with-a-musicbrainz-id)
-    1. [Download album cover art with the mpplus command](#download-album-cover-art-with-the-mpplus-command)
-    1. [Downloading album cover art with the fetchart Beets plugin](#downloading-album-cover-art-with-the-fetchart-beets-plugin)
-1. [Playlist creation](#playlist-creation)
-1. [Fetching lyrics](#fetching-lyrics)
-1. [Finding duplicate tracks](#finding-duplicate-tracks)
-1. [Automated audio analysis and audio-based information retrieval](#automated-audio-analysis-and-audio-based-information-retrieval)
-    1. [MusicPlayerPlus custom xtractor metadata configuration](#musicplayerplus-custom-xtractor-metadata-configuration)
-    1. [MusicPlayerPlus acousticbrainz metadata configuration](#musicplayerplus-acousticbrainz-metadata-configuration)
-1. [Configuring the Discogs metadata source](#configuring-the-discogs-metadata-source)
-1. [MusicPlayerPlus Beets plugins](#musicplayerplus-beets-plugins)
-
-## Overview
 
 MusicPlayerPlus includes integrated installation and extensive configuration
 for the Beets media library management system. Beets is an open source,
