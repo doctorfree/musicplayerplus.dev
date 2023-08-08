@@ -1,6 +1,5 @@
 ---
 layout: default
-refactor: true
 panel_includes:
   - toc
 ---
@@ -23,7 +22,9 @@ layout.tail_includes %} {% assign has_tail = true %} {% endif %}
       page.title %}
       <h1 class="dynamic-title" data-toc-skip>{{ title }}</h1>
       <div class="post-content">{{ _content }}</div>
-      {% else %} {{ _content }} {% endif %}
+      {% else %}
+      <div class="post-content">{{ _content }}</div>
+      {% endif %}
     </div>
   </div>
   <!-- #core-wrapper -->
