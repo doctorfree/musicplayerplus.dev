@@ -96,10 +96,10 @@ of complex music library tools that can be integrated and managed in a fairly
 simple to understand fashion. Also, to make some cool looking powerful stuff
 happen from the command-line in a character-based environment.
 
-<div align="center">
-  <h2 id="connect">Connect</h2>
-  <a href="https://ronrecord.com">
-    <img
+## Connect
+
+<p align="center">
+  <a href="https://ronrecord.com"><img
       style="height: 40px"
       alt="domain"
       src="https://raw.githubusercontent.com/doctorfree/doctorfree/master/icons/domain.png"
@@ -152,4 +152,4 @@ happen from the command-line in a character-based environment.
       alt="wikipedia"
       src="https://raw.githubusercontent.com/doctorfree/doctorfree/master/icons/wikipedia.png"
   /></a>
-</div>
+</p>
