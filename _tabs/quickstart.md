@@ -3,7 +3,10 @@ layout: post
 icon: fas fa-arrow-circle-down
 order: 1
 toc: true
+no_title: true
 ---
+
+## MusicPlayerPlus Quickstart
 
 ## Required setup
 
