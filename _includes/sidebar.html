@@ -44,22 +44,18 @@
       </li>
       <!-- .nav-item -->
     {% endfor %}
+    {% unless site.theme_mode %}
+      <li class="nav-item">
+        <button class="mode-toggle btn" aria-label="Switch Mode">
+          <i class="fas fa-adjust"></i>
+	  <span>MODE</span>
+        </button>
+      </li>
+    {% endunless %}
   </ul>
   <!-- ul.nav.flex-column -->
 
   <div class="sidebar-bottom d-flex flex-wrap  align-items-center w-100">
-    {% unless site.theme_mode %}
-      <button class="mode-toggle btn" aria-label="Switch Mode">
-        <i class="fas fa-adjust"></i>
-      </button>
-
-      {% if site.data.contact.size > 0 %}
-        <span class="icon-border"></span>
-      {% endif %}
-    {% endunless %}
-
-    <br />
-
     {% for entry in site.data.contact %}
       {% case entry.type %}
         {% when 'github', 'twitter' %}
