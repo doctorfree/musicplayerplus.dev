@@ -29,7 +29,7 @@ e.g. `mpplus -u`.
 
 - [**config/tmuxp/README.md**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/config/tmuxp/README.md) - How to invoke the MusicPlayerPlus provided `tmuxp` session configurations
 
-## MusicPlayerPlus Commands
+## Commands
 
 `MusicPlayerPlus` adds the following commands to your system:
 
