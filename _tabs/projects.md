@@ -6,6 +6,8 @@ icon: fas fa-gg-circle
 order: 9
 ---
 
+[Doctorfree](https://github.com/doctorfree) maintains the following sister projects which may be of interest
+
 ## Project Table
 
 | **Sister** |        | **Projects** |
@@ -13,9 +15,6 @@ order: 9
 | [Asciiville](https://asciiville.dev) | [Lazyman](https://lazyman.dev) | [MusicPlayerPlus](https://musicplayerplus.dev) |
 | [RoonCommandLine](https://rooncommand.dev) | [MirrorCommand](https://mirrorcommand.dev) | [LazyIde](https://ide.lazyman.dev) |
 | [Webdev](https://webdev.lazyman.dev) | [Ascii Games](https://asciigames.neoman.dev) | [Neoman](https://neoman.dev) |
-
-[Doctorfree](https://github.com/doctorfree) maintains the following sister projects
-which may be of interest:
 
 ### [Asciiville](https://asciiville.dev)
 Ascii art tools and media, Asciiville includes nearly 1,000 works of ASCII and ANSI Art
