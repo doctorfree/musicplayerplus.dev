@@ -2,7 +2,6 @@
 title: Introduction to Beets Plugins
 author: doctorfree
 date: 2023-07-15 10:50:00 +0800
-categories: [Blogging, Tutorial]
 tags: [beets, plugins, media, library]
 pin: true
 img_path: '/posts/20230715'

@@ -2,7 +2,6 @@
 title: Streaming Music with MusicPlayerPlus
 author: doctorfree
 date: 2023-08-03 16:55:00 +0800
-categories: [Blogging, Tutorial]
 tags: [streaming, music, audio, stream]
 pin: true
 img_path: "/posts/20230803"

@@ -2,7 +2,6 @@
 title: Anatomy of an ASCIImatics Script
 author: doctorfree
 date: 2023-07-05 14:35:00 +0800
-categories: [Blogging, Tutorial]
 tags: [design, script, asciimatics, animation]
 pin: true
 img_path: "/posts/20230705"

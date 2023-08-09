@@ -2,7 +2,6 @@
 title: MusicPlayerPlus Initialization Benchmarks
 author: doctorfree
 date: 2023-07-30 16:20:00 +0800
-categories: [Stats, Info]
 tags: [data, benchmarks, stats, info, initialization]
 pin: true
 img_path: "/posts/20230730"

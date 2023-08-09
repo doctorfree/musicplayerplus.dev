@@ -2,7 +2,6 @@
 title: MusicPlayerPlus Code Count Report
 author: doctorfree
 date: 2023-07-20 11:33:00 +0800
-categories: [Stats, Info]
 tags: [stats, info, code, count, data]
 pin: true
 img_path: "/posts/20230720"

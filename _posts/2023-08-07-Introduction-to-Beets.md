@@ -2,7 +2,6 @@
 title: Introduction to Beets Media Library Management
 author: doctorfree
 date: 2023-08-07 16:26:00 +0800
-categories: [Beets, Tutorial]
 tags: [beets, media library, management]
 pin: true
 img_path: '/posts/20230807'

@@ -2,7 +2,6 @@
 title: Introduction to MusicPlayerPlus
 author: doctorfree
 date: 2023-08-05 12:15:00 +0800
-categories: [Blogging, Tutorial]
 tags: [intro, info, introduction]
 pin: true
 img_path: "/posts/20230805"
