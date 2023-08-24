@@ -15,7 +15,7 @@ streaming with the mStream server. While MPD has built-in support for
 streaming with HTTP, this solution is single user and has gaps between
 songs. MPD can be used to stream music with the Satellite setup. Another
 convenient, cross-platform streaming server solution is
-[mStream](https://github.com/IrosTheBeggar/mStream), a personal music
+[mStream](https://github.com/IrosTheBeggar/mStream){:target="_blank"}{:rel="noopener noreferrer"}, a personal music
 streaming server. You can use mStream to stream your music from your
 home computer to any device, anywhere.
 
@@ -62,7 +62,7 @@ is an introductory guide.
 ### Dependencies
 
 - NodeJS v10 or greater
-  - [How to Install NodeJS](https://nodejs.org/en/download/package-manager/)
+  - [How to Install NodeJS](https://nodejs.org/en/download/package-manager/){:target="_blank"}{:rel="noopener noreferrer"}
 - NPM
 - git
 
@@ -90,7 +90,7 @@ npm run-script wizard
 
 ### Running mStream as a Background Process
 
-We will use [PM2](https://pm2.keymetrics.io/) to run mStream as a background process
+We will use [PM2](https://pm2.keymetrics.io/){:target="_blank"}{:rel="noopener noreferrer"} to run mStream as a background process
 
 ```shell
 # Install PM2
@@ -100,7 +100,7 @@ npm install -g pm2
 pm2 start cli-boot-wrapper.js --name mStream
 ```
 
-[See the PM2 docs for more information](https://pm2.keymetrics.io/docs/usage/quick-start/)
+[See the PM2 docs for more information](https://pm2.keymetrics.io/docs/usage/quick-start/){:target="_blank"}{:rel="noopener noreferrer"}
 
 ### Updating mStream
 
@@ -115,21 +115,21 @@ pm2 restart all
 
 ### Android App
 
-[![mStream Android App](https://raw.githubusercontent.com/wiki/doctorfree/MusicPlayerPlus/img/play-store-logo.png)](https://play.google.com/store/apps/details?id=mstream.music&hl=en_US&gl=US)
+[![mStream Android App](https://raw.githubusercontent.com/wiki/doctorfree/MusicPlayerPlus/img/play-store-logo.png)](https://play.google.com/store/apps/details?id=mstream.music&hl=en_US&gl=US){:target="_blank"}{:rel="noopener noreferrer"}
 
-[This App is Open Source. See the Source Code](https://github.com/IrosTheBeggar/mstream_music/releases)
+[This App is Open Source. See the Source Code](https://github.com/IrosTheBeggar/mstream_music/releases){:target="_blank"}{:rel="noopener noreferrer"}
 
 ### iOS App
 
-[![mStream iOS App](https://raw.githubusercontent.com/wiki/doctorfree/MusicPlayerPlus/img/app-store-logo.png)](https://apps.apple.com/us/app/mstream-player/id1605378892)
+[![mStream iOS App](https://raw.githubusercontent.com/wiki/doctorfree/MusicPlayerPlus/img/app-store-logo.png)](https://apps.apple.com/us/app/mstream-player/id1605378892){:target="_blank"}{:rel="noopener noreferrer"}
 
 ### Credits
 
 mStream is built on top some great open-source libraries:
 
-- [music-metadata](https://github.com/Borewit/music-metadata) - The best metadata parser for NodeJS
-- [LokiJS](https://github.com/techfort/LokiJS) - A native, in-memory, database written in JavaScript. LokiJS is the reason mStream is so fast and easy to install
-- [Butterchurn](https://github.com/jberg/butterchurn) - A clone of Milkdrop Visualizer written in JavaScript
+- [music-metadata](https://github.com/Borewit/music-metadata){:target="_blank"}{:rel="noopener noreferrer"} - The best metadata parser for NodeJS
+- [LokiJS](https://github.com/techfort/LokiJS){:target="_blank"}{:rel="noopener noreferrer"} - A native, in-memory, database written in JavaScript. LokiJS is the reason mStream is so fast and easy to install
+- [Butterchurn](https://github.com/jberg/butterchurn){:target="_blank"}{:rel="noopener noreferrer"} - A clone of Milkdrop Visualizer written in JavaScript
 
 ## Streaming music with MPD Satellite setup
 
@@ -154,7 +154,7 @@ available to the clients. MPD supports multiple
 <a href="https://www.musicpd.org/doc/html/plugins.html#storage-plugins"
 class="external text" rel="nofollow">storage plugins</a> to fetch the
 music with. For example, if you choose the curl plugin, you will need a
-[WebDAV](https://wiki.archlinux.org/title/WebDAV "WebDAV") server on the
+[WebDAV](https://wiki.archlinux.org/title/WebDAV "WebDAV"){:target="_blank"}{:rel="noopener noreferrer"} server on the
 server.
 
 Finally, you will need a secure communication tunnel between the server
@@ -187,9 +187,9 @@ configuration file as `$HOME/.config/mpd/mpd.conf`:
 ```
 
 Then, setup either the
-[WebDAV](https://wiki.archlinux.org/title/WebDAV "WebDAV") server, the
-[NFS](https://wiki.archlinux.org/title/NFS "NFS") server or the
-[Samba](https://wiki.archlinux.org/title/Samba "Samba") share.
+[WebDAV](https://wiki.archlinux.org/title/WebDAV "WebDAV"){:target="_blank"}{:rel="noopener noreferrer"} server, the
+[NFS](https://wiki.archlinux.org/title/NFS "NFS"){:target="_blank"}{:rel="noopener noreferrer"} server or the
+[Samba](https://wiki.archlinux.org/title/Samba "Samba"){:target="_blank"}{:rel="noopener noreferrer"} share.
 
 On each client, write the configuration file for the MPD instance that
 will play the music:

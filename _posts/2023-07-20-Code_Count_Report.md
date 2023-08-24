@@ -10,10 +10,10 @@ img_path: "/posts/20230720"
 ## MusicPlayerPlus Code Count Report
 
 The following code count data was generated using David A. Wheeler's
-[SLOCCount tool](https://dwheeler.com/sloccount/). Thanks David!
+[SLOCCount tool](https://dwheeler.com/sloccount/){:target="_blank"}{:rel="noopener noreferrer"}. Thanks David!
 
 This data was generated using the source code for
-[MusicPlayerPlus v2.0.1r3](https://github.com/doctorfree/MusicPlayerPlus/releases/tag/v2.0.1r3).
+[MusicPlayerPlus v2.0.1r3](https://github.com/doctorfree/MusicPlayerPlus/releases/tag/v2.0.1r3){:target="_blank"}{:rel="noopener noreferrer"}.
 
 With over 188,000 lines of code and an estimated nearly 50 person-years
 to develop, MusicPlayerPlus represents an estimated $6,609,913 to develop.

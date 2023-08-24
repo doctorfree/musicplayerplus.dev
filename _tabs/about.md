@@ -70,20 +70,20 @@ tmux session, the `Alt-x` key binding can be used.
 
 Integration is provided for:
 
-- [mpd](https://www.musicpd.org/), the Music Player Daemon
-- [mpcplus](https://github.com/doctorfree/mpcplus/README.md), character-based MPD client
-- [beets](https://beets.io/), media library management system
-- [essentia](https://github.com/doctorfree/mpplus-essentia/README.md), acoustic metadata analysis and extraction
-- [mopidy](https://mopidy.com/), music server with cool extensions
-- [navidrome](https://www.navidrome.org/), self-hosted music server and streamer
-- [yams](https://github.com/Berulacks/yams/), MPD scrobbler for Last.fm
-- [cava](https://github.com/karlstav/cava), an audio spectrum visualizer
-- [mplayer](http://mplayerhq.hu/design7/info.html), a media player
-- [fzf](https://github.com/junegunn/fzf), interactive fuzzy finder
-- [asciimatics](https://github.com/peterbrittain/asciimatics) - automatically display a variety of character-based animation effects
-- [asciinema](https://asciinema.org/) - automatically create ascii character-based video clips
-- [tmux](https://github.com/tmux/tmux/wiki), a terminal multiplexer
-- [tmuxp](https://github.com/tmux-python/tmuxp), a tmux session manager
+- [mpd](https://www.musicpd.org/){:target="_blank"}{:rel="noopener noreferrer"}, the Music Player Daemon
+- [mpcplus](https://github.com/doctorfree/mpcplus/README.md){:target="_blank"}{:rel="noopener noreferrer"}, character-based MPD client
+- [beets](https://beets.io/){:target="_blank"}{:rel="noopener noreferrer"}, media library management system
+- [essentia](https://github.com/doctorfree/mpplus-essentia/README.md){:target="_blank"}{:rel="noopener noreferrer"}, acoustic metadata analysis and extraction
+- [mopidy](https://mopidy.com/){:target="_blank"}{:rel="noopener noreferrer"}, music server with cool extensions
+- [navidrome](https://www.navidrome.org/){:target="_blank"}{:rel="noopener noreferrer"}, self-hosted music server and streamer
+- [yams](https://github.com/Berulacks/yams/){:target="_blank"}{:rel="noopener noreferrer"}, MPD scrobbler for Last.fm
+- [cava](https://github.com/karlstav/cava){:target="_blank"}{:rel="noopener noreferrer"}, an audio spectrum visualizer
+- [mplayer](http://mplayerhq.hu/design7/info.html){:target="_blank"}{:rel="noopener noreferrer"}, a media player
+- [fzf](https://github.com/junegunn/fzf){:target="_blank"}{:rel="noopener noreferrer"}, interactive fuzzy finder
+- [asciimatics](https://github.com/peterbrittain/asciimatics){:target="_blank"}{:rel="noopener noreferrer"} - automatically display a variety of character-based animation effects
+- [asciinema](https://asciinema.org/){:target="_blank"}{:rel="noopener noreferrer"} - automatically create ascii character-based video clips
+- [tmux](https://github.com/tmux/tmux/wiki){:target="_blank"}{:rel="noopener noreferrer"}, a terminal multiplexer
+- [tmuxp](https://github.com/tmux-python/tmuxp){:target="_blank"}{:rel="noopener noreferrer"}, a tmux session manager
 - Enhanced key bindings for extended control of terminal windows and tmux sessions
 - Several terminal emulators
   - kitty (the default MusicPlayerPlus terminal emulator)

@@ -8,7 +8,7 @@ post_style: page
 
 ## MusicPlayerPlus Documentation
 
-**[NEW:]** MusicPlayerPlus documentation is now available on [Read the Docs](https://musicplayerplus.readthedocs.io/en/latest/)
+**[NEW:]** MusicPlayerPlus documentation is now available on [Read the Docs](https://musicplayerplus.readthedocs.io/en/latest/){:target="_blank"}{:rel="noopener noreferrer"}
 
 All MusicPlayerPlus commands have manual pages. Execute `man <command-name>`
 to view the manual page for a command. The `mpplus` frontend is the primary
@@ -19,15 +19,15 @@ e.g. `mpplus -u`.
 
 ## README for MusicPlayerPlus configuration
 
-- [**config/README.md**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/config/README.md) - Overview and details of the MusicPlayerPlus configuration
+- [**config/README.md**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/config/README.md){:target="_blank"}{:rel="noopener noreferrer"} - Overview and details of the MusicPlayerPlus configuration
 
 ## README for mpcplus MPD client
 
-- [**mpcplus/README.md**](https://github.com/doctorfree/mpcplus/README.md) - Introduction to the mpcplus MPD client
+- [**mpcplus/README.md**](https://github.com/doctorfree/mpcplus/README.md){:target="_blank"}{:rel="noopener noreferrer"} - Introduction to the mpcplus MPD client
 
 ## README for tmuxp configs
 
-- [**config/tmuxp/README.md**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/config/tmuxp/README.md) - How to invoke the MusicPlayerPlus provided `tmuxp` session configurations
+- [**config/tmuxp/README.md**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/config/tmuxp/README.md){:target="_blank"}{:rel="noopener noreferrer"} - How to invoke the MusicPlayerPlus provided `tmuxp` session configurations
 
 ## Commands
 
@@ -69,35 +69,35 @@ available for use with MusicPlayerPlus include ncmpc, pms, vimpc, pimpd2,
 nncmpp, mmtc, and mpq.
 
 Additional detail and info can be found in the
-[MusicPlayerPlus Wiki](https://github.com/doctorfree/MusicPlayerPlus/wiki).
+[MusicPlayerPlus Wiki](https://github.com/doctorfree/MusicPlayerPlus/wiki){:target="_blank"}{:rel="noopener noreferrer"}.
 
 ## Man Pages
 
-- [**mpplus**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/mpplus.1.md) : Primary MusicPlayerPlus user interface
-- [**mppcava**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/mppcava.1.md) : Audio Spectrum Visualizer
-- [**mppjulia**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/mppjulia.1.md) : asciimatics animation of a Julia Set
-- [**mpprocks**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/mpprocks.1.md) : asciimatics animation of MusicPlayerPlus intro
-- [**mppplasma**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/mppplasma.1.md) : asciimatics animation with Plasma effect
-- [**mppinit**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/mppinit.1.md) : MusicPlayerPlus initialization
-- [**mppcover**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/mppcover.1.md) : Displays album cover art for currently playing song
-- [**mppdl**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/mppdl.1.md) : Downloads audio tracks from Bandcamp, Soundcloud, or a URL
-- [**mpcplus-tmux**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/mpcplus-tmux.1.md) : MusicPlayerPlus in a tmux session
-- [**mpcplus**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/mpcplus.1.md) : MusicPlayerPlus MPD client
-- [**mpcpluskeys**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/mpcpluskeys.1.md) : Cheat sheet for `mpcplus` MPD client navigation
-- [**mppsplash-tmux**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/mppsplash-tmux.1.md) : MusicPlayerPlus asciimatics animations in a tmux session
-- [**mppsplash**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/mppsplash.1.md) : MusicPlayerPlus asciimatics animations
-- [**mpd-configure**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/mpd-configure.1.md) : MPD configuration generator
-- [**mpd-monitor**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/mpd-monitor.1.md) : Display info on currently playing MPD song
-- [**beet**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/beet.1.md) : Beets media library management command-line interface
-- [**beetsconfig**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/beetsconfig.5.md) : Beets media library management configuration
-- [**bandcamp-dl**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/bandcamp-dl.1.md) : Download Bandcamp collections
-- [**blissify**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/blissify.1.md) : create MPD playlists using song similarity database
-- [**scdl**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/scdl.1.md) : Download Soundcloud favorites
-- [**fzmp**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/fzmp.1.md) : List and search MPD media using fuzzy find
-- [**artist_to_albumartist**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/artist_to_albumartist.1.md) : Copies the Artist tag to the AlbumArtist tag
-- [**listyt**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/listyt.1.md) : List YouTube video titles and urls
-- [**yt-dlp**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/yt-dlp.1.md) : Download YouTube and other sites videos and audio
-- [**create_playlist**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/create_playlist.1.md) : Create playlists using Beets queries
+- [**mpplus**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/mpplus.1.md){:target="_blank"}{:rel="noopener noreferrer"} : Primary MusicPlayerPlus user interface
+- [**mppcava**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/mppcava.1.md){:target="_blank"}{:rel="noopener noreferrer"} : Audio Spectrum Visualizer
+- [**mppjulia**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/mppjulia.1.md){:target="_blank"}{:rel="noopener noreferrer"} : asciimatics animation of a Julia Set
+- [**mpprocks**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/mpprocks.1.md){:target="_blank"}{:rel="noopener noreferrer"} : asciimatics animation of MusicPlayerPlus intro
+- [**mppplasma**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/mppplasma.1.md){:target="_blank"}{:rel="noopener noreferrer"} : asciimatics animation with Plasma effect
+- [**mppinit**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/mppinit.1.md){:target="_blank"}{:rel="noopener noreferrer"} : MusicPlayerPlus initialization
+- [**mppcover**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/mppcover.1.md){:target="_blank"}{:rel="noopener noreferrer"} : Displays album cover art for currently playing song
+- [**mppdl**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/mppdl.1.md){:target="_blank"}{:rel="noopener noreferrer"} : Downloads audio tracks from Bandcamp, Soundcloud, or a URL
+- [**mpcplus-tmux**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/mpcplus-tmux.1.md){:target="_blank"}{:rel="noopener noreferrer"} : MusicPlayerPlus in a tmux session
+- [**mpcplus**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/mpcplus.1.md){:target="_blank"}{:rel="noopener noreferrer"} : MusicPlayerPlus MPD client
+- [**mpcpluskeys**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/mpcpluskeys.1.md){:target="_blank"}{:rel="noopener noreferrer"} : Cheat sheet for `mpcplus` MPD client navigation
+- [**mppsplash-tmux**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/mppsplash-tmux.1.md){:target="_blank"}{:rel="noopener noreferrer"} : MusicPlayerPlus asciimatics animations in a tmux session
+- [**mppsplash**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/mppsplash.1.md){:target="_blank"}{:rel="noopener noreferrer"} : MusicPlayerPlus asciimatics animations
+- [**mpd-configure**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/mpd-configure.1.md){:target="_blank"}{:rel="noopener noreferrer"} : MPD configuration generator
+- [**mpd-monitor**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/mpd-monitor.1.md){:target="_blank"}{:rel="noopener noreferrer"} : Display info on currently playing MPD song
+- [**beet**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/beet.1.md){:target="_blank"}{:rel="noopener noreferrer"} : Beets media library management command-line interface
+- [**beetsconfig**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/beetsconfig.5.md){:target="_blank"}{:rel="noopener noreferrer"} : Beets media library management configuration
+- [**bandcamp-dl**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/bandcamp-dl.1.md){:target="_blank"}{:rel="noopener noreferrer"} : Download Bandcamp collections
+- [**blissify**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/blissify.1.md){:target="_blank"}{:rel="noopener noreferrer"} : create MPD playlists using song similarity database
+- [**scdl**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/scdl.1.md){:target="_blank"}{:rel="noopener noreferrer"} : Download Soundcloud favorites
+- [**fzmp**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/fzmp.1.md){:target="_blank"}{:rel="noopener noreferrer"} : List and search MPD media using fuzzy find
+- [**artist_to_albumartist**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/artist_to_albumartist.1.md){:target="_blank"}{:rel="noopener noreferrer"} : Copies the Artist tag to the AlbumArtist tag
+- [**listyt**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/listyt.1.md){:target="_blank"}{:rel="noopener noreferrer"} : List YouTube video titles and urls
+- [**yt-dlp**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/yt-dlp.1.md){:target="_blank"}{:rel="noopener noreferrer"} : Download YouTube and other sites videos and audio
+- [**create_playlist**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/create_playlist.1.md){:target="_blank"}{:rel="noopener noreferrer"} : Create playlists using Beets queries
 
 ## Usage
 
@@ -290,7 +290,7 @@ Options:
 The mpcplus MPD client has a customized set of key bindings that allow
 quick and easy control of MPD, searches, lyrics display, client navigation,
 and much more via the keyboard. View the
-[**mpcpluskeys man page**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/mpcpluskeys.1.md) with the command
+[**mpcpluskeys man page**](https://github.com/doctorfree/MusicPlayerPlus/blob/master/markdown/mpcpluskeys.1.md){:target="_blank"}{:rel="noopener noreferrer"} with the command
 `man mpcpluskeys`.
 
 The `mppsplash` command can be used to display a variety of character
@@ -399,7 +399,7 @@ difficult to display graphical images. However, this limitation can be
 overcome using `tmux` and additional tools. In this way we can add album
 cover art to MusicPlayerPlus when using the character-based `mpcplus` client.
 
-See [Adding album art to MusicPlayerPlus](https://github.com/doctorfree/MusicPlayerPlus/blob/master/config/README.md) to get
+See [Adding album art to MusicPlayerPlus](https://github.com/doctorfree/MusicPlayerPlus/blob/master/config/README.md){:target="_blank"}{:rel="noopener noreferrer"} to get
 started integrating album art in MusicPlayerPlus.
 
 An album cover art downloader is included in MusicPlayerPlus. To download

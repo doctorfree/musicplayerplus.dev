@@ -8,7 +8,7 @@ img_path: '/posts/20230715'
 ---
 
 MusicPlayerPlus installs and configures the
-[Beets media library management system](https://beets.io/).
+[Beets media library management system](https://beets.io/){:target="_blank"}{:rel="noopener noreferrer"}.
 Beets is a powerful and flexible media library management system
 and a large part of that power and flexibility is provided by the
 very rich Beets plugin system. Plugins extend beets’ core functionality.
@@ -30,81 +30,81 @@ MusicPlayerPlus installs and configures several Beets plugins during the
 post-installation initialization performed by `mppinit`. The following
 Beets plugins are installed:
 
-- [describe](https://github.com/doctorfree/MusicPlayerPlus/wiki/describe) - attempts to give you the full picture on a single attribute of your library item
+- [describe](https://github.com/doctorfree/MusicPlayerPlus/wiki/describe){:target="_blank"}{:rel="noopener noreferrer"} - attempts to give you the full picture on a single attribute of your library item
     - Usage: `beet describe field_name`
     - Examples:
         - `beet describe bpm`
         - `beet describe genre`
         - `beet describe genre albumartist:'Various Artists'`
-- [duplicates](https://github.com/doctorfree/MusicPlayerPlus/wiki/duplicates) - adds a new command, `beet duplicates` or `beet dup`, finds and lists duplicate tracks or albums in your collection
+- [duplicates](https://github.com/doctorfree/MusicPlayerPlus/wiki/duplicates){:target="_blank"}{:rel="noopener noreferrer"} - adds a new command, `beet duplicates` or `beet dup`, finds and lists duplicate tracks or albums in your collection
     - Usage: `beet duplicates [QUERY]`
     - Examples:
         - `beet duplicates`
         - `beet duplicates --help`
         - `beet duplicates year:2008`
         - `beet duplicates -k title -k albumartist -k album`
-- [edit](https://github.com/doctorfree/MusicPlayerPlus/wiki/edit) - lets you modify music metadata using your favorite text editor
+- [edit](https://github.com/doctorfree/MusicPlayerPlus/wiki/edit){:target="_blank"}{:rel="noopener noreferrer"} - lets you modify music metadata using your favorite text editor
     - Usage: `beet edit QUERY`
-- [fetchart](https://github.com/doctorfree/MusicPlayerPlus/wiki/fetchart) -  retrieves album art images from various sources on the Web and stores them as image files
+- [fetchart](https://github.com/doctorfree/MusicPlayerPlus/wiki/fetchart){:target="_blank"}{:rel="noopener noreferrer"} -  retrieves album art images from various sources on the Web and stores them as image files
     - Usage: `beet fetchart [OPTIONS] [QUERY]`
     - Examples:
         - Display missing album art for media matching 'beatles'
             - `beet fetchart -q beatles`
         - Fetch missing album art for media matching 'beatles'
             - `beet fetchart beatles`
-- [fromfilename](https://github.com/doctorfree/MusicPlayerPlus/wiki/fromfilename) - helps to tag albums that are missing tags altogether but where the filenames contain useful information like the artist and title
-- [hook](https://github.com/doctorfree/MusicPlayerPlus/wiki/hook) - lets you run commands in response to events
-- [importadded](https://github.com/doctorfree/MusicPlayerPlus/wiki/importadded) - useful when an existing collection is imported and the time when albums and items were added should be preserved
-- [info](https://github.com/doctorfree/MusicPlayerPlus/wiki/info) - provides a command that dumps the current tag values for any file format supported by beets
+- [fromfilename](https://github.com/doctorfree/MusicPlayerPlus/wiki/fromfilename){:target="_blank"}{:rel="noopener noreferrer"} - helps to tag albums that are missing tags altogether but where the filenames contain useful information like the artist and title
+- [hook](https://github.com/doctorfree/MusicPlayerPlus/wiki/hook){:target="_blank"}{:rel="noopener noreferrer"} - lets you run commands in response to events
+- [importadded](https://github.com/doctorfree/MusicPlayerPlus/wiki/importadded){:target="_blank"}{:rel="noopener noreferrer"} - useful when an existing collection is imported and the time when albums and items were added should be preserved
+- [info](https://github.com/doctorfree/MusicPlayerPlus/wiki/info){:target="_blank"}{:rel="noopener noreferrer"} - provides a command that dumps the current tag values for any file format supported by beets
     - Usage: `beet info [PATH|QUERY]`
     - Examples:
         - `beet info /path/to/music.flac`
         - `beet info beatles`
         - `beet info -i 'title,mb_artistid' beatles`
-- [lyrics](https://github.com/doctorfree/MusicPlayerPlus/wiki/lyrics) - fetches and stores song lyrics from databases on the Web
+- [lyrics](https://github.com/doctorfree/MusicPlayerPlus/wiki/lyrics){:target="_blank"}{:rel="noopener noreferrer"} - fetches and stores song lyrics from databases on the Web
     - Usage: `beet lyrics [QUERY]`
     - Examples:
         - `beet lyrics`
         - `beet lyrics magnetic fields`
         - `beet lyrics magnetic fields absolutely cuckoo`
-- [lastgenre](https://github.com/doctorfree/MusicPlayerPlus/wiki/lastgenre) - fetches *tags* from [Last.fm](https://last.fm/) and assigns them as genres to your albums and items
+- [lastgenre](https://github.com/doctorfree/MusicPlayerPlus/wiki/lastgenre){:target="_blank"}{:rel="noopener noreferrer"} - fetches *tags* from [Last.fm](https://last.fm/){:target="_blank"}{:rel="noopener noreferrer"} and assigns them as genres to your albums and items
     - Usage: `beet lastgenre [QUERY]`
-- [missing](https://github.com/doctorfree/MusicPlayerPlus/wiki/missing) - adds a new command, `beet missing` or `beet miss`, which finds and lists, for every album in your collection, which or how many tracks are missing
+- [missing](https://github.com/doctorfree/MusicPlayerPlus/wiki/missing){:target="_blank"}{:rel="noopener noreferrer"} - adds a new command, `beet missing` or `beet miss`, which finds and lists, for every album in your collection, which or how many tracks are missing
     - Usage: `beet missing [QUERY]`
     - Examples:
         - `beet missing`
         - `beet missing -a`
         - `beet missing year:2008`
         - `beet ls -a -f '$albumartist - $album: $missing'`
-- [mbsync](https://github.com/doctorfree/MusicPlayerPlus/wiki/mbsync) - provides the `beet mbsync` command, which lets you fetch metadata from MusicBrainz for albums and tracks that already have MusicBrainz IDs
+- [mbsync](https://github.com/doctorfree/MusicPlayerPlus/wiki/mbsync){:target="_blank"}{:rel="noopener noreferrer"} - provides the `beet mbsync` command, which lets you fetch metadata from MusicBrainz for albums and tracks that already have MusicBrainz IDs
     - Usage: `beet mbsync [QUERY]`
     - Examples:
         - `beet mbsync --pretend`
-- [mpdstats](https://github.com/doctorfree/MusicPlayerPlus/wiki/mpdstats) - collects statistics about your listening habits from [MPD](https://www.musicpd.org/)
+- [mpdstats](https://github.com/doctorfree/MusicPlayerPlus/wiki/mpdstats){:target="_blank"}{:rel="noopener noreferrer"} - collects statistics about your listening habits from [MPD](https://www.musicpd.org/){:target="_blank"}{:rel="noopener noreferrer"}
     - Usage: `beet mpdstats`
-- [play](https://github.com/doctorfree/MusicPlayerPlus/wiki/play) - allows you to pass the results of a query to a music player in the form of an m3u playlist or paths on the command line
+- [play](https://github.com/doctorfree/MusicPlayerPlus/wiki/play){:target="_blank"}{:rel="noopener noreferrer"} - allows you to pass the results of a query to a music player in the form of an m3u playlist or paths on the command line
     - Usage: `beet play [QUERY]`
     - Examples:
         - `beet play beatles`
         - `beet play --args -shuffle`
-- [playlist](https://github.com/doctorfree/MusicPlayerPlus/wiki/playlist) - use playlists in m3u format
+- [playlist](https://github.com/doctorfree/MusicPlayerPlus/wiki/playlist){:target="_blank"}{:rel="noopener noreferrer"} - use playlists in m3u format
     - Examples:
         - `beet ls playlist:/path/to/someplaylist.m3u`
         - `beet ls playlist:mycoolplaylist`
-- [smartplaylist](https://github.com/doctorfree/MusicPlayerPlus/wiki/smartplaylist) - generates smart playlists in m3u format based on beets queries every time your library changes. This plugin is specifically created to work well with [MPD\'s](https://www.musicpd.org/) playlist functionality.
+- [smartplaylist](https://github.com/doctorfree/MusicPlayerPlus/wiki/smartplaylist){:target="_blank"}{:rel="noopener noreferrer"} - generates smart playlists in m3u format based on beets queries every time your library changes. This plugin is specifically created to work well with [MPD\'s](https://www.musicpd.org/){:target="_blank"}{:rel="noopener noreferrer"} playlist functionality.
     - Examples:
         - `beet splupdate`
         - `beet splupdate BeatlesUniverse.m3u MyTravelPlaylist`
-- [mpdupdate](https://github.com/doctorfree/MusicPlayerPlus/wiki/mpdupdate) - automatically updates [MPD](https://www.musicpd.org/)\'s index whenever you change your beets library
-- [unimported](https://github.com/doctorfree/MusicPlayerPlus/wiki/unimported) - list all files in the library folder which are not listed in the beets library database, including art files
+- [mpdupdate](https://github.com/doctorfree/MusicPlayerPlus/wiki/mpdupdate){:target="_blank"}{:rel="noopener noreferrer"} - automatically updates [MPD](https://www.musicpd.org/){:target="_blank"}{:rel="noopener noreferrer"}\'s index whenever you change your beets library
+- [unimported](https://github.com/doctorfree/MusicPlayerPlus/wiki/unimported){:target="_blank"}{:rel="noopener noreferrer"} - list all files in the library folder which are not listed in the beets library database, including art files
     - Usage: `beet unimported`
-- [xtractor](https://github.com/doctorfree/MusicPlayerPlus/wiki/xtractor) - obtain low and high level musical information from your songs
+- [xtractor](https://github.com/doctorfree/MusicPlayerPlus/wiki/xtractor){:target="_blank"}{:rel="noopener noreferrer"} - obtain low and high level musical information from your songs
     - Usage: `beet xtractor [options] [QUERY...]`
     - Examples:
         - `beet xtractor --force donovan`
         - `beet xtractor -dry-run beatles`
-    - [Essentia: An Audio Analysis Library for Music Information Retrieval](https://github.com/doctorfree/MusicPlayerPlus/wiki/Essentia_An_Audio_Analysis_Library_for_M.pdf) (PDF)
-- [yearfixer](https://github.com/doctorfree/MusicPlayerPlus/wiki/yearfixer) - finds the original_year for each of your songs by querying the MusicBrainz database and finding the first release date that is associated with it.
+    - [Essentia: An Audio Analysis Library for Music Information Retrieval](https://github.com/doctorfree/MusicPlayerPlus/wiki/Essentia_An_Audio_Analysis_Library_for_M.pdf){:target="_blank"}{:rel="noopener noreferrer"} (PDF)
+- [yearfixer](https://github.com/doctorfree/MusicPlayerPlus/wiki/yearfixer){:target="_blank"}{:rel="noopener noreferrer"} - finds the original_year for each of your songs by querying the MusicBrainz database and finding the first release date that is associated with it.
     - Usage: `beet yearfixer [--force] [QUERY...]`
     - Examples:
         - `beet yearfixer donovan`
@@ -113,14 +113,14 @@ Beets plugins are installed:
 The Beets web plugin is not installed or configured by default. See the next
 section for detailed instructions on installing and configuring the web plugin.
 
-- [web](https://github.com/doctorfree/MusicPlayerPlus/wiki/web) - query, browse, and play your music in browsers that support HTML5 audio
+- [web](https://github.com/doctorfree/MusicPlayerPlus/wiki/web){:target="_blank"}{:rel="noopener noreferrer"} - query, browse, and play your music in browsers that support HTML5 audio
     - Usage: `beet web [HOSTNAME] [PORT]`
 
 ## Beets web plugin
 
 The Beets web plugin provides a graphical user interface to browse, query,
 and play music in a Beets library. It requires the `flask` Python pip module
-and a browser that supports HTML5 audio. See the [web plugin manual](https://github.com/doctorfree/MusicPlayerPlus/wiki/web) for
+and a browser that supports HTML5 audio. See the [web plugin manual](https://github.com/doctorfree/MusicPlayerPlus/wiki/web){:target="_blank"}{:rel="noopener noreferrer"} for
 greater detail. What follows are the basics of setting up the Beets web plugin.
 
 Install the flask Python pip module:

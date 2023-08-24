@@ -27,11 +27,11 @@ Subsequent invocations of `mpcplus` will be able to use this rich set of tags
 to filter, search, and find items in your music library.
 
 The primary source of online data for Beets is
-[MusicBrainz](https://musicbrainz.org), a collaborative music database.
+[MusicBrainz](https://musicbrainz.org){:target="_blank"}{:rel="noopener noreferrer"}, a collaborative music database.
 As of March 2022, MusicBrainz contained information on roughly 1.9 million
 artists, 3 million releases, and 26.5 million recordings. This extensive set
 of data, along with additional data from other online sources like
-[Bandcamp](https://bandcamp.com) and [Last.fm](https://www.last.fm)
+[Bandcamp](https://bandcamp.com){:target="_blank"}{:rel="noopener noreferrer"} and [Last.fm](https://www.last.fm){:target="_blank"}{:rel="noopener noreferrer"}
 can be used to significantly improve the metadata content and organization
 of your music library.
 
@@ -209,7 +209,7 @@ beet play QUERY
 ```
 
 Where 'QUERY' is a valid
-[Beets query](https://beets.readthedocs.io/en/stable/reference/query.html).
+[Beets query](https://beets.readthedocs.io/en/stable/reference/query.html){:target="_blank"}{:rel="noopener noreferrer"}.
 This can be a simple string like
 "blue" or "love" or a more complicated expression as described in the
 Beets query documentation. The Beets `play` plugin should match the
@@ -244,15 +244,15 @@ mppinit metadata
 This will identify and delete duplicate tracks, retrieve album genres,
 download album cover art, and optionally analyze and retrieve metadata
 for all songs in the music library using the
-[Essentia extractor](https://essentia.upf.edu/index.html) and
-[Essentia trained models](https://essentia.upf.edu/models.html).
+[Essentia extractor](https://essentia.upf.edu/index.html){:target="_blank"}{:rel="noopener noreferrer"} and
+[Essentia trained models](https://essentia.upf.edu/models.html){:target="_blank"}{:rel="noopener noreferrer"}.
 
 MusicPlayerPlus uses Essentia for extracting acoustic characteristics
 of music, including low-level spectral information, rhythm, keys, scales,
 and much more, and automatic annotation by genres, moods, and instrumentation.
 
 This is the same sort of thing that
-[AcousticBrainz](https://acousticbrainz.org/) does but the AcousticBrainz
+[AcousticBrainz](https://acousticbrainz.org/){:target="_blank"}{:rel="noopener noreferrer"} does but the AcousticBrainz
 project is no longer collecting data and will be withdrawn in 2023.
 MusicPlayerPlus provides the same functionality using pre-compiled and
 packaged Essentia binaries and models.
@@ -309,7 +309,7 @@ To analyze and extract a wealth of additional metadata directly from
 all of the audio files in the music library, run the command `mpplus -X all`.
 To limit the analysis and extraction to a subset of audio files in the
 music library, run the command `mpplus -X [QUERY]` where 'QUERY' is a
-[Beets query](https://beets.readthedocs.io/en/stable/reference/query.html).
+[Beets query](https://beets.readthedocs.io/en/stable/reference/query.html){:target="_blank"}{:rel="noopener noreferrer"}.
 For example, to analyze and extract metadata for all audio files
 with beets-per-minute set to 0, run the command `mpplus -X bpm:0`.
 
@@ -403,7 +403,7 @@ a libary's structure but can consume much additional disk space. The
 MusicPlayerPlus default preference is to move rather than copy.
 
 **[NOTE:]** Some users prefer to use
-[MusicBrainz Picard](https://picard.musicbrainz.org/)  to tag their music
+[MusicBrainz Picard](https://picard.musicbrainz.org/){:target="_blank"}{:rel="noopener noreferrer"}  to tag their music
 library. If you have previously tagged your music library using
 MusicBrainz Picard then you may wish to modify the default Beets
 *import* configuration to preserve Picard tagging and speed up import.
@@ -589,7 +589,7 @@ in the music library cannot be identified by MusicBrainz or Beetcamp
 updated manually.
 
 Use the
-[beet modify](https://beets.readthedocs.io/en/stable/reference/cli.html#modify)
+[beet modify](https://beets.readthedocs.io/en/stable/reference/cli.html#modify){:target="_blank"}{:rel="noopener noreferrer"}
 command to selectively add titles, artists, track names, and other
 metadata to items in the music library for which there is no match in
 any of the configured metadata sources. For example, if the above unknown
@@ -649,7 +649,7 @@ unavailable digital audio recordings.
 After manually identifying and updating an album or track that MusicBrainz
 could not match, it is possible to update the MusicBrainz database with
 that new information. Beets even has a
-[MusicBrainz Submit Plugin](https://beets.readthedocs.io/en/stable/plugins/mbsubmit.html)
+[MusicBrainz Submit Plugin](https://beets.readthedocs.io/en/stable/plugins/mbsubmit.html){:target="_blank"}{:rel="noopener noreferrer"}
 to ease this process but that is beyond the scope of this document.
 
 Generally, an interactive Beets re-import of unmatched, miscategorized
@@ -819,7 +819,7 @@ change the `sources: tekstowo` setting in the `lyrics:` section of
 `google musixmatch genius tekstowo`.
 
 See the
-[Beets lyrics plugin documentation](https://beets.readthedocs.io/en/stable/plugins/lyrics.html)
+[Beets lyrics plugin documentation](https://beets.readthedocs.io/en/stable/plugins/lyrics.html){:target="_blank"}{:rel="noopener noreferrer"}
 for more information on configuring and using the Beets lyrics plugin.
 
 ## Finding duplicate tracks
@@ -1214,7 +1214,7 @@ lower than that with the Xtractor plugin.
 
 ## Configuring the Discogs metadata source
 
-Beets uses [MusicBrainz](https://musicbrainz.org) as the default source
+Beets uses [MusicBrainz](https://musicbrainz.org){:target="_blank"}{:rel="noopener noreferrer"} as the default source
 for metadata. This is sufficient for many Beets users as MusicBrainz has
 a vast amount of data and requires no registration or API key to utilize.
 However, MusicBrainz does not have every artist, album, and song in its
@@ -1222,7 +1222,7 @@ database and there are several Beets plugins that extend metadata search
 to additional sources.
 
 MusicPlayerPlus provides a pre-configured Beets `bandcamp` plugin to enable
-[Bandcamp](https://bandcamp.com) as a metadata source. Many artists have
+[Bandcamp](https://bandcamp.com){:target="_blank"}{:rel="noopener noreferrer"} as a metadata source. Many artists have
 chosen to only distribute their works on Bandcamp in order to avoid the
 miniscule royalty payments made to artists by streaming services. Bandcamp
 is also a frequent home for artists who have not been signed to a label
@@ -1235,7 +1235,7 @@ The default MusicPlayerPlus Beets configuration, using both MusicBrainz
 and Bandcamp as metadata sources, should satisfy most use cases.
 However, some users may wish to enable additional metadata sources.
 One of the most complete sources of music metadata is
-[Discogs](https://www.discogs.com). To enable Discogs as a metadata source,
+[Discogs](https://www.discogs.com){:target="_blank"}{:rel="noopener noreferrer"}. To enable Discogs as a metadata source,
 it will be necessary to register for a Discogs account, provide
 authorization and credentials, and configure the `discogs` plugin.
 This process is not too difficult but MusicPlayerPlus cannot perform
@@ -1245,7 +1245,7 @@ steps to enable Discogs as a metadata source:
 * Register for a free Discogs account by visiting https://www.discogs.com
 * No need to install `python3-discogs-client` as this was done during the MusicPlayerPlus initialization with `mppinit`
 * Login to Discogs to generate a user token
-    * Visit the [Developer settings page](https://www.discogs.com/settings/developers) at https://www.discogs.com/settings/developers
+    * Visit the [Developer settings page](https://www.discogs.com/settings/developers){:target="_blank"}{:rel="noopener noreferrer"} at https://www.discogs.com/settings/developers
     * Press the `Generate new token` button
     * Copy the generated token to your clipboard (select the token and press Ctrl-c)
 * Add the generated token in the `discogs` section of the Beets configuration
@@ -1281,30 +1281,30 @@ Beets plugins are installed and configured automatically by MusicPlayerPlus.
 MusicPlayerPlus 2.0.1 and later include automated installation and
 configuration for the following Beets plugins:
 
-- [acousticbrainz](https://beets.readthedocs.io/en/stable/plugins/acousticbrainz.html)
-- [albumtypes](https://beets.readthedocs.io/en/stable/plugins/albumtypes.html)
-- [bandcamp](https://github.com/snejus/beetcamp)
-- [describe](https://github.com/adamjakab/BeetsPluginDescribe)
-- [duplicates](https://beets.readthedocs.io/en/stable/plugins/duplicates.html)
-- [edit](https://beets.readthedocs.io/en/stable/plugins/edit.html)
-- [fetchart](https://beets.readthedocs.io/en/stable/plugins/fetchart.html)
-- [fromfilename](https://beets.readthedocs.io/en/stable/plugins/fromfilename.html)
-- [hook](https://beets.readthedocs.io/en/stable/plugins/hook.html)
-- [importadded](https://beets.readthedocs.io/en/stable/plugins/importadded.html)
-- [info](https://beets.readthedocs.io/en/stable/plugins/info.html)
-- [lyrics](https://beets.readthedocs.io/en/stable/plugins/lyrics.html)
-- [lastgenre](https://beets.readthedocs.io/en/stable/plugins/lastgenre.html)
-- [missing](https://beets.readthedocs.io/en/stable/plugins/missing.html)
-- [mbsync](https://beets.readthedocs.io/en/stable/plugins/mbsync.html)
-- [mpdstats](https://beets.readthedocs.io/en/stable/plugins/mpdstats.html)
-- [play](https://beets.readthedocs.io/en/stable/plugins/play.html)
-- [playlist](https://beets.readthedocs.io/en/stable/plugins/playlist.html)
-- [smartplaylist](https://beets.readthedocs.io/en/stable/plugins/smartplaylist.html)
-- [mpdupdate](https://beets.readthedocs.io/en/stable/plugins/mpdupdate.html)
-- [unimported](https://beets.readthedocs.io/en/stable/plugins/unimported.html)
-- [web](https://beets.readthedocs.io/en/stable/plugins/web.html)
-- [xtractor](https://github.com/adamjakab/BeetsPluginXtractor)
-- [yearfixer](https://github.com/adamjakab/BeetsPluginYearFixer)
+- [acousticbrainz](https://beets.readthedocs.io/en/stable/plugins/acousticbrainz.html){:target="_blank"}{:rel="noopener noreferrer"}
+- [albumtypes](https://beets.readthedocs.io/en/stable/plugins/albumtypes.html){:target="_blank"}{:rel="noopener noreferrer"}
+- [bandcamp](https://github.com/snejus/beetcamp){:target="_blank"}{:rel="noopener noreferrer"}
+- [describe](https://github.com/adamjakab/BeetsPluginDescribe){:target="_blank"}{:rel="noopener noreferrer"}
+- [duplicates](https://beets.readthedocs.io/en/stable/plugins/duplicates.html){:target="_blank"}{:rel="noopener noreferrer"}
+- [edit](https://beets.readthedocs.io/en/stable/plugins/edit.html){:target="_blank"}{:rel="noopener noreferrer"}
+- [fetchart](https://beets.readthedocs.io/en/stable/plugins/fetchart.html){:target="_blank"}{:rel="noopener noreferrer"}
+- [fromfilename](https://beets.readthedocs.io/en/stable/plugins/fromfilename.html){:target="_blank"}{:rel="noopener noreferrer"}
+- [hook](https://beets.readthedocs.io/en/stable/plugins/hook.html){:target="_blank"}{:rel="noopener noreferrer"}
+- [importadded](https://beets.readthedocs.io/en/stable/plugins/importadded.html){:target="_blank"}{:rel="noopener noreferrer"}
+- [info](https://beets.readthedocs.io/en/stable/plugins/info.html){:target="_blank"}{:rel="noopener noreferrer"}
+- [lyrics](https://beets.readthedocs.io/en/stable/plugins/lyrics.html){:target="_blank"}{:rel="noopener noreferrer"}
+- [lastgenre](https://beets.readthedocs.io/en/stable/plugins/lastgenre.html){:target="_blank"}{:rel="noopener noreferrer"}
+- [missing](https://beets.readthedocs.io/en/stable/plugins/missing.html){:target="_blank"}{:rel="noopener noreferrer"}
+- [mbsync](https://beets.readthedocs.io/en/stable/plugins/mbsync.html){:target="_blank"}{:rel="noopener noreferrer"}
+- [mpdstats](https://beets.readthedocs.io/en/stable/plugins/mpdstats.html){:target="_blank"}{:rel="noopener noreferrer"}
+- [play](https://beets.readthedocs.io/en/stable/plugins/play.html){:target="_blank"}{:rel="noopener noreferrer"}
+- [playlist](https://beets.readthedocs.io/en/stable/plugins/playlist.html){:target="_blank"}{:rel="noopener noreferrer"}
+- [smartplaylist](https://beets.readthedocs.io/en/stable/plugins/smartplaylist.html){:target="_blank"}{:rel="noopener noreferrer"}
+- [mpdupdate](https://beets.readthedocs.io/en/stable/plugins/mpdupdate.html){:target="_blank"}{:rel="noopener noreferrer"}
+- [unimported](https://beets.readthedocs.io/en/stable/plugins/unimported.html){:target="_blank"}{:rel="noopener noreferrer"}
+- [web](https://beets.readthedocs.io/en/stable/plugins/web.html){:target="_blank"}{:rel="noopener noreferrer"}
+- [xtractor](https://github.com/adamjakab/BeetsPluginXtractor){:target="_blank"}{:rel="noopener noreferrer"}
+- [yearfixer](https://github.com/adamjakab/BeetsPluginYearFixer){:target="_blank"}{:rel="noopener noreferrer"}
 
 See the MusicPlayerPlus [article on Beets plugins](https://musicplayerplus.dev/posts/BeetsPlugins)
 for an introduction to the installed and configured MusicPlayerPlus Beets plugins.

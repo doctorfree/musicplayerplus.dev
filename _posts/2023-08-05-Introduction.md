@@ -9,8 +9,8 @@ img_path: "/posts/20230805"
 
 ## MusicPlayerPlus Introduction
 
-[Mpcplus](https://github.com/doctorfree/MusicPlayerPlus/mpcplus) is an mpd
-client (compatible with [mopidy](https://mopidy.com)) with a UI very similar
+[Mpcplus](https://github.com/doctorfree/MusicPlayerPlus/mpcplus){:target="_blank"}{:rel="noopener noreferrer"} is an mpd
+client (compatible with [mopidy](https://mopidy.com){:target="_blank"}{:rel="noopener noreferrer"}) with a UI very similar
 to `ncmpc`, but it provides new useful features such as support for regular
 expressions for library searches, extended song format, items filtering, the
 ability to sort playlists, and a local filesystem browser.
@@ -21,7 +21,7 @@ To use it, a functional ''mpd'' must be present on the system since
 ## Installation
 
 To install download the latest Debian or RPM format package from the
-[MusicPlayerPlus Releases](https://github.com/doctorfree/MusicPlayerPlus/releases).
+[MusicPlayerPlus Releases](https://github.com/doctorfree/MusicPlayerPlus/releases){:target="_blank"}{:rel="noopener noreferrer"}.
 
 ## MPD Server Configuration
 
@@ -77,7 +77,7 @@ audio_output {
 
 MPD is a powerful and flexible music player server with many configuration
 options. Additional MPD configuration may be desired. See the
-[MPD User's Manual](https://mpd.readthedocs.io/en/stable/user.html)
+[MPD User's Manual](https://mpd.readthedocs.io/en/stable/user.html){:target="_blank"}{:rel="noopener noreferrer"}
 
 ## Basic configuration
 
@@ -173,7 +173,7 @@ Options:
 The mpcplus MPD client has an extensive set of key bindings that allow
 quick and easy control of MPD, searches, lyrics display, client navigation,
 and much more via the keyboard. View the
-[**mpcpluskeys man page**](https://github.com/doctorfree/MusicPlayerPlus/wiki/mpcpluskeys.1) with the command
+[**mpcpluskeys man page**](https://github.com/doctorfree/MusicPlayerPlus/wiki/mpcpluskeys.1){:target="_blank"}{:rel="noopener noreferrer"} with the command
 `man mpcpluskeys`.
 
 ```

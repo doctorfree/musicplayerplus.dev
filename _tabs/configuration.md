@@ -216,7 +216,7 @@ beet play QUERY
 ```
 
 Where 'QUERY' is a valid
-[Beets query](https://beets.readthedocs.io/en/stable/reference/query.html).
+[Beets query](https://beets.readthedocs.io/en/stable/reference/query.html){:target="_blank"}{:rel="noopener noreferrer"}.
 This can be a simple string like
 "blue" or "love" or a more complicated expression as described in the
 Beets query documentation. The Beets `play` plugin should match the
@@ -310,8 +310,8 @@ mppinit -e metadata
 This will identify and delete duplicate tracks, retrieve album genres,
 download album cover art, and optionally analyze and retrieve metadata
 for all songs in the music library using the
-[Essentia extractor](https://essentia.upf.edu/index.html) and
-[Essentia trained models](https://essentia.upf.edu/models.html).
+[Essentia extractor](https://essentia.upf.edu/index.html){:target="_blank"}{:rel="noopener noreferrer"} and
+[Essentia trained models](https://essentia.upf.edu/models.html){:target="_blank"}{:rel="noopener noreferrer"}.
 
 MusicPlayerPlus `mppinit -e metadata` uses Essentia for extracting acoustic
 characteristics of music, including low-level spectral information, rhythm,
@@ -319,7 +319,7 @@ keys, scales, and much more, and automatic annotation by genres, moods, and
 instrumentation.
 
 This is the same sort of thing that
-[AcousticBrainz](https://acousticbrainz.org/) does but the AcousticBrainz
+[AcousticBrainz](https://acousticbrainz.org/){:target="_blank"}{:rel="noopener noreferrer"} does but the AcousticBrainz
 project is no longer collecting data and will be withdrawn in 2023.
 MusicPlayerPlus provides the same functionality using pre-compiled and
 packaged Essentia binaries and models.
@@ -348,7 +348,7 @@ in the [MusicPlayerPlus Beets section](https://musicplayerplus.dev/beets).
 
 YAMS is an acronym for "Yet Another MPD Scrobbler".
 When YAMS is configured and running, any songs, artists, or albums
-played through MPD get "scrobbled" to [Last.fm](https://www.last.fm).
+played through MPD get "scrobbled" to [Last.fm](https://www.last.fm){:target="_blank"}{:rel="noopener noreferrer"}.
 This enables a tracking of your listening patterns and habits,
 creating a fairly extensive set of statistics viewable on Last.fm.
 
@@ -454,7 +454,7 @@ audio_output {
 
 MPD is a powerful and flexible music player server with many configuration
 options. Additional MPD configuration may be desired. See the
-[MPD User's Manual](https://mpd.readthedocs.io/en/stable/user.html)
+[MPD User's Manual](https://mpd.readthedocs.io/en/stable/user.html){:target="_blank"}{:rel="noopener noreferrer"}
 
 ## Fuzzy Finder Configuration
 
@@ -541,8 +541,8 @@ some system checks can optionally be performed.
     * `systemctl --user is-enabled mpd.service`
     * `systemctl --user enable mpd.service`
 * Play music with `mpplus`
-    * See the [online mpcpluskeys cheat sheet](https://github.com/doctorfree/MusicPlayerPlus/wiki/mpcpluskeys.1) or `man mpcpluskeys` for help navigating the `mpplus` windows
-    * See the [online mpplus man page](https://github.com/doctorfree/MusicPlayerPlus/wiki/mpplus.1) or `man mpplus` for different ways to invoke the `mpplus` command
+    * See the [online mpcpluskeys cheat sheet](https://github.com/doctorfree/MusicPlayerPlus/wiki/mpcpluskeys.1){:target="_blank"}{:rel="noopener noreferrer"} or `man mpcpluskeys` for help navigating the `mpplus` windows
+    * See the [online mpplus man page](https://github.com/doctorfree/MusicPlayerPlus/wiki/mpplus.1){:target="_blank"}{:rel="noopener noreferrer"} or `man mpplus` for different ways to invoke the `mpplus` command
 
 ## Initialize Music Database
 
@@ -580,7 +580,7 @@ and Mopidy extensions resides in `$HOME/.config/mopidy/`. The MusicPlayerPlus
 activation of Mopidy auto-configures Mopidy and the installed extensions.
 
 In addition to the
-[bundled Mopidy extensions](https://docs.mopidy.com/en/latest/),
+[bundled Mopidy extensions](https://docs.mopidy.com/en/latest/){:target="_blank"}{:rel="noopener noreferrer"},
 the `mppinit mopidy` command installs the following Mopidy extensions:
 
 - **Mopidy-Beets**
@@ -590,7 +590,7 @@ the `mppinit mopidy` command installs the following Mopidy extensions:
     - Open `http://<ip address>:6680/iris`
 - **Mopidy-Mobile**
     - Fully control a Mopidy music server from your mobile device
-    - Android App available on [Google Play](https://play.google.com/store/apps/details?id=at.co.kemmer.mopidy_mobile)
+    - Android App available on [Google Play](https://play.google.com/store/apps/details?id=at.co.kemmer.mopidy_mobile){:target="_blank"}{:rel="noopener noreferrer"}
     - Other devices open `http://IP_Address:6680` in a browser
 - **Mopidy-Mpd**
     - Mopidy extension for controlling Mopidy from MPD clients
@@ -677,18 +677,18 @@ The Navidrome self-hosted music service can stream your music to many devices.
 MusicPlayerPlus tested and recommended free open source Navidrome clients:
 
 - **iPhone/iPad**
-    - [iSub](http://www.subsonic.org/pages/apps.jsp#isub)
+    - [iSub](http://www.subsonic.org/pages/apps.jsp#isub){:target="_blank"}{:rel="noopener noreferrer"}
 - **Android**
-    - [Dsub](http://www.subsonic.org/pages/apps.jsp#dsub)
+    - [Dsub](http://www.subsonic.org/pages/apps.jsp#dsub){:target="_blank"}{:rel="noopener noreferrer"}
 - **Linux/MacOS/Windows**
-    - [Sonixd](https://github.com/jeffvli/sonixd)
+    - [Sonixd](https://github.com/jeffvli/sonixd){:target="_blank"}{:rel="noopener noreferrer"}
 
 Character based terminal/console Navidrome clients:
 
 - **Linux/Windows**
-    - [Jellycli](https://github.com/tryffel/jellycli)
+    - [Jellycli](https://github.com/tryffel/jellycli){:target="_blank"}{:rel="noopener noreferrer"}
 - **Linux**
-    - [Stmp](https://github.com/wildeyedskies/stmp)
+    - [Stmp](https://github.com/wildeyedskies/stmp){:target="_blank"}{:rel="noopener noreferrer"}
 
 Navidrome clients are not installed by MusicPlayerPlus. Install Navidrome
 clients using your device's app store or following the installation
@@ -705,7 +705,7 @@ https://airsonic.github.io/docs/apps/
 For a list of Subsonic compatible clients, see
 https://www.navidrome.org/docs/overview/#apps
 
-[Sonixd](https://github.com/jeffvli/sonixd) is a cross-platform desktop
+[Sonixd](https://github.com/jeffvli/sonixd){:target="_blank"}{:rel="noopener noreferrer"} is a cross-platform desktop
 Subsonic client compatible with Navidrome. On Apple MacOS, install sonixd
 with Homebrew:
 
@@ -713,7 +713,7 @@ with Homebrew:
 brew install --cask sonixd
 ```
 
-[Sublime](https://sublime-music.gitlab.io/sublime-music/index.html) is a
+[Sublime](https://sublime-music.gitlab.io/sublime-music/index.html){:target="_blank"}{:rel="noopener noreferrer"} is a
 native Subsonic client compatible with Navidrome for the Linux Desktop.
 See https://sublime-music.gitlab.io/sublime-music/index.html to install
 Sublime on a variety of Linux distributions.
@@ -725,7 +725,7 @@ Supported terminal emulators in MusicPlayerPlus include `kitty`, `tilix`,
 emulator used by MusicPlayerPlus except on Raspberry Pi OS where `st` is used
 as the default.
 
-**[Note:]** The [kitty terminal emulator](https://sw.kovidgoyal.net/kitty/)
+**[Note:]** The [kitty terminal emulator](https://sw.kovidgoyal.net/kitty/){:target="_blank"}{:rel="noopener noreferrer"}
 is very cool. A default kitty theme is provided (the 'Music Player Plus' theme)
 and should suffice for most users. An alternate kitty theme can be configured
 using the kitty themes kitten. To use this kitten, run:
@@ -783,7 +783,7 @@ emulator and modify the desired profile in the Preferences dialog.
 ## Discogs User Collection
 
 MusicPlayerPlus includes support for the auto-generation of an
-[Obsidian](https://obsidian.md) vault from either a [Discogs](https://discogs.com)
+[Obsidian](https://obsidian.md){:target="_blank"}{:rel="noopener noreferrer"} vault from either a [Discogs](https://discogs.com){:target="_blank"}{:rel="noopener noreferrer"}
 user collection or a local music library. The extremely rich data available from
 Discogs can be used to generate markdown format files reflecting the artists,
 albums, tracks, and items in your collection or library. The generated markdown
@@ -797,5 +797,5 @@ configured in `$HOME/.config/mpprc`. If these are set then the resulting Obsidia
 vault from the either the command `mppinit discogs` or `mppinit discogs local`
 will be located in the folder specified by `DISCOGS_DIR` in `mpprc`.
 
-See the [Obsidian Custom Discogs README](https://github.com/doctorfree/Obsidian-Custom-Discogs#readme) for details on setup and maintenance of a Discogs Obsidian vault.
+See the [Obsidian Custom Discogs README](https://github.com/doctorfree/Obsidian-Custom-Discogs#readme){:target="_blank"}{:rel="noopener noreferrer"} for details on setup and maintenance of a Discogs Obsidian vault.
 

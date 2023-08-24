@@ -10,9 +10,9 @@ img_path: "/posts/20230705"
 ## Anatomy of an ASCIImatics Script
 
 This document examines the design, structure, features, and coding of
-a scripted [ASCIImatics](https://github.com/peterbrittain/asciimatics)
+a scripted [ASCIImatics](https://github.com/peterbrittain/asciimatics){:target="_blank"}{:rel="noopener noreferrer"}
 animation. As an example we use the `asciimpplus` command from the
-[MusicPlayerPlus project](https://github.com/doctorfree/MusicPlayerPlus).
+[MusicPlayerPlus project](https://github.com/doctorfree/MusicPlayerPlus){:target="_blank"}{:rel="noopener noreferrer"}.
 This script displays an ASCIImatics animation featuring ascii art for that
 project. It is complex enough to illustrate many of the features available
 in ASCIImatics while remaining simple enough to act as an example.
@@ -33,7 +33,7 @@ The `asciimpplus` is invoked from the command line with the following options:
 **asciimpplus** [-h] [-d] [-a AUDIO] [-c CYCLE] [-f font]
 
 We use the standard Python
-[argparse](https://docs.python.org/3/library/argparse.html) facility
+[argparse](https://docs.python.org/3/library/argparse.html){:target="_blank"}{:rel="noopener noreferrer"} facility
 to process the script's command line arguments.
 
 ### Command Line Options
@@ -900,7 +900,7 @@ if __name__ == "__main__":
 
 See what the script looks like in action by viewing this YouTube video:
 
-[![MusicPlayerPlus Intro](https://i.imgur.com/UH2A21h.png)](https://www.youtube.com/watch?v=r7XLA9tO45Q "MusicPlayerPlus ASCIImatics Intro")
+[![MusicPlayerPlus Intro](https://i.imgur.com/UH2A21h.png)](https://www.youtube.com/watch?v=r7XLA9tO45Q "MusicPlayerPlus ASCIImatics Intro"){:target="_blank"}{:rel="noopener noreferrer"}
 
 ## Author
 
